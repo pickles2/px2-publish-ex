@@ -189,6 +189,7 @@ class publish{
 			print '  - device['.$key.']:'."\n";
 			print '    - user_agent: '.$device->user_agent."\n";
 			print '    - path_publish_dir: '.$device->path_publish_dir."\n";
+			print '    - path_rewrite_rule: '.$device->path_rewrite_rule."\n";
 		}
 		print '------------'."\n";
 		flush();
