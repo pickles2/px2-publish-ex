@@ -101,7 +101,7 @@ $ php .px_execute.php /?PX=publish.run
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.0 (未定)
+### pickles2/px2-publish-ex v2.0.0 (リリース日未定)
 
 - First release.
 
