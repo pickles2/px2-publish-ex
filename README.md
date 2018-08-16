@@ -7,28 +7,28 @@
 
 ### 1. composer.json に pickles2/px2-publish-ex を追加
 
-require の項目に、"pickles2/px2-publish-ex" を追加します。
+`require` の項目に、`pickles2/px2-publish-ex` を追加します。
 
 ```json
 {
 	"require": {
 		"pickles2/px2-publish-ex": "^2.0.0"
-	},
+	}
 }
 ```
 
 
 追加したら、`composer update` を実行して変更を反映することを忘れずに。
 
-```bash
+```
 $ composer update
 ```
 
 
 ### 2. config.php に、プラグインを設定
 
-設定ファイル config.php (通常は `./px-files/config.php`) を編集します。
-`before_content` にある、PX=publish の設定を、次の例を参考に書き換えます。
+設定ファイル `config.php` (通常は `./px-files/config.php`) を編集します。
+`before_content` にある、`PX=publish` の設定を、次の例を参考に書き換えます。
 
 ```php
 <?php
@@ -40,21 +40,20 @@ $ composer update
 	 * サイトマップ読み込みの後、コンテンツ実行の前に実行するプラグインを設定します。
 	 */
 	$conf->funcs->before_content = array(
-		// PX=api
-		'picklesFramework2\commands\api::register' ,
 
 		// PX=publish (px2-publish-ex)
 		'tomk79\pickles2\publishEx\publish::register()' , // オプションについては後述
 	);
 ```
 
-Pickles 2 の設定をJSON形式で編集している方は、`config.json` の該当箇所に追加してください。
+※ Pickles 2 の設定をJSON形式で編集している方は、`config.json` の該当箇所に追加してください。
+
 
 ### 3. パブリッシュを実行
 
 標準的な Pickles 2 のパブリッシュと同じ手順で、パブリッシュコマンドを実行します。
 
-```bash
+```
 $ php .px_execute.php /?PX=publish.run
 ```
 
@@ -75,8 +74,6 @@ $ php .px_execute.php /?PX=publish.run
 ```php
 <?php
 	$conf->funcs->before_content = array(
-		// PX=api
-		'picklesFramework2\commands\api::register' ,
 
 		// PX=publish (px2-publish-ex)
 		'tomk79\pickles2\publishEx\publish::register('.json_encode(array(
@@ -114,7 +111,7 @@ $ php .px_execute.php /?PX=publish.run
 
 ### pickles2/px2-publish-ex v2.0.0 (リリース日未定)
 
-- First release.
+- Initial release.
 
 
 ## ライセンス - License

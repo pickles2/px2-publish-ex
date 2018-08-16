@@ -226,7 +226,7 @@ class publish{
 
 		if( @$pxcmd[1] == 'version' ){
 			// 命令が publish.version の場合、バージョン番号を返す。
-			$val = $this->px->get_version();
+			$val = '2.0.0+px2-publish-ex';
 			@header('Content-type: application/json; charset=UTF-8');
 			print json_encode($val);
 			exit;

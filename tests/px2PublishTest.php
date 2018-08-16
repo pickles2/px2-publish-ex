@@ -32,7 +32,7 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 
 		// var_dump($output);
 		$this->assertTrue( $this->helper->common_error( $output ) );
-		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.]+)?$/s', json_decode($output)) );
+		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.\-\_]+)?$/s', json_decode($output)) );
 
 		// -------------------
 		// api.get.config
@@ -53,7 +53,7 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 		clearstatcache();
 		// var_dump($output);
 		$this->assertTrue( $this->helper->common_error( $output ) );
-		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.]+)?$/s', json_decode($output)) );
+		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.\-\_]+)?$/s', json_decode($output)) );
 
 		// -------------------
 		// clearcache.version
@@ -65,7 +65,7 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 		clearstatcache();
 		// var_dump($output);
 		$this->assertTrue( $this->helper->common_error( $output ) );
-		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.]+)?$/s', json_decode($output)) );
+		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.\-\_]+)?$/s', json_decode($output)) );
 
 
 		// ----- publish -----
@@ -81,7 +81,7 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 
 		// var_dump($output);
 		$this->assertTrue( $this->helper->common_error( $output ) );
-		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.]+)?$/s', json_decode($output)) );
+		$this->assertEquals( 1, preg_match('/^[0-9]+\.[0-9]+\.[0-9]+(?:\-(?:alpha|beta|rc)(?:\.[a-zA-Z0-9][a-zA-Z0-9\.]*)?)?(?:\+[a-zA-Z0-9\.\-\_]+)?$/s', json_decode($output)) );
 
 		// -------------------
 		// api.get.config
