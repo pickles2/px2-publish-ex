@@ -556,10 +556,12 @@ function cont_EditPublishTargetPathApply(formElm){
 					}
 
 					// パスの書き換え
-					$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
-					$path_resolver = new path_resolver( $this->px, $this->plugin_conf, $this->path_rewriter, $device_info, $path, $path_rewrited );
-					$src = $path_resolver->resolve($src);
-					$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, $src );
+					if( is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited) ){
+						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
+						$path_resolver = new path_resolver( $this->px, $this->plugin_conf, $this->path_rewriter, $device_info, $path, $path_rewrited );
+						$src = $path_resolver->resolve($src);
+						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, $src );
+					}
 					// / パスの書き換え
 
 					$str_errors = '';

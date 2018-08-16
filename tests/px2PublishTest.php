@@ -169,8 +169,9 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 		$this->assertEquals( $publish_log[0][4], 'status_message' );
 		$this->assertEquals( $publish_log[0][5], 'errors' );
 		$this->assertEquals( $publish_log[0][6], 'filesize' );
-		$this->assertEquals( $publish_log[0][7], 'proc_microtime' );
-		$this->assertNull( @$publish_log[0][8] );
+		$this->assertEquals( $publish_log[0][7], 'user_agent' );
+		$this->assertEquals( $publish_log[0][8], 'proc_microtime' );
+		$this->assertNull( @$publish_log[0][9] );
 		$this->assertTrue( is_file( __DIR__.'/testdata/pxfw2-original/standard/px-files/_sys/ram/publish/alert_log.csv' ) );
 		foreach( $publish_log as $publish_log_row ){
 			if( $publish_log_row[1] == '/errors/server_side_unknown_error.html' ){
@@ -266,8 +267,9 @@ class px2PublishTest extends PHPUnit_Framework_TestCase{
 		$this->assertEquals( $publish_log[0][4], 'status_message' );
 		$this->assertEquals( $publish_log[0][5], 'errors' );
 		$this->assertEquals( $publish_log[0][6], 'filesize' );
-		$this->assertEquals( $publish_log[0][7], 'proc_microtime' );
-		$this->assertNull( @$publish_log[0][8] );
+		$this->assertEquals( $publish_log[0][7], 'user_agent' );
+		$this->assertEquals( $publish_log[0][8], 'proc_microtime' );
+		$this->assertNull( @$publish_log[0][9] );
 		$this->assertTrue( is_file( __DIR__.'/testdata/pxfw2-original/standard/px-files/_sys/ram/publish/alert_log.csv' ) );
 		foreach( $publish_log as $publish_log_row ){
 			if( $publish_log_row[1] == '/errors/server_side_unknown_error.html' ){

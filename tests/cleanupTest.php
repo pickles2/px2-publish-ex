@@ -18,10 +18,17 @@ class cleanupTest extends PHPUnit_Framework_TestCase{
 	 */
 	public function testCleanUp(){
 		// 後始末
+
 		$output = $this->passthru( [
 			'php', __DIR__.'/testdata/standard/.px_execute.php', '/?PX=clearcache'
 		] );
 		clearstatcache();
+
+		$output = $this->passthru( [
+			'php', __DIR__.'/testdata/publish/px2/.px_execute.php', '/?PX=clearcache'
+		] );
+		clearstatcache();
+
 		$this->assertTrue( !is_dir( __DIR__.'/testdata/standard/caches/p/' ) );
 		$this->assertTrue( !is_dir( __DIR__.'/testdata/standard/px-files/_sys/ram/caches/sitemaps/' ) );
 	}//testCleanUp();
