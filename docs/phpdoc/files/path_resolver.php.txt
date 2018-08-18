@@ -49,6 +49,11 @@ class path_resolver{
 	 * @return string           変換後のソース全体
 	 */
 	public function resolve($src){
+		if( is_null($this->device_info->path_rewrite_rule) ){
+			// パスの書き換えを行わない設定の場合、
+			// この処理はスキップする。(無加工のまま返す)
+			return $src;
+		}
 
 		$ext = $this->px->fs()->get_extension($this->path_original);
 
@@ -66,7 +71,9 @@ class path_resolver{
 	}
 
 	/**
-	 * HTMLファイル中のパスを解決
+	 * HTMLファイル中のパスを解決する
+	 * @param string $src HTMLソース
+	 * @return string 解決された後の HTMLソース
 	 */
 	private function path_resolve_in_html( $src ){
 
@@ -128,7 +135,9 @@ class path_resolver{
 	}
 
 	/**
-	 * CSSファイル中のパスを解決
+	 * CSSファイル中のパスを解決する
+	 * @param string $bin CSSソース
+	 * @return string 解決された後の CSSソース
 	 */
 	private function path_resolve_in_css( $bin ){
 
@@ -181,7 +190,9 @@ class path_resolver{
 	}
 
 	/**
-	 * 変換後の新しいパスを取得
+	 * 書き換え後の新しいパスを取得する
+	 * @param string $path 書き換え前のリンク先のパス
+	 * @return string 書き換え後のリンク先のパス
 	 */
 	private function get_new_path( $path ){
 		if( preg_match( '/^(?:[a-zA-Z0-9]+\:|\/\/|\#)/', $path ) ){

@@ -61,6 +61,33 @@ class publish{
 	private $preg_exts;
 
 	/**
+	 * pickles2/px2-publish-ex のバージョン番号を取得する。
+	 *
+	 * pickles2/px2-publish-ex のバージョン番号はこのメソッドにハードコーディングされます。
+	 *
+	 * Pickles Framework 2 と同様、バージョン番号発行の規則は、
+	 * Semantic Versioning 2.0.0 仕様に従います。
+	 * - [Semantic Versioning(英語原文)](http://semver.org/)
+	 * - [セマンティック バージョニング(日本語)](http://semver.org/lang/ja/)
+	 *
+	 * Pickles Framework 2 が提供するオリジナルのパブリッシュプラグインと区別するため、
+	 * 末尾に文字列 `+px2-publish-ex` を付加します。
+	 *
+	 * *[ナイトリービルド]*<br />
+	 * バージョン番号が振られていない、開発途中のリビジョンを、ナイトリービルドと呼びます。<br />
+	 * ナイトリービルドの場合、バージョン番号は、次のリリースが予定されているバージョン番号に、
+	 * ビルドメタデータ `+nb` を付加します。
+	 * 通常は、プレリリース記号 `alpha` または `beta` を伴うようにします。
+	 * - 例：1.0.0-beta.12+nb+px2-publish-ex (=1.0.0-beta.12リリース前のナイトリービルド)
+	 *
+	 * @return string バージョン番号を示す文字列
+	 */
+	public function get_version(){
+		$version = '2.0.0';
+		return $version.'+px2-publish-ex';
+	}
+
+	/**
 	 * Before content function
 	 * @param object $px Picklesオブジェクト
 	 * @param object $json プラグイン設定
@@ -70,7 +97,48 @@ class publish{
 	 * 		// パブリッシュ対象から常に除外するパスを設定する。
 	 * 		// (ここに設定されたパスは、動的なプレビューは可能)
 	 * 		"/sample_pages/no_publish/*"
-	 * 	]
+	 * 	],
+	 * 	"devices": [
+	 * 		[
+	 * 			// USER_AGENT 文字列
+	 * 			"user_agent": "Mozilla/1.0",
+	 *
+	 * 			// このデバイス向けのパブリッシュ先ディレクトリ
+	 * 			"path_publish_dir": "./px-files/dist_smt/",
+	 *
+	 * 			// パスの書き換えロジック
+	 * 			// 次の部品を組み合わせて、書き換え後のパスの構成規則を指定します。
+	 * 			// - `{$dirname}` = 変換前のパスの、ディレクトリ部分
+	 * 			// - `{$filename}` = 変換前のパスの、拡張子を除いたファイル名部分
+	 * 			// - `{$ext}` = 変換前のパスの、拡張子部分
+	 * 			//
+	 * 			// または次のように、コールバックメソッド名を指定します。
+	 * 			// > 'path_rewrite_rule'=>'functionNameOf::rewrite_smt',
+	 * 			// コールバックメソッドには、 引数 `$path` が渡されます。
+	 * 			// これを加工して、書き換え後のパスを返してください。
+	 * 			"path_rewrite_rule" : "{$dirname}/{$filename}.smt.{$ext}",
+	 *
+	 * 			// このデバイス向けに出力するファイルのパス
+	 * 			"paths_target": [
+	 * 				'*.html'
+	 * 			],
+	 *
+	 * 			// このデバイス向けには出力しないファイルのパス
+	 * 			"paths_ignore" : [
+	 * 				'/default_only/*'
+	 * 			],
+	 *
+	 * 			// リンクの書き換え方向
+	 * 			// `origin2origin`、`origin2rewrited`、`rewrited2origin`、`rewrited2rewrited` のいずれかで指定します。
+	 * 			// `origin` は変換前のパス、 `rewrited` は変換後のパスを意味します。
+	 * 			// 変換前のパスから変換後のパスへのリンクとして書き換える場合は `origin2rewrited` のように指定します。
+	 * 			"rewrite_direction": "rewrited2rewrited"
+	 *
+	 * 		]
+	 * 	],
+	 * 	// 標準デバイスを出力しない (default to `false`)
+	 * 	// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
+	 * 	"skip_default_device" : false
 	 * }
 	 * ```
 	 */
@@ -80,12 +148,37 @@ class publish{
 		if( !is_object(@$json) ){
 			$json = json_decode('{}');
 		}
-		if( !is_array(@$json->paths_ignore) ){
+		if( !property_exists($json, 'paths_ignore') || !is_array(@$json->paths_ignore) ){
 			$json->paths_ignore = array();
 		}
-		if( !is_array(@$json->devices) ){
-			// multi-device 拡張
+		if( !property_exists($json, 'devices') || !is_array(@$json->devices) ){
 			$json->devices = array();
+		}
+		foreach( $json->devices as $device ){
+			if( !is_object($device) ){
+				$device = json_decode('{}');
+			}
+			if( !property_exists($device, 'user_agent') ){
+				$device->user_agent = null;
+			}
+			if( !property_exists($device, 'path_publish_dir') ){
+				$device->path_publish_dir = null;
+			}
+			if( !property_exists($device, 'path_rewrite_rule') ){
+				$device->path_rewrite_rule = null;
+			}
+			if( !property_exists($device, 'paths_target') ){
+				$device->paths_target = null;
+			}
+			if( !property_exists($device, 'paths_ignore') ){
+				$device->paths_ignore = null;
+			}
+			if( !property_exists($device, 'rewrite_direction') ){
+				$device->rewrite_direction = null;
+			}
+		}
+		if( !property_exists($json, 'skip_default_device') ){
+			$json->skip_default_device = false;
 		}
 		// var_dump($json);
 
@@ -189,7 +282,12 @@ class publish{
 			print '  - device['.$key.']:'."\n";
 			print '    - user_agent: '.$device->user_agent."\n";
 			print '    - path_publish_dir: '.$device->path_publish_dir."\n";
+			print '    - path_rewrite_rule: '.$device->path_rewrite_rule."\n";
+			print '    - paths_target: '.(is_array($device->paths_target) ? join(', ', $device->paths_target) : '')."\n";
+			print '    - paths_ignore: '.(is_array($device->paths_ignore) ? join(', ', $device->paths_ignore) : '')."\n";
+			print '    - rewrite_direction: '.$device->rewrite_direction."\n";
 		}
+		print 'skip default device: '.($this->plugin_conf->skip_default_device ? 'true' : 'false')."\n";
 		print '------------'."\n";
 		flush();
 		return ob_get_clean();
@@ -225,7 +323,7 @@ class publish{
 
 		if( @$pxcmd[1] == 'version' ){
 			// 命令が publish.version の場合、バージョン番号を返す。
-			$val = $this->px->get_version();
+			$val = $this->get_version();
 			@header('Content-type: application/json; charset=UTF-8');
 			print json_encode($val);
 			exit;
@@ -427,11 +525,17 @@ function cont_EditPublishTargetPathApply(formElm){
 			}
 			$device_list[$device_num]->path_rewrite_rule = $this->path_rewriter->normalize_callback( @$device_list[$device_num]->path_rewrite_rule );
 		}
-		array_unshift($device_list, json_decode(json_encode(array(
-			'user_agent' => '',
-			'path_publish_dir' => $this->path_publish_dir,
-			'path_rewrite_rule' => $this->path_rewriter->normalize_callback(null),
-		))));
+		if( !$this->plugin_conf->skip_default_device ){
+			// 標準デバイスを暗黙的に追加する
+			array_unshift($device_list, json_decode(json_encode(array(
+				'user_agent' => '',
+				'path_publish_dir' => $this->path_publish_dir,
+				'path_rewrite_rule' => $this->path_rewriter->normalize_callback(null),
+				'paths_target'=>null,
+				'paths_ignore'=>null,
+				'rewrite_direction'=>null,
+			))));
+		}
 		// var_dump($device_list);
 
 		while(1){
@@ -457,7 +561,12 @@ function cont_EditPublishTargetPathApply(formElm){
 					continue;
 				}
 
-				if( $this->px->fs()->is_dir(dirname($_SERVER['SCRIPT_FILENAME']).$path) ){
+				$path_type = $this->px->get_path_type( $path );
+				if( $path_type != 'normal' && $path_type !== false ){
+					// 物理ファイルではないものはスキップ
+					print ' -> Non file URL.'."\n";
+	
+				}elseif( $this->px->fs()->is_dir(dirname($_SERVER['SCRIPT_FILENAME']).$path) ){
 					// ディレクトリを処理
 					$this->px->fs()->mkdir( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
 					print ' -> A directory.'."\n";
@@ -550,10 +659,12 @@ function cont_EditPublishTargetPathApply(formElm){
 					}
 
 					// パスの書き換え
-					$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
-					$path_resolver = new path_resolver( $this->px, $this->plugin_conf, $this->path_rewriter, $device_info, $path, $path_rewrited );
-					$src = $path_resolver->resolve($src);
-					$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, $src );
+					if( is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited) ){
+						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
+						$path_resolver = new path_resolver( $this->px, $this->plugin_conf, $this->path_rewriter, $device_info, $path, $path_rewrited );
+						$src = $path_resolver->resolve($src);
+						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, $src );
+					}
 					// / パスの書き換え
 
 					$str_errors = '';
@@ -1063,6 +1174,13 @@ function cont_EditPublishTargetPathApply(formElm){
 	 * @return bool 真偽
 	 */
 	private function add_queue( $path ){
+		$path_type = $this->px->get_path_type( $path );
+		if($path_type != 'normal'){
+			// `normal` ではないもの(`data`, `javascript`, `anchor`, `full_url` など)は、
+			// 物理ファイルを出力するものではないので、キューに送らない。
+			return false;
+		}
+
 		$path = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $path, $this->path_docroot ) );
 		$path = preg_replace('/\#.*$/', '', $path);
 		$path = preg_replace('/\?.*$/', '', $path);

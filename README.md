@@ -173,7 +173,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.0 (リリース日未定)
+### pickles2/px2-publish-ex v2.0.0 (2018-08-18)
 
 - Initial release.
 

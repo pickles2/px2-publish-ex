@@ -78,12 +78,13 @@ class publish{
 	 * ナイトリービルドの場合、バージョン番号は、次のリリースが予定されているバージョン番号に、
 	 * ビルドメタデータ `+nb` を付加します。
 	 * 通常は、プレリリース記号 `alpha` または `beta` を伴うようにします。
-	 * - 例：1.0.0-beta.12+nb (=1.0.0-beta.12リリース前のナイトリービルド)
+	 * - 例：1.0.0-beta.12+nb+px2-publish-ex (=1.0.0-beta.12リリース前のナイトリービルド)
 	 *
 	 * @return string バージョン番号を示す文字列
 	 */
 	public function get_version(){
-		return '2.0.0-alpha.1+px2-publish-ex+nb';
+		$version = '2.0.0';
+		return $version.'+px2-publish-ex';
 	}
 
 	/**
@@ -96,7 +97,48 @@ class publish{
 	 * 		// パブリッシュ対象から常に除外するパスを設定する。
 	 * 		// (ここに設定されたパスは、動的なプレビューは可能)
 	 * 		"/sample_pages/no_publish/*"
-	 * 	]
+	 * 	],
+	 * 	"devices": [
+	 * 		[
+	 * 			// USER_AGENT 文字列
+	 * 			"user_agent": "Mozilla/1.0",
+	 *
+	 * 			// このデバイス向けのパブリッシュ先ディレクトリ
+	 * 			"path_publish_dir": "./px-files/dist_smt/",
+	 *
+	 * 			// パスの書き換えロジック
+	 * 			// 次の部品を組み合わせて、書き換え後のパスの構成規則を指定します。
+	 * 			// - `{$dirname}` = 変換前のパスの、ディレクトリ部分
+	 * 			// - `{$filename}` = 変換前のパスの、拡張子を除いたファイル名部分
+	 * 			// - `{$ext}` = 変換前のパスの、拡張子部分
+	 * 			//
+	 * 			// または次のように、コールバックメソッド名を指定します。
+	 * 			// > 'path_rewrite_rule'=>'functionNameOf::rewrite_smt',
+	 * 			// コールバックメソッドには、 引数 `$path` が渡されます。
+	 * 			// これを加工して、書き換え後のパスを返してください。
+	 * 			"path_rewrite_rule" : "{$dirname}/{$filename}.smt.{$ext}",
+	 *
+	 * 			// このデバイス向けに出力するファイルのパス
+	 * 			"paths_target": [
+	 * 				'*.html'
+	 * 			],
+	 *
+	 * 			// このデバイス向けには出力しないファイルのパス
+	 * 			"paths_ignore" : [
+	 * 				'/default_only/*'
+	 * 			],
+	 *
+	 * 			// リンクの書き換え方向
+	 * 			// `origin2origin`、`origin2rewrited`、`rewrited2origin`、`rewrited2rewrited` のいずれかで指定します。
+	 * 			// `origin` は変換前のパス、 `rewrited` は変換後のパスを意味します。
+	 * 			// 変換前のパスから変換後のパスへのリンクとして書き換える場合は `origin2rewrited` のように指定します。
+	 * 			"rewrite_direction": "rewrited2rewrited"
+	 *
+	 * 		]
+	 * 	],
+	 * 	// 標準デバイスを出力しない (default to `false`)
+	 * 	// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
+	 * 	"skip_default_device" : false
 	 * }
 	 * ```
 	 */

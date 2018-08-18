@@ -46,7 +46,7 @@ class tmp_publish_dir{
 	}
 
 	/**
-	 * 一時パブリッシュディレクトリの通し番号の落乱を得る
+	 * 一時パブリッシュディレクトリの通し番号の一覧を得る
 	 * @return array ディレクトリの一覧
 	 */
 	public function get_publish_dir_list(){
