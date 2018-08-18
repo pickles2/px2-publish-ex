@@ -61,6 +61,32 @@ class publish{
 	private $preg_exts;
 
 	/**
+	 * pickles2/px2-publish-ex のバージョン番号を取得する。
+	 *
+	 * pickles2/px2-publish-ex のバージョン番号はこのメソッドにハードコーディングされます。
+	 *
+	 * Pickles Framework 2 と同様、バージョン番号発行の規則は、
+	 * Semantic Versioning 2.0.0 仕様に従います。
+	 * - [Semantic Versioning(英語原文)](http://semver.org/)
+	 * - [セマンティック バージョニング(日本語)](http://semver.org/lang/ja/)
+	 *
+	 * Pickles Framework 2 が提供するオリジナルのパブリッシュプラグインと区別するため、
+	 * 末尾に文字列 `+px2-publish-ex` を付加します。
+	 *
+	 * *[ナイトリービルド]*<br />
+	 * バージョン番号が振られていない、開発途中のリビジョンを、ナイトリービルドと呼びます。<br />
+	 * ナイトリービルドの場合、バージョン番号は、次のリリースが予定されているバージョン番号に、
+	 * ビルドメタデータ `+nb` を付加します。
+	 * 通常は、プレリリース記号 `alpha` または `beta` を伴うようにします。
+	 * - 例：1.0.0-beta.12+nb (=1.0.0-beta.12リリース前のナイトリービルド)
+	 *
+	 * @return string バージョン番号を示す文字列
+	 */
+	public function get_version(){
+		return '2.0.0-alpha.1+px2-publish-ex+nb';
+	}
+
+	/**
 	 * Before content function
 	 * @param object $px Picklesオブジェクト
 	 * @param object $json プラグイン設定
@@ -255,7 +281,7 @@ class publish{
 
 		if( @$pxcmd[1] == 'version' ){
 			// 命令が publish.version の場合、バージョン番号を返す。
-			$val = '2.0.0+px2-publish-ex';
+			$val = $this->get_version();
 			@header('Content-type: application/json; charset=UTF-8');
 			print json_encode($val);
 			exit;

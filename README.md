@@ -63,12 +63,30 @@ $ php .px_execute.php /?PX=publish.run
 
 ### コマンドラインオプション - CLI Options
 
-次のコマンドラインオプションは、 `pickles2/px-fw-2.x` に含まれる[オリジナルのパブリッシュ機能](http://pickles2.pxt.jp.pub.localhost/manual/publish/)のオプションと互換します。
+次のコマンドラインオプションが、 `PX=publish.run` と合わせて使用できます。
 
-- `path_region`
-- `paths_region`
-- `paths_ignore`
-- `keep_cache`
+#### `path_region`
+対象範囲とするディレクトリパスを1つ指定します。省略時はカレントディレクトリが対象になります。
+`/?PX=publish.run&path_region=/a/b/` と `/a/b/?PX=publish.run` は同じ意味です。
+
+#### `paths_region`
+対象範囲を追加指定します。配列で複数指定可能です。
+
+#### `paths_ignore`
+`path_region` で指定した対象範囲のうち、パブリッシュを除外するパスを指定します。複数指定可能です。
+
+#### `keep_cache`
+1を指定し、パブリッシュ処理の初期化時に、キャッシュの削除および再生成をスキップします。
+
+#### 実行例
+オプションを設定した実行例を示します。
+
+```
+$ php .px_execute.php "/?PX=publish.run&path_region=/a/b/&paths_region[]=/a/c/&paths_region[]=/a/d/&paths_ignore[]=/a/b/ignore1/&paths_ignore[]=/a/b/ignore2/&keep_cache=1"
+```
+
+この例では、対象範囲を `/a/b/` に絞った上で、 `/a/b/ignore1/` と `/a/b/ignore2/` を対象外に指定しています。
+
 
 ### プラグインオプション - Plugin Options
 
