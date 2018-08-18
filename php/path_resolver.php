@@ -49,6 +49,11 @@ class path_resolver{
 	 * @return string           変換後のソース全体
 	 */
 	public function resolve($src){
+		if( is_null($this->device_info->path_rewrite_rule) ){
+			// パスの書き換えを行わない設定の場合、
+			// この処理はスキップする。(無加工のまま返す)
+			return $src;
+		}
 
 		$ext = $this->px->fs()->get_extension($this->path_original);
 

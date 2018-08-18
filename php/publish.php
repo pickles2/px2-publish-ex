@@ -463,6 +463,9 @@ function cont_EditPublishTargetPathApply(formElm){
 				'user_agent' => '',
 				'path_publish_dir' => $this->path_publish_dir,
 				'path_rewrite_rule' => $this->path_rewriter->normalize_callback(null),
+				'paths_target'=>null,
+				'paths_ignore'=>null,
+				'rewrite_direction'=>null,
 			))));
 		}
 		// var_dump($device_list);
