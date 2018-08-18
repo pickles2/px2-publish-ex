@@ -80,12 +80,16 @@ class publish{
 		if( !is_object(@$json) ){
 			$json = json_decode('{}');
 		}
-		if( !is_array(@$json->paths_ignore) ){
+		if( !property_exists($json, 'paths_ignore') || !is_array(@$json->paths_ignore) ){
 			$json->paths_ignore = array();
 		}
-		if( !is_array(@$json->devices) ){
+		if( !property_exists($json, 'devices') || !is_array(@$json->devices) ){
 			// multi-device 拡張
 			$json->devices = array();
+		}
+		if( !property_exists($json, 'skip_default_device') ){
+			// multi-device 拡張
+			$json->skip_default_device = false;
 		}
 		// var_dump($json);
 
@@ -428,11 +432,14 @@ function cont_EditPublishTargetPathApply(formElm){
 			}
 			$device_list[$device_num]->path_rewrite_rule = $this->path_rewriter->normalize_callback( @$device_list[$device_num]->path_rewrite_rule );
 		}
-		array_unshift($device_list, json_decode(json_encode(array(
-			'user_agent' => '',
-			'path_publish_dir' => $this->path_publish_dir,
-			'path_rewrite_rule' => $this->path_rewriter->normalize_callback(null),
-		))));
+		if( !$this->plugin_conf->skip_default_device ){
+			// 標準デバイスを暗黙的に追加する
+			array_unshift($device_list, json_decode(json_encode(array(
+				'user_agent' => '',
+				'path_publish_dir' => $this->path_publish_dir,
+				'path_rewrite_rule' => $this->path_rewriter->normalize_callback(null),
+			))));
+		}
 		// var_dump($device_list);
 
 		while(1){

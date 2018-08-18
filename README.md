@@ -91,6 +91,7 @@ $conf->funcs->before_content = array(
 		// ここには、追加で処理したいデバイスの設定だけを記述します。
 		// 本来のパブリッシュで処理される標準的なデバイスは、暗黙的に処理されます。
 		// つまり、このオプションが空白でも、 1つの標準的なデバイスとしてパブリッシュされます。
+		// (この挙動を変更したい場合は、次の `skip_default_device` に true を設定します)
 		'devices'=>array(
 			array(
 				// USER_AGENT 文字列
@@ -133,7 +134,11 @@ $conf->funcs->before_content = array(
 				'path_rewrite_rule'=>'functionNameOf::rewriter_tab',
 			),
 			/* ...以下同様... */
-		)
+		),
+
+		// 標準デバイスを出力しない (default to `false`)
+		// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
+		'skip_default_device' => false,
 	)).')' ,
 );
 ```

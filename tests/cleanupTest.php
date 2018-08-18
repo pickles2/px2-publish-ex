@@ -29,6 +29,11 @@ class cleanupTest extends PHPUnit_Framework_TestCase{
 		] );
 		clearstatcache();
 
+		$output = $this->passthru( [
+			'php', __DIR__.'/testdata/skip_default_device/.px_execute.php', '/?PX=clearcache'
+		] );
+		clearstatcache();
+
 		$this->assertTrue( !is_dir( __DIR__.'/testdata/standard/caches/p/' ) );
 		$this->assertTrue( !is_dir( __DIR__.'/testdata/standard/px-files/_sys/ram/caches/sitemaps/' ) );
 	}//testCleanUp();
