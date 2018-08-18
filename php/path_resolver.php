@@ -66,7 +66,9 @@ class path_resolver{
 	}
 
 	/**
-	 * HTMLファイル中のパスを解決
+	 * HTMLファイル中のパスを解決する
+	 * @param string $src HTMLソース
+	 * @return string 解決された後の HTMLソース
 	 */
 	private function path_resolve_in_html( $src ){
 
@@ -128,7 +130,9 @@ class path_resolver{
 	}
 
 	/**
-	 * CSSファイル中のパスを解決
+	 * CSSファイル中のパスを解決する
+	 * @param string $bin CSSソース
+	 * @return string 解決された後の CSSソース
 	 */
 	private function path_resolve_in_css( $bin ){
 
@@ -181,7 +185,9 @@ class path_resolver{
 	}
 
 	/**
-	 * 変換後の新しいパスを取得
+	 * 書き換え後の新しいパスを取得する
+	 * @param string $path 書き換え前のリンク先のパス
+	 * @return string 書き換え後のリンク先のパス
 	 */
 	private function get_new_path( $path ){
 		if( preg_match( '/^(?:[a-zA-Z0-9]+\:|\/\/|\#)/', $path ) ){

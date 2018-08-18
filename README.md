@@ -93,9 +93,39 @@ $conf->funcs->before_content = array(
 		// つまり、このオプションが空白でも、 1つの標準的なデバイスとしてパブリッシュされます。
 		'devices'=>array(
 			array(
-				'user_agent'=>'iPhone', // USER_AGENT 文字列
-				'path_publish_dir'=>'./px-files/dist_smt/', // このデバイス向けのパブリッシュ先ディレクトリ
-				'path_rewrite_rule'=>'functionNameOf::rewrite_smt', // パスの書き換えロジック(コールバックメソッド名を指定します)
+				// USER_AGENT 文字列
+				'user_agent'=>'iPhone',
+
+				// このデバイス向けのパブリッシュ先ディレクトリ
+				'path_publish_dir'=>'./px-files/dist_smt/',
+
+				// パスの書き換えロジック
+				// 次の部品を組み合わせて、書き換え後のパスの構成規則を指定します。
+				// - `{$dirname}` = 変換前のパスの、ディレクトリ部分
+				// - `{$filename}` = 変換前のパスの、拡張子を除いたファイル名部分
+				// - `{$ext}` = 変換前のパスの、拡張子部分
+				//
+				// または次のように、コールバックメソッド名を指定します。
+				// > 'path_rewrite_rule'=>'functionNameOf::rewrite_smt',
+				// コールバックメソッドには、 引数 `$path` が渡されます。
+				// これを加工して、書き換え後のパスを返してください。
+				'path_rewrite_rule' => '{$dirname}/{$filename}.smt.{$ext}',
+
+				// このデバイス向けに出力するファイルのパス
+				'paths_target' => array(
+					'*.html',
+				),
+
+				// このデバイス向けには出力しないファイルのパス
+				'paths_ignore'=>array(
+					'/default_only/*',
+				),
+
+				// リンクの書き換え方向
+				// `origin2origin`、`origin2rewrited`、`rewrited2origin`、`rewrited2rewrited` のいずれかで指定します。
+				// `origin` は変換前のパス、 `rewrited` は変換後のパスを意味します。
+				// 変換前のパスから変換後のパスへのリンクとして書き換える場合は `origin2rewrited` のように指定します。
+				'rewrite_direction'=>'rewrited2rewrited',
 			),
 			array(
 				'user_agent'=>'iPad',
@@ -113,6 +143,7 @@ $conf->funcs->before_content = array(
 
 次の PX Command が登録されます。
 
+- `PX=publish` : パブリッシュのホーム画面を表示します。
 - `PX=publish.run` : パブリッシュを実行します。
 - `PX=publish.version` : パブリッシュプラグインのバージョン番号を返します。
 
