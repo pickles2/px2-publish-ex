@@ -84,11 +84,32 @@ class publish{
 			$json->paths_ignore = array();
 		}
 		if( !property_exists($json, 'devices') || !is_array(@$json->devices) ){
-			// multi-device 拡張
 			$json->devices = array();
 		}
+		foreach( $json->devices as $device ){
+			if( !is_object($device) ){
+				$device = json_decode('{}');
+			}
+			if( !property_exists($device, 'user_agent') ){
+				$device->user_agent = null;
+			}
+			if( !property_exists($device, 'path_publish_dir') ){
+				$device->path_publish_dir = null;
+			}
+			if( !property_exists($device, 'path_rewrite_rule') ){
+				$device->path_rewrite_rule = null;
+			}
+			if( !property_exists($device, 'paths_target') ){
+				$device->paths_target = null;
+			}
+			if( !property_exists($device, 'paths_ignore') ){
+				$device->paths_ignore = null;
+			}
+			if( !property_exists($device, 'rewrite_direction') ){
+				$device->rewrite_direction = null;
+			}
+		}
 		if( !property_exists($json, 'skip_default_device') ){
-			// multi-device 拡張
 			$json->skip_default_device = false;
 		}
 		// var_dump($json);
@@ -194,7 +215,11 @@ class publish{
 			print '    - user_agent: '.$device->user_agent."\n";
 			print '    - path_publish_dir: '.$device->path_publish_dir."\n";
 			print '    - path_rewrite_rule: '.$device->path_rewrite_rule."\n";
+			print '    - paths_target: '.(is_array($device->paths_target) ? join(', ', $device->paths_target) : '')."\n";
+			print '    - paths_ignore: '.(is_array($device->paths_ignore) ? join(', ', $device->paths_ignore) : '')."\n";
+			print '    - rewrite_direction: '.$device->rewrite_direction."\n";
 		}
+		print 'skip default device: '.($this->plugin_conf->skip_default_device ? 'true' : 'false')."\n";
 		print '------------'."\n";
 		flush();
 		return ob_get_clean();
