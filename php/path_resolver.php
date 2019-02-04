@@ -230,13 +230,13 @@ class path_resolver{
 
 		// ------------------
 
-		$cd_origin = $this->px->fs()->get_realpath( $this->path_original );
+		$cd_origin = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $this->path_original ) );
 		$cd_origin = preg_replace( '/^(.*)(\/.*?)$/si', '$1', $cd_origin );
 		if( !strlen($cd_origin) ){
 			$cd_origin = '/';
 		}
 
-		$cd_rewrited = $this->px->fs()->get_realpath( $this->path_rewrited );
+		$cd_rewrited = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $this->path_rewrited ) );
 		$cd_rewrited = preg_replace( '/^(.*)(\/.*?)$/si', '$1', $cd_rewrited );
 		if( !strlen($cd_rewrited) ){
 			$cd_rewrited = '/';
@@ -258,7 +258,7 @@ class path_resolver{
 		// ------------------
 
 		if( $type == 'relative' || $type == 'relative_dotslash' ){
-			$realpath_to = $this->px->fs()->get_relatedpath($realpath_to, $realpath_from);
+			$realpath_to = $this->px->fs()->normalize_path($this->px->fs()->get_relatedpath($realpath_to, $realpath_from));
 			if( $type == 'relative' ){
 				$realpath_to = preg_replace( '/^\.\//si', '', $realpath_to );
 			}elseif( $type == 'relative_dotslash' ){
