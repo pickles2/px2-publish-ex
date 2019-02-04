@@ -173,7 +173,11 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.0 (2018-08-18)
+### pickles2/px2-publish-ex v2.0.1 (リリース日未定)
+
+- Windowsで、パス変換時に相対パスの階層がズレることがある不具合を修正。
+
+### pickles2/px2-publish-ex v2.0.0 (2018年8月18日)
 
 - Initial release.
 
@@ -186,5 +190,5 @@ MIT License
 ## 作者 - Author
 
 - Tomoya Koyanagi <tomk79@gmail.com>
-- website: <http://www.pxt.jp/>
-- Twitter: @tomk79 <http://twitter.com/tomk79/>
+- website: <https://www.pxt.jp/>
+- Twitter: @tomk79 <https://twitter.com/tomk79/>
