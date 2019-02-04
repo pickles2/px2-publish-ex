@@ -73,11 +73,13 @@ class mainTest extends PHPUnit_Framework_TestCase{
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.smt2.html');
 		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: iPhone2\/PicklesCrawler<\/p>/s', $file ) );
-		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="default_only/default.smt2.html">default_only</a></li>', '/').'/s', $file ) );
-		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./default_only/default.smt2.html">default_only</a></li>', '/').'/s', $file ) );
-		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="/default_only/default.smt2.html">default_only</a></li>', '/').'/s', $file ) );
+		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="default_only/default.smt2.html">default_only 1</a></li>', '/').'/s', $file ) );
+		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./default_only/default.smt2.html">default_only 2</a></li>', '/').'/s', $file ) );
+		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="/default_only/default.smt2.html">default_only 3</a></li>', '/').'/s', $file ) );
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="/sample_pages/sample1.smt2.html">Sample 1</a></li>', '/').'/s', $file ) );
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./sample_pages/sample2.smt2.html">Sample 2</a></li>', '/').'/s', $file ) );
+		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="/sample_pages/sample1.smt2.html?param=./../abc//def#param=./../abc//def">Sample 1 with params</a></li>', '/').'/s', $file ) );
+		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./sample_pages/sample2.smt2.html?param=./../abc//def#param=./../abc//def">Sample 2 with params</a></li>', '/').'/s', $file ) );
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs1/index.smt.html');
 		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: iPhone\/PicklesCrawler<\/p>/s', $file ) );
