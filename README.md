@@ -173,7 +173,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.2 (リリース日未定)
+### pickles2/px2-publish-ex v2.0.2 (2019年4月19日)
 
 - パス変換時に、もとの文字セットが無視されて UTF-8 に変換されてしまう不具合を修正。
 
