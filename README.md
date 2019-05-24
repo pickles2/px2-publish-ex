@@ -173,6 +173,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.0.3 (リリース日未定)
+
+- `path_region`、`paths_region`、`paths_ignore` で、各行の先頭にスラッシュを補完するようになった。
+
 ### pickles2/px2-publish-ex v2.0.2 (2019年4月19日)
 
 - パス変換時に、もとの文字セットが無視されて UTF-8 に変換されてしまう不具合を修正。
