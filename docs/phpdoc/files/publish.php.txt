@@ -73,17 +73,17 @@ class publish{
 	 * Pickles Framework 2 が提供するオリジナルのパブリッシュプラグインと区別するため、
 	 * 末尾に文字列 `+px2-publish-ex` を付加します。
 	 *
-	 * *[ナイトリービルド]*<br />
-	 * バージョン番号が振られていない、開発途中のリビジョンを、ナイトリービルドと呼びます。<br />
-	 * ナイトリービルドの場合、バージョン番号は、次のリリースが予定されているバージョン番号に、
-	 * ビルドメタデータ `+nb` を付加します。
+	 * *[開発版]*<br />
+	 * バージョン番号が振られていない、開発途中のリビジョンを、開発版と呼びます。<br />
+	 * 開発版の場合、バージョン番号は、次のリリースが予定されているバージョン番号に、
+	 * ビルドメタデータ `+dev` を付加します。
 	 * 通常は、プレリリース記号 `alpha` または `beta` を伴うようにします。
-	 * - 例：1.0.0-beta.12+nb+px2-publish-ex (=1.0.0-beta.12リリース前のナイトリービルド)
+	 * - 例：1.0.0-beta.12+dev+px2-publish-ex (=1.0.0-beta.12リリース前の開発版)
 	 *
 	 * @return string バージョン番号を示す文字列
 	 */
 	public function get_version(){
-		$version = '2.0.2';
+		$version = '2.0.3';
 		return $version.'+px2-publish-ex';
 	}
 
@@ -229,6 +229,7 @@ class publish{
 			return true;
 		};
 		$param_path_region = $this->px->req()->get_param('path_region');
+		$param_path_region = preg_replace( '/^\\/*/is', '/', $param_path_region ); // 先頭がスラッシュじゃない場合は追加する
 		if( strlen( $param_path_region ) && $param_path_region != $path_region && $func_check_param_path( $param_path_region ) ){
 			$path_region = $param_path_region;
 		}
@@ -241,11 +242,13 @@ class publish{
 			$this->paths_region = array_merge( $this->paths_region, $paths_region );
 		}
 
-		// パブリッシュ範囲の指定から、2重拡張子の2つ目を削除
 		foreach( $this->paths_region as $tmp_key=>$tmp_localpath_region ){
+			// 2重拡張子の2つ目を削除
 			if( !is_dir('./'.$tmp_localpath_region) && preg_match( '/\.'.$this->preg_exts.'\.'.$this->preg_exts.'$/is', $tmp_localpath_region ) ){
 				$this->paths_region[$tmp_key] = preg_replace( '/\.'.$this->preg_exts.'$/is', '', $tmp_localpath_region );
 			}
+			// 先頭がスラッシュじゃない場合は追加する
+			$this->paths_region[$tmp_key] = preg_replace( '/^\\/*/is', '/', $this->paths_region[$tmp_key] );
 		}
 		unset($tmp_localpath_region, $tmp_key);
 
@@ -259,6 +262,10 @@ class publish{
 		}
 		if( !is_array($this->paths_ignore) ){
 			$this->paths_ignore = array();
+		}
+		foreach( $this->paths_ignore as $tmp_key=>$tmp_localpath_region ){
+			// 先頭がスラッシュじゃない場合は追加する
+			$this->paths_ignore[$tmp_key] = preg_replace( '/^\\/*/is', '/', $this->paths_ignore[$tmp_key] );
 		}
 	}
 
