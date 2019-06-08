@@ -176,6 +176,7 @@ $conf->funcs->before_content = array(
 ### pickles2/px2-publish-ex v2.0.3 (リリース日未定)
 
 - `path_region`、`paths_region`、`paths_ignore` で、各行の先頭にスラッシュを補完するようになった。
+- CSSが参照するファイル名に `)` 記号を含められない不具合を修正。
 
 ### pickles2/px2-publish-ex v2.0.2 (2019年4月19日)
 

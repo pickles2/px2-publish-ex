@@ -155,20 +155,31 @@ class path_resolver{
 
 		// url()
 		while( 1 ){
-			if( !preg_match( '/^(.*?)url\s*\\((.*?)\\)(.*)$/si', $bin, $matched ) ){
+			if( !preg_match( '/^(.*?)(\/\*|url\s*\\(\s*(\"|\'|))(.*)$/si', $bin, $matched ) ){
 				$rtn .= $bin;
 				break;
 			}
 			$rtn .= $matched[1];
-			$rtn .= 'url("';
-			$res = trim( $matched[2] );
-			if( preg_match( '/^(\"|\')(.*)\1$/si', $res, $matched2 ) ){
-				$res = trim( $matched2[2] );
+			$start = $matched[2];
+			$delimiter = $matched[3];
+			$bin = $matched[4];
+
+			if( $start == '/*' ){
+				$rtn .= '/*';
+				preg_match( '/^(.*?)\*\/(.*)$/si', $bin, $matched );
+				$rtn .= $matched[1];
+				$rtn .= '*/';
+				$bin = $matched[2];
+			}else{
+				$rtn .= 'url("';
+				preg_match( '/^(.*?)'.preg_quote($delimiter, '/').'\s*\)(.*)$/si', $bin, $matched );
+				$res = trim( $matched[1] );
+				$res = $this->get_new_path( $res );
+				$rtn .= $res;
+				$rtn .= '")';
+				$bin = $matched[2];
 			}
-			$res = $this->get_new_path( $res );
-			$rtn .= $res;
-			$rtn .= '")';
-			$bin = $matched[3];
+
 		}
 
 		// @import

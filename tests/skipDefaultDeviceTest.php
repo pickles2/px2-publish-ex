@@ -86,6 +86,19 @@ class skipDefaultDeviceTest extends PHPUnit_Framework_TestCase{
 			md5_file(__DIR__.'/testdata/skip_default_device/px-files/dist_tab/_tab/index.html')
 		);
 
+		// パブリッシュしたスタイルシート内のパス解決
+		$this->assertFalse( is_file( __DIR__.'/testdata/skip_default_device/px-files/dist/common/styles/path_resolve.css' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/skip_default_device/px-files/dist_smt/common/styles/path_resolve.smt2.css' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/skip_default_device/px-files/dist_tab/common/styles/_tab/path_resolve.css' ) );
+		$output = file_get_contents( __DIR__.'/testdata/skip_default_device/px-files/dist_smt/common/styles/path_resolve.smt2.css' );
+		// var_dump($output);
+		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url( "./././../images/path_not_resolved(1).gif" );', '/').'/s', $output) );
+		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url("./../images/path_resolved(2).gif");', '/').'/s', $output) );
+		$output = file_get_contents( __DIR__.'/testdata/skip_default_device/px-files/dist_tab/common/styles/_tab/path_resolve.css' );
+		// var_dump($output);
+		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url( "./././../images/path_not_resolved(1).gif" );', '/').'/s', $output) );
+		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url("./../../images/_tab/path_resolved(2).gif");', '/').'/s', $output) );
+
 	}//testPublishMultiDevice();
 
 }
