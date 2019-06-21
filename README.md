@@ -173,6 +173,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.0.4 (リリース日未定)
+
+- パブリッシュが2重に起動することがある問題を修正。
+
 ### pickles2/px2-publish-ex v2.0.3 (2019年6月8日)
 
 - `path_region`、`paths_region`、`paths_ignore` で、各行の先頭にスラッシュを補完するようになった。
