@@ -173,6 +173,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.0.5 (リリース日未定)
+
+- ????????????
+
 ### pickles2/px2-publish-ex v2.0.4 (2019年9月4日)
 
 - パブリッシュが2重に起動することがある問題を修正。
