@@ -117,6 +117,9 @@ class publishVendorDirTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/autoload.php' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/autoload.php' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/autoload.php' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/.htaccess' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/.htaccess' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/.htaccess' ) );
 
 
 	}//testPublishMultiDevice();

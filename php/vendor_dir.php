@@ -52,6 +52,10 @@ class vendor_dir{
 		}
 		unset($tmp_path_autoload);
 
+		$htaccess = '';
+		$htaccess .= 'RewriteEngine off'."\n";
+		$htaccess .= 'Deny from all'."\n";
+
 		if( $realpath_original_vendor_dir && is_dir($realpath_original_vendor_dir) ){
 			$tmp_done = array();
 			foreach($device_list as $device_num => $device_info){
@@ -70,6 +74,8 @@ class vendor_dir{
 					continue;
 				}
 				set_time_limit(5*60);
+
+				$this->px->fs()->save_file( $device_info->path_publish_dir.$this->path_controot.'vendor/.htaccess', $htaccess );
 
 				$tmp_done[$device_info->path_publish_dir] = true;
 			}

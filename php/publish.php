@@ -555,8 +555,11 @@ function cont_EditPublishTargetPathApply(formElm){
 			if( !$this->is_region_path( '/vendor/' ) ){
 				// vendor が範囲外の場合には、実行しない。
 			}else{
+				print ' Copying vendor directory...'."\n";
 				$vendorDir = new vendor_dir( $this->px, $this->plugin_conf );
 				$vendorDir->copy_vendor_to_publish_dirs( $device_list );
+				print ' Done!'."\n";
+				print "\n";
 			}
 		}
 
