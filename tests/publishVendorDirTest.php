@@ -60,6 +60,14 @@ class publishVendorDirTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( is_dir( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs2/' ) );
 		$this->assertFalse( is_dir( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs3/' ) );
 
+		// 一時パブリッシュフォルダには出力されない
+		$this->assertFalse( is_dir( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs/vendor/' ) );
+		$this->assertFalse( is_dir( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs1/vendor/' ) );
+		$this->assertFalse( is_dir( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs2/vendor/' ) );
+		$this->assertFalse( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs/vendor/autoload.php' ) );
+		$this->assertFalse( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs1/vendor/autoload.php' ) );
+		$this->assertFalse( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs2/vendor/autoload.php' ) );
+
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs/index.html' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs/index.smt1.html' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/src_px2/px-files/_sys/ram/publish/htdocs1/index.smt2.html' ) );
@@ -99,6 +107,16 @@ class publishVendorDirTest extends PHPUnit_Framework_TestCase{
 		// var_dump($output);
 		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url( "./././../images/path_not_resolved(1).gif" );', '/').'/s', $output) );
 		$this->assertEquals( 1, preg_match('/'.preg_quote('background-image: url("./../../images/_tab/path_resolved(2).gif");', '/').'/s', $output) );
+
+
+		// 直接パブリッシュフォルダに出力される
+		$this->assertTrue( is_dir( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/' ) );
+		$this->assertTrue( is_dir( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/' ) );
+		$this->assertTrue( is_dir( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/autoload.php' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/autoload.php' ) );
+		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/autoload.php' ) );
+
 
 	}//testPublishMultiDevice();
 

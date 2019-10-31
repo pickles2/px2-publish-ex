@@ -1,6 +1,0 @@
-/*
-    background-image: url( "./././../images/path_not_resolved(1).gif" );
-*/
-.path-resolve{
-    background-image: url("./../images/path_resolved(2).gif");
-}

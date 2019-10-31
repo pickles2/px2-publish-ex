@@ -180,6 +180,9 @@ class publish{
 		if( !property_exists($json, 'skip_default_device') ){
 			$json->skip_default_device = false;
 		}
+		if( !property_exists($json, 'publish_vendor_dir') ){
+			$json->publish_vendor_dir = false;
+		}
 		// var_dump($json);
 
 		$self = new self( $px, $json );
@@ -295,6 +298,7 @@ class publish{
 			print '    - rewrite_direction: '.$device->rewrite_direction."\n";
 		}
 		print 'skip default device: '.($this->plugin_conf->skip_default_device ? 'true' : 'false')."\n";
+		print 'publish vendor directory: '.($this->plugin_conf->publish_vendor_dir ? 'true' : 'false')."\n";
 		print '------------'."\n";
 		flush();
 		return ob_get_clean();
@@ -544,6 +548,54 @@ function cont_EditPublishTargetPathApply(formElm){
 			))));
 		}
 		// var_dump($device_list);
+
+		if( $this->plugin_conf->publish_vendor_dir ){
+			// --------------------------------------
+			// vendorディレクトリのコピーを作成する
+
+			$realpath_original_vendor_dir = null;
+			$tmp_path_autoload = __DIR__;
+			while(1){
+				if( is_file( $tmp_path_autoload.'/vendor/autoload.php' ) ){
+					$realpath_original_vendor_dir = $tmp_path_autoload.'/vendor/';
+					break;
+				}
+
+				if( $tmp_path_autoload == dirname($tmp_path_autoload) ){
+					// これ以上、上の階層がない。
+					break;
+				}
+				$tmp_path_autoload = dirname($tmp_path_autoload);
+				continue;
+			}
+			unset($tmp_path_autoload);
+
+			if( $realpath_original_vendor_dir && is_dir($realpath_original_vendor_dir) ){
+				$tmp_done = array();
+				foreach($device_list as $device_num => $device_info){
+					// var_dump($device_info);
+
+					if( array_key_exists($device_info->path_publish_dir, $tmp_done) && $tmp_done[$device_info->path_publish_dir] ){
+						// すでに処理したパス
+						continue;
+					}
+
+					if( !$this->px->fs()->mkdir_r( $device_info->path_publish_dir.$this->path_docroot ) ){
+						continue;
+					}
+					set_time_limit(5*60);
+					if( !$this->px->fs()->copy_r( $realpath_original_vendor_dir, $device_info->path_publish_dir.$this->path_docroot.'vendor/' ) ){
+						continue;
+					}
+					set_time_limit(5*60);
+
+					$tmp_done[$device_info->path_publish_dir] = true;
+				}
+				unset($tmp_done);
+			}
+			// / vendorディレクトリのコピーを作成する
+			// --------------------------------------
+		}
 
 		while(1){
 			set_time_limit(5*60);
