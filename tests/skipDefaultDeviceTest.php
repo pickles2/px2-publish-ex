@@ -1,6 +1,6 @@
 <?php
 /**
- * test for tomk79\px2-publish-for-multi-device
+ * test for pickles2\px2-publish-ex
  */
 class skipDefaultDeviceTest extends PHPUnit_Framework_TestCase{
 	private $helper;
@@ -58,6 +58,7 @@ class skipDefaultDeviceTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( is_dir( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs/' ) );
 		$this->assertTrue( is_dir( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs1/' ) );
 		$this->assertTrue( is_dir( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs2/' ) );
+		$this->assertFalse( is_dir( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs3/' ) );
 
 		$this->assertFalse( is_file( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs/index.html' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/skip_default_device/px-files/_sys/ram/publish/htdocs/index.smt1.html' ) );

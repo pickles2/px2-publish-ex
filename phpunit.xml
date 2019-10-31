@@ -3,6 +3,7 @@
 		<testsuite name="default">
 			<file>./tests/mainTest.php</file>
 			<file>./tests/skipDefaultDeviceTest.php</file>
+			<file>./tests/publishVendorDirTest.php</file>
 			<file>./tests/px2PublishTest.php</file>
 			<file>./tests/cleanupTest.php</file>
 		</testsuite>

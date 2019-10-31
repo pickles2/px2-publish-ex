@@ -1,6 +1,6 @@
 <?php
 /**
- * test for tomk79\px2-publish-for-multi-device
+ * test for pickles2\px2-publish-ex
  */
 class mainTest extends PHPUnit_Framework_TestCase{
 	private $helper;

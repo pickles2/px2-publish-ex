@@ -1,6 +1,6 @@
 <?php
 /**
- * test for tomk79\px2-publish-for-multi-device
+ * test for pickles2\px2-publish-ex
  */
 class cleanupTest extends PHPUnit_Framework_TestCase{
 	private $fs;
@@ -31,6 +31,11 @@ class cleanupTest extends PHPUnit_Framework_TestCase{
 
 		$output = $this->passthru( [
 			'php', __DIR__.'/testdata/skip_default_device/.px_execute.php', '/?PX=clearcache'
+		] );
+		clearstatcache();
+
+		$output = $this->passthru( [
+			'php', __DIR__.'/testdata/publish_vendor_dir/src_px2/.px_execute.php', '/?PX=clearcache'
 		] );
 		clearstatcache();
 

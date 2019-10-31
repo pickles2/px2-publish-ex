@@ -1,5 +1,6 @@
 <?php
 /**
+ * test for pickles2\px2-publish-ex
  * `publishTest.php` originated in `tomk79\PxFW-2.x`
  */
 class px2PublishTest extends PHPUnit_Framework_TestCase{

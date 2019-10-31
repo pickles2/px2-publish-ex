@@ -157,6 +157,9 @@ $conf->funcs->before_content = array(
 		// 標準デバイスを出力しない (default to `false`)
 		// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
 		'skip_default_device' => false,
+
+		// vendor ディレクトリをパブリッシュする (default to `false`)
+		'publish_vendor_dir' => false,
 	)).')' ,
 );
 ```
@@ -175,7 +178,7 @@ $conf->funcs->before_content = array(
 
 ### pickles2/px2-publish-ex v2.0.5 (リリース日未定)
 
-- ????????????
+- 新しいオプション `publish_vendor_dir` を追加。
 
 ### pickles2/px2-publish-ex v2.0.4 (2019年9月4日)
 
