@@ -34,7 +34,7 @@ class publish{
 	private $device_target_path;
 
 	/** パス設定 */
-	private $path_tmp_publish, $path_publish_dir, $path_docroot;
+	private $path_tmp_publish, $path_publish_dir, $path_controot;
 
 	/** ドメイン設定 */
 	private $domain;
@@ -208,7 +208,7 @@ class publish{
 			$this->path_publish_dir = $this->get_path_publish_dir();
 		}
 		$this->domain = $px->conf()->domain;
-		$this->path_docroot = $px->conf()->path_controot;
+		$this->path_controot = $px->conf()->path_controot;
 
 		// Extensionをマッチさせる正規表現
 		$process = array_keys( get_object_vars( $this->px->conf()->funcs->processor ) );
@@ -282,7 +282,7 @@ class publish{
 		print 'lockfile: '.$this->path_lockfile."\n";
 		print 'publish directory: '.$this->path_publish_dir."\n";
 		print 'domain: '.$this->domain."\n";
-		print 'docroot directory: '.$this->path_docroot."\n";
+		print 'docroot directory: '.$this->path_controot."\n";
 		print 'ignore: '.join(', ', $this->plugin_conf->paths_ignore)."\n";
 		print 'region: '.join(', ', $this->paths_region)."\n";
 		print 'ignore (tmp): '.join(', ', $this->paths_ignore)."\n";
@@ -437,7 +437,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">docroot directory</th>
-			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_docroot) ?></td>
+			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_controot) ?></td>
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">region</th>
@@ -552,47 +552,8 @@ function cont_EditPublishTargetPathApply(formElm){
 		if( $this->plugin_conf->publish_vendor_dir ){
 			// --------------------------------------
 			// vendorディレクトリのコピーを作成する
-
-			$realpath_original_vendor_dir = null;
-			$tmp_path_autoload = __DIR__;
-			while(1){
-				if( is_file( $tmp_path_autoload.'/vendor/autoload.php' ) ){
-					$realpath_original_vendor_dir = $tmp_path_autoload.'/vendor/';
-					break;
-				}
-
-				if( $tmp_path_autoload == dirname($tmp_path_autoload) ){
-					// これ以上、上の階層がない。
-					break;
-				}
-				$tmp_path_autoload = dirname($tmp_path_autoload);
-				continue;
-			}
-			unset($tmp_path_autoload);
-
-			if( $realpath_original_vendor_dir && is_dir($realpath_original_vendor_dir) ){
-				$tmp_done = array();
-				foreach($device_list as $device_num => $device_info){
-					// var_dump($device_info);
-
-					if( array_key_exists($device_info->path_publish_dir, $tmp_done) && $tmp_done[$device_info->path_publish_dir] ){
-						// すでに処理したパス
-						continue;
-					}
-
-					if( !$this->px->fs()->mkdir_r( $device_info->path_publish_dir.$this->path_docroot ) ){
-						continue;
-					}
-					set_time_limit(5*60);
-					if( !$this->px->fs()->copy_r( $realpath_original_vendor_dir, $device_info->path_publish_dir.$this->path_docroot.'vendor/' ) ){
-						continue;
-					}
-					set_time_limit(5*60);
-
-					$tmp_done[$device_info->path_publish_dir] = true;
-				}
-				unset($tmp_done);
-			}
+			$vendorDir = new vendor_dir( $this->px, $this->plugin_conf );
+			$vendorDir->copy_vendor_to_publish_dirs( $device_list );
 			// / vendorディレクトリのコピーを作成する
 			// --------------------------------------
 		}
@@ -627,7 +588,7 @@ function cont_EditPublishTargetPathApply(formElm){
 	
 				}elseif( $this->px->fs()->is_dir(dirname($_SERVER['SCRIPT_FILENAME']).$path) ){
 					// ディレクトリを処理
-					$this->px->fs()->mkdir( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
+					$this->px->fs()->mkdir( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited );
 					print ' -> A directory.'."\n";
 
 				}else{
@@ -642,12 +603,12 @@ function cont_EditPublishTargetPathApply(formElm){
 						case 'pass':
 							// pass
 							print $ext.' -> '.$proc_type."\n";
-							if( !$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited ) ) ){
+							if( !$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) ) ){
 								$status_code = 500;
 								$this->alert_log(array( @date('Y-m-d H:i:s'), $path_rewrited, 'FAILED to making parent directory.' ));
 								break;
 							}
-							if( !$this->px->fs()->copy( dirname($_SERVER['SCRIPT_FILENAME']).$path , $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited ) ){
+							if( !$this->px->fs()->copy( dirname($_SERVER['SCRIPT_FILENAME']).$path , $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) ){
 								$status_code = 500;
 								$this->alert_log(array( @date('Y-m-d H:i:s'), $path_rewrited, 'FAILED to copying file.' ));
 								break;
@@ -694,10 +655,10 @@ function cont_EditPublishTargetPathApply(formElm){
 
 							// コンテンツの書き出し処理
 							// エラーが含まれている場合でも、得られたコンテンツを出力する。
-							$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited ) );
-							$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, base64_decode( @$bin->body_base64 ) );
+							$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) );
+							$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, base64_decode( @$bin->body_base64 ) );
 							foreach( $bin->relatedlinks as $link ){
-								$link = $this->px->fs()->get_realpath( $link, dirname($this->path_docroot.$path).'/' );
+								$link = $this->px->fs()->get_realpath( $link, dirname($this->path_controot.$path).'/' );
 								$link = $this->px->fs()->normalize_path( $link );
 								$tmp_link = preg_replace( '/^'.preg_quote($this->px->get_path_controot(), '/').'/s', '/', $link );
 								if( $this->px->fs()->is_dir( $this->px->get_realpath_docroot().'/'.$link ) ){
@@ -718,11 +679,11 @@ function cont_EditPublishTargetPathApply(formElm){
 					}
 
 					// パスの書き換え
-					if( is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited) ){
-						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited );
+					if( is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ){
+						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited );
 						$path_resolver = new path_resolver( $this->px, $this->plugin_conf, $this->path_rewriter, $device_info, $path, $path_rewrited );
 						$src = $path_resolver->resolve($src);
-						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited, $src );
+						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, $src );
 					}
 					// / パスの書き換え
 
@@ -738,7 +699,7 @@ function cont_EditPublishTargetPathApply(formElm){
 						$status_code ,
 						$status_message ,
 						$str_errors,
-						@filesize($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited),
+						@filesize($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited),
 						$device_info->user_agent,
 						microtime(true)-$microtime
 					));
@@ -747,11 +708,11 @@ function cont_EditPublishTargetPathApply(formElm){
 
 				if( !empty( $device_info->path_publish_dir ) ){
 					// パブリッシュ先ディレクトリに都度コピー
-					if( $this->px->fs()->is_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited ) ){
-						$this->px->fs()->mkdir_r( dirname( $device_info->path_publish_dir.$this->path_docroot.$path_rewrited ) );
+					if( $this->px->fs()->is_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) ){
+						$this->px->fs()->mkdir_r( dirname( $device_info->path_publish_dir.$this->path_controot.$path_rewrited ) );
 						$this->px->fs()->copy(
-							$this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot.$path_rewrited ,
-							$device_info->path_publish_dir.$this->path_docroot.$path_rewrited
+							$this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ,
+							$device_info->path_publish_dir.$this->path_controot.$path_rewrited
 						);
 						print ' -> copied to publish dir'."\n";
 					}
@@ -784,8 +745,8 @@ function cont_EditPublishTargetPathApply(formElm){
 				set_time_limit(30*60);
 				foreach( $this->paths_region as $path_region ){
 					$this->sync_dir(
-						$this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_docroot ,
-						$path_publish_dir.$this->path_docroot ,
+						$this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot ,
+						$path_publish_dir.$this->path_controot ,
 						$path_region
 					);
 				}
@@ -1240,7 +1201,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			return false;
 		}
 
-		$path = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $path, $this->path_docroot ) );
+		$path = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $path, $this->path_controot ) );
 		$path = preg_replace('/\#.*$/', '', $path);
 		$path = preg_replace('/\?.*$/', '', $path);
 		if( preg_match( '/\/$/', $path ) ){
