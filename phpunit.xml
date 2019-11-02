@@ -1,4 +1,7 @@
-<phpunit>
+<phpunit
+		timeoutForSmallTests="600"
+		timeoutForMediumTests="1000"
+		timeoutForLargeTests="6000">
 	<testsuites>
 		<testsuite name="default">
 			<file>./tests/mainTest.php</file>

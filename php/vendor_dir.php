@@ -76,6 +76,7 @@ class vendor_dir{
 				set_time_limit(5*60);
 
 				$this->px->fs()->save_file( $device_info->path_publish_dir.$this->path_controot.'vendor/.htaccess', $htaccess );
+				$this->remove_dot_git( $device_info->path_publish_dir.$this->path_controot.'vendor/' );
 
 				$tmp_done[$device_info->path_publish_dir] = true;
 			}
@@ -84,4 +85,35 @@ class vendor_dir{
 		return true;
 	}
 
+
+	/**
+	 * .git ディレクトリを削除する
+	 */
+	private function remove_dot_git( $realpath_vendor ){
+		if( !is_dir($realpath_vendor) ){
+			return false;
+		}
+		$vendors = $this->px->fs()->ls($realpath_vendor);
+		if( !is_array($vendors) ){
+			return false;
+		}
+
+		foreach( $vendors as $vendor_name ){
+			if( !is_dir($realpath_vendor.$vendor_name.'/') ){
+				continue;
+			}
+			$pkgs = $this->px->fs()->ls($realpath_vendor.$vendor_name.'/');
+			if( !is_array($pkgs) ){
+				continue;
+			}
+			foreach( $pkgs as $pkg_name ){
+				if( !is_dir($realpath_vendor.$vendor_name.'/'.$pkg_name.'/.git') ){
+					continue;
+				}
+				$this->px->fs()->rm($realpath_vendor.$vendor_name.'/'.$pkg_name.'/.git');
+			}
+		}
+
+		return true;
+	}
 }
