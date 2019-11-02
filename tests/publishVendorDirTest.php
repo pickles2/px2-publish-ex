@@ -120,6 +120,9 @@ class publishVendorDirTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/.htaccess' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/.htaccess' ) );
 		$this->assertTrue( is_file( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/.htaccess' ) );
+		$this->assertFalse( file_exists( __DIR__.'/testdata/publish_vendor_dir/dist/vendor/pickles2/px-fw-2.x/.git' ) );
+		$this->assertFalse( file_exists( __DIR__.'/testdata/publish_vendor_dir/dist_smt/vendor/pickles2/px-fw-2.x/.git' ) );
+		$this->assertFalse( file_exists( __DIR__.'/testdata/publish_vendor_dir/dist_tab/vendor/pickles2/px-fw-2.x/.git' ) );
 
 
 	}//testPublishMultiDevice();
