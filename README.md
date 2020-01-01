@@ -176,7 +176,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.5 (リリース日未定)
+### pickles2/px2-publish-ex v2.0.5 (2020年1月2日)
 
 - 新しいオプション `publish_vendor_dir` を追加。
 

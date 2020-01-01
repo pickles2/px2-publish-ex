@@ -21,7 +21,55 @@
     <script src="../js/jquery.smooth-scroll.js"></script>
     <script src="../js/prism.min.js"></script>
     <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
-    
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
     <link rel="shortcut icon" href="../images/favicon.ico"/>
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
@@ -96,37 +144,37 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2024637170"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1053329433"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2024637170" class="accordion-body collapse in">
+            <div id="namespace-1053329433" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2135473740"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1010009480"></a>
                                 <a href="../namespaces/tomk79.html" style="margin-left: 30px; padding-left: 0">tomk79</a>
             </div>
-            <div id="namespace-2135473740" class="accordion-body collapse ">
+            <div id="namespace-1010009480" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1852652413"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-904126534"></a>
                                 <a href="../namespaces/tomk79.pickles2.html" style="margin-left: 30px; padding-left: 0">pickles2</a>
             </div>
-            <div id="namespace-1852652413" class="accordion-body collapse ">
+            <div id="namespace-904126534" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-885703580"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1687714126"></a>
                                 <a href="../namespaces/tomk79.pickles2.publishEx.html" style="margin-left: 30px; padding-left: 0">publishEx</a>
             </div>
-            <div id="namespace-885703580" class="accordion-body collapse ">
+            <div id="namespace-1687714126" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -174,300 +222,303 @@
     <section class="row-fluid">
         <div class="span10 offset2">
             <div class="row-fluid">
-                <div class="span8 content namespace">
+                <div class="span8 content class">
                     <nav>
-                                                <a href="../namespaces/tomk79.pickles2.html">\tomk79\pickles2</a>
+                                                <a href="../namespaces/tomk79.pickles2.publishEx.html">\tomk79\pickles2\publishEx</a> <i class="icon-level-up"></i>
                                             </nav>
-                    <h1><small>\tomk79\pickles2</small>publishEx</h1>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
+                    <h1><small>\tomk79\pickles2\publishEx</small>vendor_dir</h1>
+                    <p><em>PX Commands &quot;publish&quot; publish_vendor_dir operator</em></p>
                     
                     
-                    
-                                        <h2>Classes</h2>
-                    <table class="table table-hover">
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.device_target_path.html">device_target_path</a></td>
-                            <td><em>PX Commands &quot;publish&quot; Device Target Path</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.path_resolver.html">path_resolver</a></td>
-                            <td><em>PX Commands &quot;publish&quot; path resolver</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.path_rewriter.html">path_rewriter</a></td>
-                            <td><em>PX Commands &quot;publish&quot; path rewriter</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.publish.html">publish</a></td>
-                            <td><em>PX Commands &quot;publish&quot;</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.simple_html_dom.html">simple_html_dom</a></td>
-                            <td><em>simple html dom parser
-Paperg - in the find routine: allow us to specify that we want case insensitive testing of the value of the selector.</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.simple_html_dom_node.html">simple_html_dom_node</a></td>
-                            <td><em>simple html dom node
-PaperG - added ability for &quot;find&quot; routine to lowercase the value of the selector.</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.tmp_publish_dir.html">tmp_publish_dir</a></td>
-                            <td><em>PX Commands &quot;publish&quot; Temporaly Publish Directory Manager</em></td>
-                        </tr>
-                                            <tr>
-                            <td><a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html">vendor_dir</a></td>
-                            <td><em>PX Commands &quot;publish&quot; publish_vendor_dir operator</em></td>
-                        </tr>
-                                        </table>
-                                    </div>
-
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#method_copy_vendor_to_publish_dirs" class="">copy_vendor_to_publish_dirs()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#method_remove_dot_git" class="">remove_dot_git()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#property_px" class="">$px</a><br />
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#property_plugin_conf" class="">$plugin_conf</a><br />
+                                                                    <a href="../classes/tomk79.pickles2.publishEx.vendor_dir.html#property_path_controot" class="">$path_controot</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
                 <aside class="span4 detailsbar">
+                                        
+                    
                     <dl>
-                        <dt>Namespace hierarchy</dt>
-                        <dd class="hierarchy">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                                    <div class="namespace-wrapper"><a href="../namespaces/default.html">\</a></div>
-                                                            
-                                    <div class="namespace-wrapper"><a href="../namespaces/tomk79.html">\tomk79</a></div>
-                                                            
-                                    <div class="namespace-wrapper"><a href="../namespaces/tomk79.pickles2.html">\tomk79\pickles2</a></div>
-                                                                                        <div class="namespace-wrapper">\tomk79\pickles2\publishEx</div>
-                        </dd>
-                    </dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/vendor_dir.html"><div class="path-wrapper">vendor_dir.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\tomk79\pickles2\publishEx\vendor_dir</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
                 </aside>
             </div>
 
-            
-                        <div class="row-fluid">
-                <section class="span8 content namespace">
-                    <h2>Functions</h2>
-                </section>
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
                 <aside class="span4 detailsbar"></aside>
             </div>
 
-                                        <div class="row-fluid">
+                                                                    <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_dump_html_tree" name="method_dump_html_tree" class="anchor"></a>
-            <article class="method">
-                <h3 class=" ">dump_html_tree()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">dump_html_tree(  <span class="argument">$node</span>,   <span class="argument">$show_attr = true</span>,   <span class="argument">$deep</span>) </pre>
-                <p><em></em></p>
+            <a id="property_px" name="property_px" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$px</h3>
+                <pre class="signature">$px : </pre>
+                <p><em>Picklesオブジェクト</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$node </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$show_attr </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$deep </td>
-                                <td></td>
-                            </tr>
-                                            </table>
+                                <h4>Type</h4>
                 
-                
-                				
-                            </article>
+                                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                    <dt>Inherited from</dt>
-                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                        <dl>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
-                                    <tr>
-                        <th>
-                            package
-                        </th>
-                        <td>
-                                                                                            <p>PlaceLocalInclude</p>
-                                                    </td>
-                    </tr>
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
                             </table>
         </aside>
     </div>
 
-                                        <div class="row-fluid">
+                                    <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_file_get_html" name="method_file_get_html" class="anchor"></a>
-            <article class="method">
-                <h3 class=" ">file_get_html()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">file_get_html(  <span class="argument">$url</span>,   <span class="argument">$use_include_path = false</span>,   <span class="argument">$context = null</span>,   <span class="argument">$offset = -1</span>,   <span class="argument">$maxLen = -1</span>,   <span class="argument">$lowercase = true</span>,   <span class="argument">$forceTagsClosed = true</span>,   <span class="argument">$target_charset = DEFAULT_TARGET_CHARSET</span>,   <span class="argument">$stripRN = true</span>,   <span class="argument">$defaultBRText = DEFAULT_BR_TEXT</span>,   <span class="argument">$defaultSpanText = DEFAULT_SPAN_TEXT</span>) </pre>
-                <p><em></em></p>
+            <a id="property_plugin_conf" name="property_plugin_conf" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$plugin_conf</h3>
+                <pre class="signature">$plugin_conf : </pre>
+                <p><em>プラグイン設定</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$url </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$use_include_path </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$context </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$offset </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$maxLen </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$lowercase </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$forceTagsClosed </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$target_charset </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$stripRN </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$defaultBRText </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$defaultSpanText </td>
-                                <td></td>
-                            </tr>
-                                            </table>
+                                <h4>Type</h4>
                 
-                
-                				
-                            </article>
+                                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                    <dt>Inherited from</dt>
-                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                        <dl>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
-                                    <tr>
-                        <th>
-                            package
-                        </th>
-                        <td>
-                                                                                            <p>PlaceLocalInclude</p>
-                                                    </td>
-                    </tr>
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
                             </table>
         </aside>
     </div>
 
-                                        <div class="row-fluid">
+                                    <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_str_get_html" name="method_str_get_html" class="anchor"></a>
-            <article class="method">
-                <h3 class=" ">str_get_html()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">str_get_html(  <span class="argument">$str</span>,   <span class="argument">$lowercase = true</span>,   <span class="argument">$forceTagsClosed = true</span>,   <span class="argument">$target_charset = DEFAULT_TARGET_CHARSET</span>,   <span class="argument">$stripRN = true</span>,   <span class="argument">$defaultBRText = DEFAULT_BR_TEXT</span>,   <span class="argument">$defaultSpanText = DEFAULT_SPAN_TEXT</span>) </pre>
-                <p><em></em></p>
+            <a id="property_path_controot" name="property_path_controot" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$path_controot</h3>
+                <pre class="signature">$path_controot : </pre>
+                <p><em>コンテンツルートディレクトリ</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$str </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$lowercase </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$forceTagsClosed </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$target_charset </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$stripRN </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$defaultBRText </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td></td>
-                                <td>$defaultSpanText </td>
-                                <td></td>
-                            </tr>
-                                            </table>
+                                <h4>Type</h4>
                 
-                
-                				
-                            </article>
+                                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                    <dt>Inherited from</dt>
-                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
+                        <dl>
                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
-                                    <tr>
-                        <th>
-                            package
-                        </th>
-                        <td>
-                                                                                            <p>PlaceLocalInclude</p>
-                                                    </td>
-                    </tr>
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
                             </table>
         </aside>
     </div>
 
                             
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(object  <span class="argument">$px</span>, object  <span class="argument">$json</span>) </pre>
+                <p><em>constructor</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$px </td>
+                                <td><p>Picklesオブジェクト</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>object</td>
+                                <td>$json </td>
+                                <td><p>プラグイン設定</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
         </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_copy_vendor_to_publish_dirs" name="method_copy_vendor_to_publish_dirs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">copy_vendor_to_publish_dirs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">copy_vendor_to_publish_dirs(object  <span class="argument">$device_list</span>) : boolean</pre>
+                <p><em>vendorディレクトリのコピーを実行する</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$device_list </td>
+                                <td><p>デバイス設定の一覧</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>実行結果</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_remove_dot_git" name="method_remove_dot_git" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">remove_dot_git()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">remove_dot_git(  <span class="argument">$realpath_vendor</span>) </pre>
+                <p><em></em></p>
+                <p>.git ディレクトリを削除する</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$realpath_vendor </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
     </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">vendor_dir.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/vendor_dir.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
 
     <footer class="row-fluid">
         <section class="span10 offset2">
