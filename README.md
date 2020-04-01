@@ -176,6 +176,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.0.6 (リリース日未定)
+
+- パブリッシュ時に、開始時刻と終了時刻を `timelog.txt` に記録するようになった。
+
 ### pickles2/px2-publish-ex v2.0.5 (2020年1月2日)
 
 - 新しいオプション `publish_vendor_dir` を追加。
