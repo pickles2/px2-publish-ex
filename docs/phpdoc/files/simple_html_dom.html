@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>pickles2/px2-publish-ex v2.0.5 API Document</title>
+    <title>pickles2/px2-publish-ex v2.0.6 API Document</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -24,7 +24,7 @@
         <script type="text/javascript">
         function loadExternalCodeSnippets() {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-                var src = pre.getAttribute('data-src');
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
                 var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
                 var language = 'php';
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.5 API Document</a>
+            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.6 API Document</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -144,37 +144,37 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-961493583"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1640756376"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-961493583" class="accordion-body collapse in">
+            <div id="namespace-1640756376" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1394709034"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1409710382"></a>
                                 <a href="../namespaces/tomk79.html" style="margin-left: 30px; padding-left: 0">tomk79</a>
             </div>
-            <div id="namespace-1394709034" class="accordion-body collapse ">
+            <div id="namespace-1409710382" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2010217989"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1238320736"></a>
                                 <a href="../namespaces/tomk79.pickles2.html" style="margin-left: 30px; padding-left: 0">pickles2</a>
             </div>
-            <div id="namespace-2010217989" class="accordion-body collapse ">
+            <div id="namespace-1238320736" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-803886067"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1922811614"></a>
                                 <a href="../namespaces/tomk79.pickles2.publishEx.html" style="margin-left: 30px; padding-left: 0">publishEx</a>
             </div>
-            <div id="namespace-803886067" class="accordion-body collapse ">
+            <div id="namespace-1922811614" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -285,9 +285,9 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                                     author
                                 </th>
                                 <td>
-                                                                            <p>S.C. Chen <a href="mailto:me578022@gmail.com">me578022@gmail.com</a></p>
-                                                                            <p>John Schlick</p>
-                                                                            <p>Rus Carroll</p>
+                                                                                                                    <p>S.C. Chen <a href="mailto:me578022@gmail.com">me578022@gmail.com</a></p>
+                                                                                                                    <p>John Schlick</p>
+                                                                                                                    <p>Rus Carroll</p>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -295,7 +295,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                                     version
                                 </th>
                                 <td>
-                                                                            <p>($Rev: 196 $)</p>
+                                                                            1.5                                        <p>($Rev: 196 $)</p>
                                                                     </td>
                             </tr>
                                             </table>
@@ -315,7 +315,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_ELEMENT" name="constant_HDOM_TYPE_ELEMENT" class="anchor"></a>
             <article id="constant_HDOM_TYPE_ELEMENT" class="constant">
                 <h3 class="">HDOM_TYPE_ELEMENT</h3>
-                <pre class="signature">HDOM_TYPE_ELEMENT</pre>
+                <pre class="signature">HDOM_TYPE_ELEMENT = 1</pre>
                 <p><em></em></p>
                 
             </article>
@@ -333,7 +333,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -345,7 +345,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_COMMENT" name="constant_HDOM_TYPE_COMMENT" class="anchor"></a>
             <article id="constant_HDOM_TYPE_COMMENT" class="constant">
                 <h3 class="">HDOM_TYPE_COMMENT</h3>
-                <pre class="signature">HDOM_TYPE_COMMENT</pre>
+                <pre class="signature">HDOM_TYPE_COMMENT = 2</pre>
                 <p><em></em></p>
                 
             </article>
@@ -363,7 +363,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -375,7 +375,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_TEXT" name="constant_HDOM_TYPE_TEXT" class="anchor"></a>
             <article id="constant_HDOM_TYPE_TEXT" class="constant">
                 <h3 class="">HDOM_TYPE_TEXT</h3>
-                <pre class="signature">HDOM_TYPE_TEXT</pre>
+                <pre class="signature">HDOM_TYPE_TEXT = 3</pre>
                 <p><em></em></p>
                 
             </article>
@@ -393,7 +393,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -405,7 +405,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_ENDTAG" name="constant_HDOM_TYPE_ENDTAG" class="anchor"></a>
             <article id="constant_HDOM_TYPE_ENDTAG" class="constant">
                 <h3 class="">HDOM_TYPE_ENDTAG</h3>
-                <pre class="signature">HDOM_TYPE_ENDTAG</pre>
+                <pre class="signature">HDOM_TYPE_ENDTAG = 4</pre>
                 <p><em></em></p>
                 
             </article>
@@ -423,7 +423,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -435,7 +435,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_ROOT" name="constant_HDOM_TYPE_ROOT" class="anchor"></a>
             <article id="constant_HDOM_TYPE_ROOT" class="constant">
                 <h3 class="">HDOM_TYPE_ROOT</h3>
-                <pre class="signature">HDOM_TYPE_ROOT</pre>
+                <pre class="signature">HDOM_TYPE_ROOT = 5</pre>
                 <p><em></em></p>
                 
             </article>
@@ -453,7 +453,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -465,7 +465,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_TYPE_UNKNOWN" name="constant_HDOM_TYPE_UNKNOWN" class="anchor"></a>
             <article id="constant_HDOM_TYPE_UNKNOWN" class="constant">
                 <h3 class="">HDOM_TYPE_UNKNOWN</h3>
-                <pre class="signature">HDOM_TYPE_UNKNOWN</pre>
+                <pre class="signature">HDOM_TYPE_UNKNOWN = 6</pre>
                 <p><em></em></p>
                 
             </article>
@@ -483,7 +483,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -495,7 +495,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_QUOTE_DOUBLE" name="constant_HDOM_QUOTE_DOUBLE" class="anchor"></a>
             <article id="constant_HDOM_QUOTE_DOUBLE" class="constant">
                 <h3 class="">HDOM_QUOTE_DOUBLE</h3>
-                <pre class="signature">HDOM_QUOTE_DOUBLE</pre>
+                <pre class="signature">HDOM_QUOTE_DOUBLE = 0</pre>
                 <p><em></em></p>
                 
             </article>
@@ -513,7 +513,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -525,7 +525,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_QUOTE_SINGLE" name="constant_HDOM_QUOTE_SINGLE" class="anchor"></a>
             <article id="constant_HDOM_QUOTE_SINGLE" class="constant">
                 <h3 class="">HDOM_QUOTE_SINGLE</h3>
-                <pre class="signature">HDOM_QUOTE_SINGLE</pre>
+                <pre class="signature">HDOM_QUOTE_SINGLE = 1</pre>
                 <p><em></em></p>
                 
             </article>
@@ -543,7 +543,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -555,7 +555,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_QUOTE_NO" name="constant_HDOM_QUOTE_NO" class="anchor"></a>
             <article id="constant_HDOM_QUOTE_NO" class="constant">
                 <h3 class="">HDOM_QUOTE_NO</h3>
-                <pre class="signature">HDOM_QUOTE_NO</pre>
+                <pre class="signature">HDOM_QUOTE_NO = 3</pre>
                 <p><em></em></p>
                 
             </article>
@@ -573,7 +573,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -585,7 +585,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_BEGIN" name="constant_HDOM_INFO_BEGIN" class="anchor"></a>
             <article id="constant_HDOM_INFO_BEGIN" class="constant">
                 <h3 class="">HDOM_INFO_BEGIN</h3>
-                <pre class="signature">HDOM_INFO_BEGIN</pre>
+                <pre class="signature">HDOM_INFO_BEGIN = 0</pre>
                 <p><em></em></p>
                 
             </article>
@@ -603,7 +603,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -615,7 +615,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_END" name="constant_HDOM_INFO_END" class="anchor"></a>
             <article id="constant_HDOM_INFO_END" class="constant">
                 <h3 class="">HDOM_INFO_END</h3>
-                <pre class="signature">HDOM_INFO_END</pre>
+                <pre class="signature">HDOM_INFO_END = 1</pre>
                 <p><em></em></p>
                 
             </article>
@@ -633,7 +633,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -645,7 +645,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_QUOTE" name="constant_HDOM_INFO_QUOTE" class="anchor"></a>
             <article id="constant_HDOM_INFO_QUOTE" class="constant">
                 <h3 class="">HDOM_INFO_QUOTE</h3>
-                <pre class="signature">HDOM_INFO_QUOTE</pre>
+                <pre class="signature">HDOM_INFO_QUOTE = 2</pre>
                 <p><em></em></p>
                 
             </article>
@@ -663,7 +663,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -675,7 +675,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_SPACE" name="constant_HDOM_INFO_SPACE" class="anchor"></a>
             <article id="constant_HDOM_INFO_SPACE" class="constant">
                 <h3 class="">HDOM_INFO_SPACE</h3>
-                <pre class="signature">HDOM_INFO_SPACE</pre>
+                <pre class="signature">HDOM_INFO_SPACE = 3</pre>
                 <p><em></em></p>
                 
             </article>
@@ -693,7 +693,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -705,7 +705,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_TEXT" name="constant_HDOM_INFO_TEXT" class="anchor"></a>
             <article id="constant_HDOM_INFO_TEXT" class="constant">
                 <h3 class="">HDOM_INFO_TEXT</h3>
-                <pre class="signature">HDOM_INFO_TEXT</pre>
+                <pre class="signature">HDOM_INFO_TEXT = 4</pre>
                 <p><em></em></p>
                 
             </article>
@@ -723,7 +723,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -735,7 +735,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_INNER" name="constant_HDOM_INFO_INNER" class="anchor"></a>
             <article id="constant_HDOM_INFO_INNER" class="constant">
                 <h3 class="">HDOM_INFO_INNER</h3>
-                <pre class="signature">HDOM_INFO_INNER</pre>
+                <pre class="signature">HDOM_INFO_INNER = 5</pre>
                 <p><em></em></p>
                 
             </article>
@@ -753,7 +753,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -765,7 +765,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_OUTER" name="constant_HDOM_INFO_OUTER" class="anchor"></a>
             <article id="constant_HDOM_INFO_OUTER" class="constant">
                 <h3 class="">HDOM_INFO_OUTER</h3>
-                <pre class="signature">HDOM_INFO_OUTER</pre>
+                <pre class="signature">HDOM_INFO_OUTER = 6</pre>
                 <p><em></em></p>
                 
             </article>
@@ -783,7 +783,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -795,7 +795,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_HDOM_INFO_ENDSPACE" name="constant_HDOM_INFO_ENDSPACE" class="anchor"></a>
             <article id="constant_HDOM_INFO_ENDSPACE" class="constant">
                 <h3 class="">HDOM_INFO_ENDSPACE</h3>
-                <pre class="signature">HDOM_INFO_ENDSPACE</pre>
+                <pre class="signature">HDOM_INFO_ENDSPACE = 7</pre>
                 <p><em></em></p>
                 
             </article>
@@ -813,7 +813,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -825,7 +825,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_DEFAULT_TARGET_CHARSET" name="constant_DEFAULT_TARGET_CHARSET" class="anchor"></a>
             <article id="constant_DEFAULT_TARGET_CHARSET" class="constant">
                 <h3 class="">DEFAULT_TARGET_CHARSET</h3>
-                <pre class="signature">DEFAULT_TARGET_CHARSET</pre>
+                <pre class="signature">DEFAULT_TARGET_CHARSET = &#039;UTF-8&#039;</pre>
                 <p><em></em></p>
                 
             </article>
@@ -843,7 +843,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -855,7 +855,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_DEFAULT_BR_TEXT" name="constant_DEFAULT_BR_TEXT" class="anchor"></a>
             <article id="constant_DEFAULT_BR_TEXT" class="constant">
                 <h3 class="">DEFAULT_BR_TEXT</h3>
-                <pre class="signature">DEFAULT_BR_TEXT</pre>
+                <pre class="signature">DEFAULT_BR_TEXT = &quot;\r\n&quot;</pre>
                 <p><em></em></p>
                 
             </article>
@@ -873,7 +873,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -885,7 +885,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_DEFAULT_SPAN_TEXT" name="constant_DEFAULT_SPAN_TEXT" class="anchor"></a>
             <article id="constant_DEFAULT_SPAN_TEXT" class="constant">
                 <h3 class="">DEFAULT_SPAN_TEXT</h3>
-                <pre class="signature">DEFAULT_SPAN_TEXT</pre>
+                <pre class="signature">DEFAULT_SPAN_TEXT = &quot; &quot;</pre>
                 <p><em></em></p>
                 
             </article>
@@ -903,7 +903,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -915,7 +915,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
             <a id="constant_MAX_FILE_SIZE" name="constant_MAX_FILE_SIZE" class="anchor"></a>
             <article id="constant_MAX_FILE_SIZE" class="constant">
                 <h3 class="">MAX_FILE_SIZE</h3>
-                <pre class="signature">MAX_FILE_SIZE</pre>
+                <pre class="signature">MAX_FILE_SIZE = 600000</pre>
                 <p><em></em></p>
                 
             </article>
@@ -933,7 +933,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                             package
                         </th>
                         <td>
-                                                            <p>PlaceLocalInclude</p>
+                                                                                            <p>PlaceLocalInclude</p>
                                                     </td>
                     </tr>
                             </table>
@@ -1018,14 +1018,14 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                     <dt>File</dt>
-                    <dd><a href=""><div class="path-wrapper">simple_html_dom.php</div></a></dd>
+                    <dd><a href="../files/simple_html_dom.html"><div class="path-wrapper">simple_html_dom.php</div></a></dd>
                                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1091,14 +1091,14 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                     <dt>File</dt>
-                    <dd><a href=""><div class="path-wrapper">simple_html_dom.php</div></a></dd>
+                    <dd><a href="../files/simple_html_dom.html"><div class="path-wrapper">simple_html_dom.php</div></a></dd>
                                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1144,14 +1144,14 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                     <dt>File</dt>
-                    <dd><a href=""><div class="path-wrapper">simple_html_dom.php</div></a></dd>
+                    <dd><a href="../files/simple_html_dom.html"><div class="path-wrapper">simple_html_dom.php</div></a></dd>
                                                                             </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1218,7 +1218,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on January 1st, 2020 at 21:56.
+                    on April 4th, 2020 at 00:36.
                 </section>
             </section>
         </section>

@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>pickles2/px2-publish-ex v2.0.5 API Document</title>
+    <title>pickles2/px2-publish-ex v2.0.6 API Document</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -24,7 +24,7 @@
     <script type="text/javascript">
     function loadExternalCodeSnippets() {
         Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
             var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
             var language = 'php';
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.5 API Document</a>
+            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.6 API Document</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -144,37 +144,37 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-503067768"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2041724621"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-503067768" class="accordion-body collapse in">
+            <div id="namespace-2041724621" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1677231814"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1662350822"></a>
                                 <a href="../namespaces/tomk79.html" style="margin-left: 30px; padding-left: 0">tomk79</a>
             </div>
-            <div id="namespace-1677231814" class="accordion-body collapse ">
+            <div id="namespace-1662350822" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1045823163"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1729922273"></a>
                                 <a href="../namespaces/tomk79.pickles2.html" style="margin-left: 30px; padding-left: 0">pickles2</a>
             </div>
-            <div id="namespace-1045823163" class="accordion-body collapse ">
+            <div id="namespace-1729922273" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-939339754"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1728448064"></a>
                                 <a href="../namespaces/tomk79.pickles2.publishEx.html" style="margin-left: 30px; padding-left: 0">publishEx</a>
             </div>
-            <div id="namespace-939339754" class="accordion-body collapse ">
+            <div id="namespace-1728448064" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -344,7 +344,7 @@
                         
                         
                         
-                        
+                                                
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -784,13 +784,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     string
                                             &mdash; <p>バージョン番号を示す文字列</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -871,14 +873,16 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                             <span class="label label-info">static</span>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -911,13 +915,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -945,13 +951,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -971,13 +979,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -997,13 +1007,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1023,13 +1035,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1057,13 +1071,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1104,13 +1120,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>常に <code>true</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1156,13 +1174,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>成功時に <code>true</code>、失敗時に <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1203,13 +1223,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>成功時 <code>true</code>、失敗時 <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1240,13 +1262,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>ログ書き込みの成否</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1277,13 +1301,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>ログ書き込みの成否</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1303,13 +1329,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1329,13 +1357,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1368,13 +1398,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1397,13 +1429,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>常に <code>true</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1434,13 +1468,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>常に真</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1471,13 +1507,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>真偽</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1508,13 +1546,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>真偽</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1545,13 +1585,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>真偽</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1574,13 +1616,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     string
                                             &mdash; <p>パブリッシュ範囲のルートパス</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1600,13 +1644,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1629,13 +1675,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>ロック成功時に <code>true</code>、失敗時に <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1658,13 +1706,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>ロック中の場合に <code>true</code>、それ以外の場合に <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1687,13 +1737,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>ロック解除成功時に <code>true</code>、失敗時に <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1716,13 +1768,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>成功時に <code>true</code>、失敗時に <code>false</code> を返します。</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/tomk79.pickles2.publishEx.publish.html"><div class="path-wrapper">\tomk79\pickles2\publishEx\publish</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1780,7 +1834,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on January 1st, 2020 at 21:56.
+                    on April 4th, 2020 at 00:36.
                 </section>
             </section>
         </section>
