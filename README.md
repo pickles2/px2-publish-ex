@@ -7,21 +7,8 @@
 
 ### 1. composer.json に pickles2/px2-publish-ex を追加
 
-`require` の項目に、`pickles2/px2-publish-ex` を追加します。
-
-```json
-{
-	"require": {
-		"pickles2/px2-publish-ex": "^2.0.0"
-	}
-}
 ```
-
-
-追加したら、`composer update` を実行して変更を反映することを忘れずに。
-
-```
-$ composer update
+$ composer require pickles2/px2-publish-ex;
 ```
 
 
@@ -175,6 +162,10 @@ $conf->funcs->before_content = array(
 
 
 ## 更新履歴 - Change log
+
+### pickles2/px2-publish-ex v2.0.7 (リリース日未定)
+
+- その他の細かい修正。
 
 ### pickles2/px2-publish-ex v2.0.6 (2020年4月4日)
 
