@@ -628,7 +628,11 @@ function cont_EditPublishTargetPathApply(formElm){
 							// pickles execute
 							print $ext.' -> '.$proc_type."\n";
 
-							$bin = $this->px->internal_sub_request( $path, array('output'=>'json', 'user_agent'=>$device_info->user_agent), $return_var );
+							if( !isset( $device_info->params ) ){
+								$device_info->params = null;
+							}
+
+							$bin = $this->px->internal_sub_request( $this->merge_params($path, $device_info->params), array('output'=>'json', 'user_agent'=>$device_info->user_agent), $return_var );
 							if( !is_object($bin) ){
 								$bin = new \stdClass;
 								$bin->status = 500;
@@ -1469,5 +1473,18 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		return touch( $lockfilepath );
 	}//touch_lockfile()
+
+	/**
+	 * パス文字列に新しいパラメータをマージする
+	 */
+	private function merge_params( $path, $params ){
+
+		$tmp_path_with_params = $path;
+		if( isset($device_info->params) ){
+			$tmp_query_params = http_build_query( $device_info->params );
+			$tmp_path_with_params .= '?'.$tmp_query_params;
+		}
+		return $tmp_path_with_params;
+	}
 
 }

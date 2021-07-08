@@ -102,6 +102,11 @@ $conf->funcs->before_content = array(
 				// USER_AGENT 文字列
 				'user_agent'=>'iPhone',
 
+				// このデバイスが常に付加するパラメータ
+				'params' => array(
+					'LANG' => 'ja',
+				),
+
 				// このデバイス向けのパブリッシュ先ディレクトリ
 				'path_publish_dir'=>'./px-files/dist_smt/',
 
@@ -165,6 +170,7 @@ $conf->funcs->before_content = array(
 
 ### pickles2/px2-publish-ex v2.0.7 (リリース日未定)
 
+- デバイス設定に `params` を追加。
 - その他の細かい修正。
 
 ### pickles2/px2-publish-ex v2.0.6 (2020年4月4日)

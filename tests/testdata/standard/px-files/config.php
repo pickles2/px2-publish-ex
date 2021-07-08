@@ -17,6 +17,10 @@ return call_user_func( function(){
 	$conf->name = 'pickles2/px2-publish-ex';
 	/** コピーライト表記 */
 	$conf->copyright = 'Pickles 2 Project';
+	/** デフォルトの言語 */
+	$conf->default_lang = 'ja';
+	/** 対応する言語 */
+	$conf->accept_langs = array('ja', 'en');
 	/** ドメイン(本番環境のドメイン) */
 	$conf->domain = null;
 	/** コンテンツルートディレクトリ */
@@ -206,6 +210,18 @@ return call_user_func( function(){
 					'user_agent'=>'iPad',
 					'path_publish_dir'=>'./px-files/dist_tab/',
 					'path_rewrite_rule'=>'testCallbackFncs::rewrite_tab',
+					'paths_ignore'=>array(
+						'/default_only/*',
+					),
+					'rewrite_direction'=>'rewrited2rewrited',
+				),
+				array(
+					'user_agent'=>'English Page',
+					'params' => array(
+						'LANG' => 'en',
+					),
+					'path_publish_dir'=>'./px-files/dist/',
+					'path_rewrite_rule'=>'testCallbackFncs::rewrite_en',
 					'paths_ignore'=>array(
 						'/default_only/*',
 					),
