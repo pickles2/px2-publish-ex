@@ -770,7 +770,7 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		$path_logfile = $this->path_tmp_publish.'alert_log.csv';
 		clearstatcache();
-		if( @is_file( $path_logfile ) ){
+		if( $this->px->fs()->is_file( $path_logfile ) ){
 			sleep(1);
 			$alert_log = $this->px->fs()->read_csv( $path_logfile );
 			array_shift( $alert_log );
@@ -809,7 +809,8 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		print $this->cli_footer();
 		exit;
-	}
+	} // exec_publish()
+
 
 	/**
 	 * ディレクトリを同期する。
@@ -851,7 +852,7 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		$result = true;
 
-		if( @is_file( $from.$path_region ) ){
+		if( $this->px->fs()->is_file( $from.$path_region ) ){
 			if( $this->px->fs()->mkdir_r( dirname( $to.$path_region ) ) ){
 				if( $this->px->is_ignore_path( $path_region ) ){
 					// ignore指定されているパスには、操作しない。
@@ -865,8 +866,8 @@ function cont_EditPublishTargetPathApply(formElm){
 			}else{
 				$result = false;
 			}
-		}elseif( @is_dir( $from.$path_region ) ){
-			if( !@is_dir( $to.$path_region ) ){
+		}elseif( $this->px->fs()->is_dir( $from.$path_region ) ){
+			if( !$this->px->fs()->is_dir( $to.$path_region ) ){
 				if( $this->px->is_ignore_path( $path_region ) ){
 					// ignore指定されているパスには、操作しない。
 				}elseif( !$this->is_region_path( $path_region ) ){
@@ -880,10 +881,10 @@ function cont_EditPublishTargetPathApply(formElm){
 			$itemlist = $this->px->fs()->ls( $from.$path_region );
 			foreach( $itemlist as $Line ){
 				if( $Line == '.' || $Line == '..' ){ continue; }
-				if( @is_dir( $from.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
-					if( @is_file( $to.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
+				if( $this->px->fs()->is_dir( $from.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
+					if( $this->px->fs()->is_file( $to.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
 						continue;
-					}elseif( !@is_dir( $to.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
+					}elseif( !$this->px->fs()->is_dir( $to.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
 						if( $this->px->is_ignore_path( $path_region.DIRECTORY_SEPARATOR.$Line ) ){
 							// ignore指定されているパスには、操作しない。
 						}elseif( !$this->is_region_path( $path_region.DIRECTORY_SEPARATOR.$Line ) ){
@@ -898,7 +899,7 @@ function cont_EditPublishTargetPathApply(formElm){
 						$result = false;
 					}
 					continue;
-				}elseif( @is_file( $from.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
+				}elseif( $this->px->fs()->is_file( $from.$path_region.DIRECTORY_SEPARATOR.$Line ) ){
 					if( !$this->sync_dir_copy_r( $from, $to, $path_region.DIRECTORY_SEPARATOR.$Line , $perm ) ){
 						$result = false;
 					}
@@ -908,7 +909,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 		return $result;
-	}//sync_dir_copy_r()
+	} // sync_dir_copy_r()
 
 	/**
 	 * ディレクトリの内部を比較し、$comparisonに含まれない要素を$targetから削除する。
@@ -925,7 +926,9 @@ function cont_EditPublishTargetPathApply(formElm){
 		if( $count%100 == 0 ){print '.';}
 		$count ++;
 
-		if( is_null( $comparison ) || is_null( $target ) ){ return false; }
+		if( is_null( $comparison ) || is_null( $target ) ){
+			return false;
+		}
 
 		$target = $this->px->fs()->localize_path($target);
 		$comparison = $this->px->fs()->localize_path($comparison);
@@ -933,7 +936,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		$flist = array();
 
 		// 先に、ディレクトリ内をスキャンする
-		if( @is_dir( $target.$path_region ) ){
+		if( $this->px->fs()->is_dir( $target.$path_region ) ){
 			$flist = $this->px->fs()->ls( $target.$path_region );
 			foreach ( $flist as $Line ){
 				if( $Line == '.' || $Line == '..' ){ continue; }
@@ -951,7 +954,7 @@ function cont_EditPublishTargetPathApply(formElm){
 				// 範囲外のパスには、操作しない。
 				return true;
 			}
-			if( @is_dir( $target.$path_region ) ){
+			if( $this->px->fs()->is_dir( $target.$path_region ) ){
 				if( !count($flist) ){
 					// ディレクトリの場合は、内容が空でなければ削除しない。
 					$this->px->fs()->rm( $target.$path_region );
@@ -964,7 +967,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 		return true;
-	}//sync_dir_compare_and_cleanup()
+	} // sync_dir_compare_and_cleanup()
 
 
 	/**
@@ -1009,6 +1012,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		return error_log( $this->px->fs()->mk_csv( array($row) ), 3, $path_logfile );
 	}
 
+
 	/**
 	 * validate
 	 */
@@ -1016,6 +1020,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		$rtn = array('status'=>true, 'message'=>'');
 		return $rtn;
 	}
+
 
 	/**
 	 * clearcache
@@ -1033,6 +1038,7 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		return true;
 	}
+
 
 	/**
 	 * 一時パブリッシュディレクトリをクリーニング
@@ -1095,8 +1101,10 @@ function cont_EditPublishTargetPathApply(formElm){
 		return $count;
 	}
 
+
 	/**
 	 * make list by sitemap
+	 *
 	 * @return bool 常に `true` を返します。
 	 */
 	private function make_list_by_sitemap(){
@@ -1114,6 +1122,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		return true;
 	}
+
 
 	/**
 	 * make list by directory scan
@@ -1200,7 +1209,8 @@ function cont_EditPublishTargetPathApply(formElm){
 			$this->make_list_by_dir_scan( $path.DIRECTORY_SEPARATOR.$basename );
 		}
 		return true;
-	}
+	} // make_list_by_dir_scan()
+
 
 	/**
 	 * add queue
@@ -1299,7 +1309,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		$rtn[$path] = false;// <- default
 		return $rtn[$path];
-	}// is_ignore_path()
+	} // is_ignore_path()
 
 	/**
 	 * パブリッシュ範囲内か調べる
@@ -1334,7 +1344,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			}
 		}
 		return true;
-	}// is_region_path()
+	}
 
 
 	/**
@@ -1357,14 +1367,14 @@ function cont_EditPublishTargetPathApply(formElm){
 			array_push($rtn, $path);
 		}
 		return $rtn;
-	}// get_region_root_path()
+	}
 
 
 	/**
 	 * パブリッシュ先ディレクトリを取得
 	 */
 	private function get_path_publish_dir(){
-		if( @!strlen( $this->px->conf()->path_publish_dir ) ){
+		if( !isset( $this->px->conf()->path_publish_dir ) || !strlen( $this->px->conf()->path_publish_dir ) ){
 			return false;
 		}
 		$tmp_path = $this->px->fs()->get_realpath( $this->px->conf()->path_publish_dir.'/' );
@@ -1375,7 +1385,8 @@ function cont_EditPublishTargetPathApply(formElm){
 			return false;
 		}
 		return $tmp_path;
-	}// get_path_publish_dir()
+	}
+
 
 	/**
 	 * パブリッシュをロックする。
@@ -1386,7 +1397,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		$lockfilepath = $this->path_lockfile;
 		$timeout_limit = 5;
 
-		if( !@is_dir( dirname( $lockfilepath ) ) ){
+		if( !$this->px->fs()->is_dir( dirname( $lockfilepath ) ) ){
 			$this->px->fs()->mkdir_r( dirname( $lockfilepath ) );
 		}
 
@@ -1419,7 +1430,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 		return	$RTN;
-	}//lock()
+	}
 
 	/**
 	 * パブリッシュがロックされているか確認する。
@@ -1441,7 +1452,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			return true;
 		}
 		return false;
-	}//is_locked()
+	}
 
 	/**
 	 * パブリッシュロックを解除する。
@@ -1451,11 +1462,13 @@ function cont_EditPublishTargetPathApply(formElm){
 	private function unlock(){
 		$lockfilepath = $this->path_lockfile;
 
-		#	PHPのFileStatusCacheをクリア
 		clearstatcache();
+		if( !$this->px->fs()->is_file( $lockfilepath ) ){
+			return true;
+		}
 
-		return @unlink( $lockfilepath );
-	}//unlock()
+		return unlink( $lockfilepath );
+	}
 
 	/**
 	 * パブリッシュロックファイルの更新日を更新する。
@@ -1465,26 +1478,44 @@ function cont_EditPublishTargetPathApply(formElm){
 	private function touch_lockfile(){
 		$lockfilepath = $this->path_lockfile;
 
-		#	PHPのFileStatusCacheをクリア
 		clearstatcache();
 		if( !is_file( $lockfilepath ) ){
 			return false;
 		}
 
 		return touch( $lockfilepath );
-	}//touch_lockfile()
+	}
 
 	/**
 	 * パス文字列に新しいパラメータをマージする
 	 */
 	private function merge_params( $path, $params ){
 
-		$tmp_path_with_params = $path;
-		if( isset($device_info->params) ){
-			$tmp_query_params = http_build_query( $device_info->params );
-			$tmp_path_with_params .= '?'.$tmp_query_params;
+		$query_string = null;
+		if( isset($params) && (is_array($params) || is_object($params)) ){
+			$query_string = http_build_query( $params );
 		}
-		return $tmp_path_with_params;
+		if( !strlen($query_string) ){
+			return $path;
+		}
+
+		$parsed_url_fin = parse_url($path);
+		$path = $this->px->fs()->normalize_path( $parsed_url_fin['path'] );
+
+		// パラメータをパスに付加
+		if( array_key_exists('query', $parsed_url_fin) && strlen($parsed_url_fin['query']) ){
+			$query_string = $parsed_url_fin['query'].'&'.$query_string;
+		}
+		if( strlen($query_string) ){
+			$path .= '?'.$query_string;
+		}
+
+		// ハッシュが付いていた場合は復元する
+		if( array_key_exists('fragment', $parsed_url_fin) && strlen($parsed_url_fin['fragment']) ){
+			$path .= '#'.$parsed_url_fin['fragment'];
+		}
+
+		return $path;
 	}
 
 }

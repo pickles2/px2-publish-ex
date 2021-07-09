@@ -8,7 +8,7 @@ os: Windows Server 2012 R2
 version: "{build}-{branch}"
 
 # Set a known clone folder
-clone_folder: C:\projects\current_pj
+clone_folder: C:\projects\unittest
 
 # environments
 environment:
@@ -16,10 +16,10 @@ environment:
     secure: L7aFaHhJkScePf7T8vMrHn3xtwObmwfSjy36tXMOpb7qY8LXpSeieA6xx1oKiBk9
 
 # branches
-branches:
-  only:
-    - master
-    - develop
+#branches:
+#  only:
+#    - main
+#    - develop
 
 # fix lineendings in Windows
 init:
@@ -41,7 +41,6 @@ install:
   - echo extension=php_openssl.dll >> php.ini
   - echo extension=php_gd2.dll >> php.ini
   - echo extension=php_mbstring.dll >> php.ini
-  - echo extension=php_mysql.dll >> php.ini
   - echo extension=php_curl.dll >> php.ini
   - echo extension=php_xsl.dll >> php.ini
   - echo extension=php_intl.dll >> php.ini
@@ -59,7 +58,7 @@ install:
 
 
   ## Set Composer.
-  - cd C:\projects\current_pj
+  - cd C:\projects\unittest
   - php -r "readfile('https://getcomposer.org/installer');" | php
   - php composer.phar --version
   - php composer.phar config -g github-oauth.github.com %oauthtoken%
