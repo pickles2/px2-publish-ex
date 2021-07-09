@@ -17,6 +17,9 @@
             "php ./vendor/phpdocumentor/phpdocumentor/bin/phpdoc --title \"pickles2/px2-publish-ex v2.0.6 API Document\" -d \"./php/\" -t \"./docs/phpdoc/\""
         ]
     } ,
+    "config": {
+        "process-timeout": 0
+    },
     "minimum-stability": "dev",
     "repositories": [
     ],

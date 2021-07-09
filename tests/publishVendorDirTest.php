@@ -40,9 +40,10 @@ class publishVendorDirTest extends PHPUnit_Framework_TestCase{
 
 	/**
 	 * publish
+	 * @large
 	 */
 	public function testPublishMultiDevice(){
-		set_time_limit(10*60);
+		set_time_limit(2*60*60);
 
 		// -------------------
 		// Execute Multi Device Publish

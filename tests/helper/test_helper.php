@@ -19,7 +19,7 @@ class test_helper{
 	 * @return string コマンドの標準出力値
 	 */
 	public function passthru( $ary_command ){
-		set_time_limit(60*10);
+		set_time_limit(2*60*60);
 		$cmd = array();
 		foreach( $ary_command as $row ){
 			$param = escapeshellcmd($row);
