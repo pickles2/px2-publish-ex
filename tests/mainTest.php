@@ -69,10 +69,10 @@ class mainTest extends PHPUnit_Framework_TestCase{
 		$this->assertFalse( is_file( __DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs2/_tab/default_only/default.html' ) );
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.html');
-		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: <\/p>/s', $file ) );
+		$this->assertTrue( !!preg_match( '/\<p\>USER_AGENT\:\ \<\/p\>/s', $file ) );
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.smt2.html');
-		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: iPhone2\/PicklesCrawler<\/p>/s', $file ) );
+		$this->assertTrue( !!preg_match( '/\<p\>USER_AGENT\:\ iPhone2\/PicklesCrawler\<\/p\>/s', $file ) );
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="default_only/default.smt2.html">default_only 1</a></li>', '/').'/s', $file ) );
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./default_only/default.smt2.html">default_only 2</a></li>', '/').'/s', $file ) );
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="/default_only/default.smt2.html">default_only 3</a></li>', '/').'/s', $file ) );
@@ -82,14 +82,24 @@ class mainTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( !!preg_match( '/'.preg_quote('<li><a href="./sample_pages/sample2.smt2.html?param=./../abc//def#param=./../abc//def">Sample 2 with params</a></li>', '/').'/s', $file ) );
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs1/index.smt.html');
-		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: iPhone\/PicklesCrawler<\/p>/s', $file ) );
+		$this->assertTrue( !!preg_match( '/\<p\>USER_AGENT\:\ iPhone\/PicklesCrawler\<\/p\>/s', $file ) );
 
 		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs2/_tab/index.html');
-		$this->assertTrue( !!preg_match( '/<p>USER_AGENT: iPad\/PicklesCrawler<\/p>/s', $file ) );
+		$this->assertTrue( !!preg_match( '/\<p\>USER_AGENT\:\ iPad\/PicklesCrawler\<\/p\>/s', $file ) );
+
+		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.html');
+		$this->assertTrue( !!preg_match( '/\<p\>Language\:\ ja\<\/p\>/s', $file ) );
+
+		$file = file_get_contents(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/en/index.html');
+		$this->assertTrue( !!preg_match( '/\<p\>Language\:\ en\<\/p\>/s', $file ) );
 
 		$this->assertEquals(
 			md5_file(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.html'),
 			md5_file(__DIR__.'/testdata/standard/px-files/dist/index.html')
+		);
+		$this->assertEquals(
+			md5_file(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/en/index.html'),
+			md5_file(__DIR__.'/testdata/standard/px-files/dist/en/index.html')
 		);
 		$this->assertEquals(
 			md5_file(__DIR__.'/testdata/standard/px-files/_sys/ram/publish/htdocs/index.smt2.html'),
