@@ -168,7 +168,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.7 (リリース日未定)
+### pickles2/px2-publish-ex v2.0.7 (2021年7月10日)
 
 - デバイス設定に `params` を追加。
 - その他の細かい修正。

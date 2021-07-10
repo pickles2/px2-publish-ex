@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>pickles2/px2-publish-ex v2.0.6 API Document</title>
+    <title>pickles2/px2-publish-ex v2.0.7 API Document</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.6 API Document</a>
+            <a class="brand" href="../index.html">pickles2/px2-publish-ex v2.0.7 API Document</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -114,7 +114,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">226</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">228</span>
                                 </a>
                             </li>
                             <li>
@@ -144,37 +144,37 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1640756376"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1553254053"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1640756376" class="accordion-body collapse in">
+            <div id="namespace-1553254053" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1409710382"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1361328152"></a>
                                 <a href="../namespaces/tomk79.html" style="margin-left: 30px; padding-left: 0">tomk79</a>
             </div>
-            <div id="namespace-1409710382" class="accordion-body collapse ">
+            <div id="namespace-1361328152" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1238320736"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1295853776"></a>
                                 <a href="../namespaces/tomk79.pickles2.html" style="margin-left: 30px; padding-left: 0">pickles2</a>
             </div>
-            <div id="namespace-1238320736" class="accordion-body collapse ">
+            <div id="namespace-1295853776" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1922811614"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-290512285"></a>
                                 <a href="../namespaces/tomk79.pickles2.publishEx.html" style="margin-left: 30px; padding-left: 0">publishEx</a>
             </div>
-            <div id="namespace-1922811614" class="accordion-body collapse ">
+            <div id="namespace-290512285" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -234,12 +234,12 @@ Contributions by:
     Yousuke Kumakura (Attribute filters)
     Vadim Voituk (Negative indexes supports of &quot;find&quot; method)
     Antcs (Constructor with automatically load contents either text or file/url)</em></p>
-                    <p>all affected sections have comments starting with &quot;PaperG&quot;</p>
+                    <p>all affected sections have comments starting with "PaperG"</p>
 <p>Paperg - Added case insensitive testing of the value of the selector.
 Paperg - Added tag_start for the starting index of tags - NOTE: This works but not accurately.
 This tag_start gets counted AFTER \r\n have been crushed out, and after the remove_noice calls so it will not reflect the REAL position of the tag in the source,
 it will almost always be smaller by some amount.
-We use this to determine how far into the file the tag in question is.  This &quot;percentage will never be accurate as the $dom-&gt;size is the &quot;real&quot; number of bytes the dom was created from.
+We use this to determine how far into the file the tag in question is.  This "percentage will never be accurate as the $dom-&gt;size is the "real" number of bytes the dom was created from.
 but for most purposes, it's a really good estimation.
 Paperg - Added the forceTagsClosed to the dom constructor.  Forcing tags closed is great for malformed html, but it CAN lead to parsing errors.
 Allow the user to tell us how much they trust the html.
@@ -250,7 +250,7 @@ Paperg: added parse_charset so that we know about the character set of the sourc
 NOTE:  If the user's system has a routine called get_last_retrieve_url_contents_content_type availalbe, we will assume it's returning the content-type header from the
 last transfer or curl_exec, and we will parse that and use it in preference to any other method of charset detection.</p>
 <p>Found infinite loop in the case of broken html in restore_noise.  Rewrote to protect from that.
-PaperG (John Schlick) Added get_display_size for &quot;IMG&quot; tags.</p>
+PaperG (John Schlick) Added get_display_size for "IMG" tags.</p>
 <p>Licensed under The MIT License
 Redistributions of files must retain the above copyright notice.</p>
 
@@ -910,36 +910,6 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
         </aside>
     </div>
 
-                                        <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="constant_MAX_FILE_SIZE" name="constant_MAX_FILE_SIZE" class="anchor"></a>
-            <article id="constant_MAX_FILE_SIZE" class="constant">
-                <h3 class="">MAX_FILE_SIZE</h3>
-                <pre class="signature">MAX_FILE_SIZE = 600000</pre>
-                <p><em></em></p>
-                
-            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                <dt>File</dt>
-                <dd><a href=""><div class="path-wrapper">simple_html_dom.php</div></a></dd>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr>
-                        <th>
-                            package
-                        </th>
-                        <td>
-                                                                                            <p>PlaceLocalInclude</p>
-                                                    </td>
-                    </tr>
-                            </table>
-        </aside>
-    </div>
-
                             
                         <div class="row-fluid">
                 <section class="span8 content file">
@@ -1218,7 +1188,7 @@ Paperg - in the find routine: allow us to specify that we want case insensitive 
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on April 4th, 2020 at 00:36.
+                    on July 10th, 2021 at 09:30.
                 </section>
             </section>
         </section>
