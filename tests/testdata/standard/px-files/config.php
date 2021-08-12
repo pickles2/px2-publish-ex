@@ -184,7 +184,7 @@ return call_user_func( function(){
 		'picklesFramework2\commands\api::register' ,
 
 		// PX=publish
-		'tomk79\pickles2\publishEx\publish::register('.json_encode(array(
+		tomk79\pickles2\publishEx\publish::register( array(
 			'devices'=>array(
 				array(
 					'user_agent'=>'iPhone',
@@ -228,7 +228,7 @@ return call_user_func( function(){
 					'rewrite_direction'=>'rewrited2rewrited',
 				),
 			)
-		)).')' ,
+		) ),
 	);
 
 

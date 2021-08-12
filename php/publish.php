@@ -142,7 +142,11 @@ class publish{
 	 * }
 	 * ```
 	 */
-	public static function register( $px, $json ){
+	public static function register( $px = null, $json = null ){
+
+		if( count(func_get_args()) <= 1 ){
+			return __CLASS__.'::'.__FUNCTION__.'('.( is_array($px) ? json_encode($px) : '' ).')';
+		}
 
 		// プラグイン設定の初期化
 		if( !is_object(@$json) ){
