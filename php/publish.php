@@ -1492,6 +1492,9 @@ function cont_EditPublishTargetPathApply(formElm){
 
 	/**
 	 * パス文字列に新しいパラメータをマージする
+	 * @param string $path マージ元のパス
+	 * @param array $params マージするパラメータ
+	 * @return string マージ後のパス
 	 */
 	private function merge_params( $path, $params ){
 

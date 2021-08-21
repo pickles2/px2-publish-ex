@@ -87,7 +87,10 @@ class vendor_dir{
 
 
 	/**
-	 * .git ディレクトリを削除する
+	 * `.git` ディレクトリを削除する
+	 *
+	 * @param string $realpath_vendor vendorディレクトリのパス
+	 * @return boolean 成否
 	 */
 	private function remove_dot_git( $realpath_vendor ){
 		if( !is_dir($realpath_vendor) ){
