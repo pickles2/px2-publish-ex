@@ -168,7 +168,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.0.8 (リリース日未定)
+### pickles2/px2-publish-ex v2.0.8 (2021年8月21日)
 
 - 同梱のプラグインが、より直接的な表現で設定できるようになった。
 
