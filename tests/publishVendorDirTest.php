@@ -2,11 +2,11 @@
 /**
  * test for pickles2\px2-publish-ex
  */
-class publishVendorDirTest extends PHPUnit_Framework_TestCase{
+class publishVendorDirTest extends PHPUnit\Framework\TestCase{
 	private $helper;
 	private $fs;
 
-	public function setup(){
+	public function setUp() : void{
 		require_once(__DIR__.'/helper/test_helper.php');
 		mb_internal_encoding('UTF-8');
 		$this->helper = new test_helper();

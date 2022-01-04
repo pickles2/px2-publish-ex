@@ -2,10 +2,10 @@
 /**
  * test for pickles2\px2-publish-ex
  */
-class cleanupTest extends PHPUnit_Framework_TestCase{
+class cleanupTest extends PHPUnit\Framework\TestCase{
 	private $fs;
 
-	public function setup(){
+	public function setUp() : void{
 		mb_internal_encoding('UTF-8');
 		$this->fs = new tomk79\filesystem();
 	}
