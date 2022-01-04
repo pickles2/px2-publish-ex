@@ -216,35 +216,35 @@ class path_resolver{
 	 * @return string 書き換え後のリンク先のパス
 	 */
 	private function get_new_path( $path ){
-		if( preg_match( '/^(?:[a-zA-Z0-9]+\:|\/\/|\#)/', $path ) ){
+		if( preg_match( '/^(?:[a-zA-Z0-9]+\:|\/\/|\#)/', ''.$path ) ){
 			return $path;
 		}
 
 		$params = '';
-		if( preg_match( '/^(.*?)([\?\#].*)$/', $path, $matched ) ){
+		if( preg_match( '/^(.*?)([\?\#].*)$/', ''.$path, $matched ) ){
 			$path = $matched[1];
 			$params = $matched[2];
 		}
 
 		$rewrite_direction = @$this->device_info->rewrite_direction;
-		@preg_match('/^(.*)2(.*)$/', $rewrite_direction, $matched);
+		@preg_match('/^(.*)2(.*)$/', ''.$rewrite_direction, $matched);
 		$rewrite_from = @$matched[1];
 		$rewrite_to   = @$matched[2];
-		if( !strlen($rewrite_from) ){
+		if( !strlen(''.$rewrite_from) ){
 			$rewrite_from = 'rewrited';
 		}
-		if( !strlen($rewrite_to) ){
+		if( !strlen(''.$rewrite_to) ){
 			$rewrite_to = 'origin';
 		}
 
 		$type = 'relative';
-		if( preg_match('/^\//', $path) ){
+		if( preg_match('/^\//', ''.$path) ){
 			$type = 'absolute';
-		}elseif( preg_match('/^\.\//', $path) ){
+		}elseif( preg_match('/^\.\//', ''.$path) ){
 			$type = 'relative_dotslash';
 		}
 		$is_slash_closed = false;
-		if( preg_match('/\/$/', $path) ){
+		if( preg_match('/\/$/', ''.$path) ){
 			$is_slash_closed = true;
 			$path .= $this->px->get_directory_index_primary();
 		}
@@ -289,7 +289,7 @@ class path_resolver{
 
 		$realpath_to = $this->px->fs()->normalize_path($realpath_to);
 		if( $is_slash_closed ){
-			$realpath_to = preg_replace( '/'.$this->px->get_directory_index_preg_pattern().'$/', '', $realpath_to );
+			$realpath_to = preg_replace( '/'.$this->px->get_directory_index_preg_pattern().'$/', '', ''.$realpath_to );
 		}
 		$realpath_to .= $params;
 
