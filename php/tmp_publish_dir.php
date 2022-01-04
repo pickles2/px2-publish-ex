@@ -35,7 +35,7 @@ class tmp_publish_dir{
 	 */
 	public function get_sufix( $path_publish_dir ){
 		$idx = $this->px->fs()->get_realpath($path_publish_dir);
-		if( @strlen($this->tmp_publish_dir_index[$idx]) ){
+		if( @strlen(''.$this->tmp_publish_dir_index[$idx]) ){
 			// 既に発行済なら、それを返す
 			return $this->tmp_publish_dir_index[$idx];
 		}

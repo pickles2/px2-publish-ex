@@ -223,21 +223,21 @@ class publish{
 
 		// パブリッシュ対象範囲
 		$path_region = $this->px->req()->get_request_file_path();
-		$path_region = preg_replace('/^\/+/s','/',$path_region);
-		$path_region = preg_replace('/\/'.$this->px->get_directory_index_preg_pattern().'$/s','/',$path_region);
+		$path_region = preg_replace('/^\/+/s', '/', ''.$path_region);
+		$path_region = preg_replace('/\/'.$this->px->get_directory_index_preg_pattern().'$/s', '/', ''.$path_region);
 		$func_check_param_path = function($path){
 			if( !preg_match('/^\//', $path) ){
 				return false;
 			}
-			$path = preg_replace('/(?:\/|\\\\)/', '/', $path);
+			$path = preg_replace('/(?:\/|\\\\)/', '/', ''.$path);
 			if( preg_match('/(?:^|\/)\.{1,2}(?:$|\/)/', $path) ){
 				return false;
 			}
 			return true;
 		};
 		$param_path_region = $this->px->req()->get_param('path_region');
-		$param_path_region = preg_replace( '/^\\/*/is', '/', $param_path_region ); // 先頭がスラッシュじゃない場合は追加する
-		if( strlen( $param_path_region ) && $param_path_region != $path_region && $func_check_param_path( $param_path_region ) ){
+		$param_path_region = preg_replace( '/^\\/*/is', '/', ''.$param_path_region ); // 先頭がスラッシュじゃない場合は追加する
+		if( strlen( ''.$param_path_region ) && $param_path_region != $path_region && $func_check_param_path( $param_path_region ) ){
 			$path_region = $param_path_region;
 		}
 		$this->paths_region = array( $path_region );
@@ -252,10 +252,10 @@ class publish{
 		foreach( $this->paths_region as $tmp_key=>$tmp_localpath_region ){
 			// 2重拡張子の2つ目を削除
 			if( !is_dir('./'.$tmp_localpath_region) && preg_match( '/\.'.$this->preg_exts.'\.'.$this->preg_exts.'$/is', $tmp_localpath_region ) ){
-				$this->paths_region[$tmp_key] = preg_replace( '/\.'.$this->preg_exts.'$/is', '', $tmp_localpath_region );
+				$this->paths_region[$tmp_key] = preg_replace( '/\.'.$this->preg_exts.'$/is', '', ''.$tmp_localpath_region );
 			}
 			// 先頭がスラッシュじゃない場合は追加する
-			$this->paths_region[$tmp_key] = preg_replace( '/^\\/*/is', '/', $this->paths_region[$tmp_key] );
+			$this->paths_region[$tmp_key] = preg_replace( '/^\\/*/is', '/', ''.$this->paths_region[$tmp_key] );
 		}
 		unset($tmp_localpath_region, $tmp_key);
 
@@ -348,7 +348,7 @@ class publish{
 			$this->exec_publish( $px );
 			exit;
 		}
-		if( @strlen($pxcmd[1]) ){
+		if( @strlen(''.$pxcmd[1]) ){
 			// 命令が不明の場合、エラーを表示する。
 			if( $this->px->req()->is_cmd() ){
 				header('Content-type: text/plain;');
@@ -380,12 +380,12 @@ class publish{
 				$html .= '	<p class="error">パブリッシュ先一時ディレクトリに書き込み許可がありません。</p>'."\n";
 				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->path_tmp_publish ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
-			}elseif( strlen($this->path_publish_dir) && !is_dir($this->path_publish_dir) ){
+			}elseif( strlen(''.$this->path_publish_dir) && !is_dir($this->path_publish_dir) ){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先ディレクトリが存在しません。</p>'."\n";
 				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
-			}elseif( strlen($this->path_publish_dir) && !is_writable($this->path_publish_dir) ){
+			}elseif( strlen(''.$this->path_publish_dir) && !is_writable($this->path_publish_dir) ){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先ディレクトリに書き込み許可がありません。</p>'."\n";
 				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
@@ -675,7 +675,7 @@ function cont_EditPublishTargetPathApply(formElm){
 							foreach( $bin->relatedlinks as $link ){
 								$link = $this->px->fs()->get_realpath( $link, dirname($this->path_controot.$path).'/' );
 								$link = $this->px->fs()->normalize_path( $link );
-								$tmp_link = preg_replace( '/^'.preg_quote($this->px->get_path_controot(), '/').'/s', '/', $link );
+								$tmp_link = preg_replace( '/^'.preg_quote($this->px->get_path_controot(), '/').'/s', '/', ''.$link );
 								if( $this->px->fs()->is_dir( $this->px->get_realpath_docroot().'/'.$link ) ){
 									$this->make_list_by_dir_scan( $tmp_link.'/' );
 								}else{
@@ -789,8 +789,8 @@ function cont_EditPublishTargetPathApply(formElm){
 				// var_dump($row);
 				$tmp_number = '  ['.($key+1).'] ';
 				print $tmp_number;
-				print preg_replace('/(\r\n|\r|\n)/s', '$1'.str_pad('', strlen($tmp_number), ' '), $row[2])."\n";
-				print str_pad('', strlen($tmp_number), ' ').'  in '.$row[1]."\n";
+				print preg_replace('/(\r\n|\r|\n)/s', '$1'.str_pad('', strlen(''.$tmp_number), ' '), $row[2])."\n";
+				print str_pad('', strlen(''.$tmp_number), ' ').'  in '.$row[1]."\n";
 				if( $counter >= $max_preview_count ){ break; }
 			}
 			if( $alert_total_count > $max_preview_count ){
@@ -799,7 +799,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			print "\n";
 			print '    You got total '.$alert_total_count.' alerts.'."\n";
 			print '    see more: '.realpath($path_logfile)."\n";
-			print str_pad('', strlen($alert_header), '*')."\n";
+			print str_pad('', strlen(''.$alert_header), '*')."\n";
 			print "\n";
 		}
 
@@ -1378,7 +1378,7 @@ function cont_EditPublishTargetPathApply(formElm){
 	 * パブリッシュ先ディレクトリを取得
 	 */
 	private function get_path_publish_dir(){
-		if( !isset( $this->px->conf()->path_publish_dir ) || !strlen( $this->px->conf()->path_publish_dir ) ){
+		if( !isset( $this->px->conf()->path_publish_dir ) || !strlen( ''.$this->px->conf()->path_publish_dir ) ){
 			return false;
 		}
 		$tmp_path = $this->px->fs()->get_realpath( $this->px->conf()->path_publish_dir.'/' );
@@ -1502,7 +1502,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		if( isset($params) && (is_array($params) || is_object($params)) ){
 			$query_string = http_build_query( $params );
 		}
-		if( !strlen($query_string) ){
+		if( !strlen(''.$query_string) ){
 			return $path;
 		}
 
@@ -1510,15 +1510,15 @@ function cont_EditPublishTargetPathApply(formElm){
 		$path = $this->px->fs()->normalize_path( $parsed_url_fin['path'] );
 
 		// パラメータをパスに付加
-		if( array_key_exists('query', $parsed_url_fin) && strlen($parsed_url_fin['query']) ){
+		if( array_key_exists('query', $parsed_url_fin) && strlen(''.$parsed_url_fin['query']) ){
 			$query_string = $parsed_url_fin['query'].'&'.$query_string;
 		}
-		if( strlen($query_string) ){
+		if( strlen(''.$query_string) ){
 			$path .= '?'.$query_string;
 		}
 
 		// ハッシュが付いていた場合は復元する
-		if( array_key_exists('fragment', $parsed_url_fin) && strlen($parsed_url_fin['fragment']) ){
+		if( array_key_exists('fragment', $parsed_url_fin) && strlen(''.$parsed_url_fin['fragment']) ){
 			$path .= '#'.$parsed_url_fin['fragment'];
 		}
 
