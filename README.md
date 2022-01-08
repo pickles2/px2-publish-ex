@@ -168,7 +168,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.1.0 (リリース日未定)
+### pickles2/px2-publish-ex v2.1.0 (2022年1月8日)
 
 - サポートするPHPのバージョンを `>=7.3.0` に変更。
 - PHP 8.1 に対応した。

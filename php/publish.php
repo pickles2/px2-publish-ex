@@ -83,7 +83,7 @@ class publish{
 	 * @return string バージョン番号を示す文字列
 	 */
 	public function get_version(){
-		$version = '2.0.8';
+		$version = '2.1.0';
 		return $version.'+px2-publish-ex';
 	}
 
