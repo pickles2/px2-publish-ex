@@ -149,13 +149,13 @@ class publish{
 		}
 
 		// プラグイン設定の初期化
-		if( !is_object(@$json) ){
+		if( !is_object($json) ){
 			$json = json_decode('{}');
 		}
-		if( !property_exists($json, 'paths_ignore') || !is_array(@$json->paths_ignore) ){
+		if( !property_exists($json, 'paths_ignore') || !is_array($json->paths_ignore ?? null) ){
 			$json->paths_ignore = array();
 		}
-		if( !property_exists($json, 'devices') || !is_array(@$json->devices) ){
+		if( !property_exists($json, 'devices') || !is_array($json->devices ?? null) ){
 			$json->devices = array();
 		}
 		foreach( $json->devices as $device ){
@@ -336,19 +336,19 @@ class publish{
 	public function exec_home( $px ){
 		$pxcmd = $this->px->get_px_command();
 
-		if( @$pxcmd[1] == 'version' ){
+		if( ($pxcmd[1] ?? null) == 'version' ){
 			// 命令が publish.version の場合、バージョン番号を返す。
 			$val = $this->get_version();
 			@header('Content-type: application/json; charset=UTF-8');
 			print json_encode($val);
 			exit;
 		}
-		if( @$pxcmd[1] == 'run' ){
+		if( ($pxcmd[1] ?? null) == 'run' ){
 			// 命令が publish.run の場合、実行する。
 			$this->exec_publish( $px );
 			exit;
 		}
-		if( @strlen(''.$pxcmd[1]) ){
+		if( strlen($pxcmd[1] ?? '') ){
 			// 命令が不明の場合、エラーを表示する。
 			if( $this->px->req()->is_cmd() ){
 				header('Content-type: text/plain;');
@@ -540,7 +540,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			}else{
 				$device_list[$device_num]->path_publish_dir = false;
 			}
-			$device_list[$device_num]->path_rewrite_rule = $this->path_rewriter->normalize_callback( @$device_list[$device_num]->path_rewrite_rule );
+			$device_list[$device_num]->path_rewrite_rule = $this->path_rewriter->normalize_callback( $device_list[$device_num]->path_rewrite_rule ?? null );
 		}
 		if( !$this->plugin_conf->skip_default_device ){
 			// 標準デバイスを暗黙的に追加する
@@ -651,9 +651,9 @@ function cont_EditPublishTargetPathApply(formElm){
 								// $bin->body_base64 = base64_encode($tmp_err_msg);
 								unset($tmp_err_msg);
 							}
-							$status_code = @$bin->status;
-							$status_message = @$bin->message;
-							$errors = @$bin->errors;
+							$status_code = $bin->status ?? null;
+							$status_message = $bin->message ?? null;
+							$errors = $bin->errors ?? null;
 							if( $bin->status >= 500 ){
 								$this->alert_log(array( @date('Y-m-d H:i:s'), $path, 'status: '.$bin->status.' '.$bin->message ));
 							}elseif( $bin->status >= 400 ){
@@ -671,7 +671,7 @@ function cont_EditPublishTargetPathApply(formElm){
 							// コンテンツの書き出し処理
 							// エラーが含まれている場合でも、得られたコンテンツを出力する。
 							$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) );
-							$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, base64_decode( @$bin->body_base64 ) );
+							$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, base64_decode( $bin->body_base64 ?? null ) );
 							foreach( $bin->relatedlinks as $link ){
 								$link = $this->px->fs()->get_realpath( $link, dirname($this->path_controot.$path).'/' );
 								$link = $this->px->fs()->normalize_path( $link );
@@ -714,7 +714,7 @@ function cont_EditPublishTargetPathApply(formElm){
 						$status_code ,
 						$status_message ,
 						$str_errors,
-						@filesize($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited),
+						(file_exists($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ? filesize($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) : false),
 						$device_info->user_agent,
 						microtime(true)-$microtime
 					));
@@ -950,7 +950,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 
-		if( !@file_exists( $comparison.$path_region ) && @file_exists( $target.$path_region ) ){
+		if( !file_exists( $comparison.$path_region ) && file_exists( $target.$path_region ) ){
 			if( $this->px->is_ignore_path( $path_region ) ){
 				// ignore指定されているパスには、操作しない。
 				return true;
@@ -1278,7 +1278,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		$path = $this->px->fs()->normalize_path($path);
 
-		if( @is_bool($rtn[$path]) ){
+		if( is_bool($rtn[$path] ?? null) ){
 			return $rtn[$path];
 		}
 

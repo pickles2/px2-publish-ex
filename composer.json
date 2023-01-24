@@ -18,7 +18,10 @@
         ]
     } ,
     "config": {
-        "process-timeout": 0
+        "process-timeout": 0,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "minimum-stability": "dev",
     "repositories": [
