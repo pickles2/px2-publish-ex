@@ -226,10 +226,10 @@ class path_resolver{
 			$params = $matched[2];
 		}
 
-		$rewrite_direction = @$this->device_info->rewrite_direction;
-		@preg_match('/^(.*)2(.*)$/', ''.$rewrite_direction, $matched);
-		$rewrite_from = @$matched[1];
-		$rewrite_to   = @$matched[2];
+		$rewrite_direction = $this->device_info->rewrite_direction ?? null;
+		preg_match('/^(.*)2(.*)$/', $rewrite_direction ?? '', $matched);
+		$rewrite_from = $matched[1] ?? null;
+		$rewrite_to   = $matched[2] ?? null;
 		if( !strlen(''.$rewrite_from) ){
 			$rewrite_from = 'rewrited';
 		}

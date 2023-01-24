@@ -34,7 +34,7 @@ class device_target_path{
 	public function is_target_path( $path, $device_info ){
 
 		$is_target = false;
-		if( is_null( @$device_info->paths_target ) ){
+		if( is_null( $device_info->paths_target ?? null ) ){
 			// ターゲット指定がされていなければ、全体がターゲット
 			$is_target = true;
 		}elseif( is_array( $device_info->paths_target ) ){
@@ -56,7 +56,7 @@ class device_target_path{
 		}
 
 		$is_ignore = false;
-		if( is_null( @$device_info->paths_ignore ) ){
+		if( is_null( $device_info->paths_ignore ?? null ) ){
 			// 対象外指定がされていなければ、評価をスキップ
 		}elseif( is_array( $device_info->paths_ignore ) ){
 			foreach( $device_info->paths_ignore as $path_ignore ){
