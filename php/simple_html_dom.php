@@ -704,7 +704,7 @@ class simple_html_dom_node
             if (!empty($m[6])) {$val=$m[6];}
 
             // convert to lowercase
-            if ($this->dom->lowercase) {$tag=strtolower($tag); $key=strtolower($key);}
+            if ($this->dom->lowercase) {$tag=strtolower(''.$tag); $key=strtolower(''.$key);}
             //elements that do NOT have the specified attribute
             if (isset($key[0]) && $key[0]==='!') {$key=substr($key, 1); $no_key=true;}
 
@@ -1013,6 +1013,7 @@ class simple_html_dom
         'b'=>array('b'=>1),
 		'option'=>array('option'=>1),
     );
+    private $optional_closing_array = null;
 
     function __construct($str=null, $lowercase=true, $forceTagsClosed=true, $target_charset=DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
     {
