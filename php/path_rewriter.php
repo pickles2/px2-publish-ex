@@ -45,7 +45,7 @@ class path_rewriter{
 			return null;
 		}
 		return $callback;
-	}//normalize_callback()
+	}
 
 	/**
 	 * パスを変換する
@@ -63,9 +63,9 @@ class path_rewriter{
 		}elseif( is_string($callback) ){
 			$path_rewrited = $callback;
 			$data = array(
-				'dirname'=>$this->px->fs()->normalize_path(dirname($path)),
-				'filename'=>basename($this->px->fs()->trim_extension($path)),
-				'ext'=>strtolower($this->px->fs()->get_extension($path)),
+				'dirname'=>$this->px->fs()->normalize_path(dirname($path ?? '')),
+				'filename'=>basename($this->px->fs()->trim_extension($path) ?? ''),
+				'ext'=>strtolower($this->px->fs()->get_extension($path) ?? ''),
 			);
 			$path_rewrited = str_replace( '{$dirname}', $data['dirname'], $path_rewrited );
 			$path_rewrited = str_replace( '{$filename}', $data['filename'], $path_rewrited );
