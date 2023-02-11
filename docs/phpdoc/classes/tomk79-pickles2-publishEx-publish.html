@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pickles2/px2-publish-ex v2.1.0 API Document</title>
+    <title>pickles2/px2-publish-ex v2.1.1 API Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">pickles2/px2-publish-ex v2.1.0 API Document</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">pickles2/px2-publish-ex v2.1.1 API Document</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -1170,53 +1170,15 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>プラグイン設定</p>
 <pre class="prettyprint"><code class="prettyprint">{
-	&quot;paths_ignore&quot;: [
-		// パブリッシュ対象から常に除外するパスを設定する。
-		// (ここに設定されたパスは、動的なプレビューは可能)
-		&quot;/sample_pages/no_publish/*&quot;
-	],
-	&quot;devices&quot;: [
-		[
-			// USER_AGENT 文字列
-			&quot;user_agent&quot;: &quot;Mozilla/1.0&quot;,
-
-			// このデバイス向けのパブリッシュ先ディレクトリ
-			&quot;path_publish_dir&quot;: &quot;./px-files/dist_smt/&quot;,
-
-			// パスの書き換えロジック
-			// 次の部品を組み合わせて、書き換え後のパスの構成規則を指定します。
-			// - `{$dirname}` = 変換前のパスの、ディレクトリ部分
-			// - `{$filename}` = 変換前のパスの、拡張子を除いたファイル名部分
-			// - `{$ext}` = 変換前のパスの、拡張子部分
-			//
-			// または次のように、コールバックメソッド名を指定します。
-			// &gt; 'path_rewrite_rule'=&gt;'functionNameOf::rewrite_smt',
-			// コールバックメソッドには、 引数 `$path` が渡されます。
-			// これを加工して、書き換え後のパスを返してください。
-			&quot;path_rewrite_rule&quot; : &quot;{$dirname}/{$filename}.smt.{$ext}&quot;,
-
-			// このデバイス向けに出力するファイルのパス
-			&quot;paths_target&quot;: [
-				'*.html'
-			],
-
-			// このデバイス向けには出力しないファイルのパス
-			&quot;paths_ignore&quot; : [
-				'/default_only/*'
-			],
-
-			// リンクの書き換え方向
-			// `origin2origin`、`origin2rewrited`、`rewrited2origin`、`rewrited2rewrited` のいずれかで指定します。
-			// `origin` は変換前のパス、 `rewrited` は変換後のパスを意味します。
-			// 変換前のパスから変換後のパスへのリンクとして書き換える場合は `origin2rewrited` のように指定します。
-			&quot;rewrite_direction&quot;: &quot;rewrited2rewrited&quot;
-
-		]
-	],
-	// 標準デバイスを出力しない (default to `false`)
-	// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
-	&quot;skip_default_device&quot; : false
-}
+&quot;paths_ignore&quot;: [
+// パブリッシュ対象から常に除外するパスを設定する。
+// (ここに設定されたパスは、動的なプレビューは可能)
+&quot;/sample_pages/no_publish/*&quot;
+],
+&quot;devices&quot;: [
+[
+// USER_AGENT 文字列
+&quot;user_agent&quot;: &quot;Mozilla/1.0&quot;,
 </code></pre>
 </section>
 

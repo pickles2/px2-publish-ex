@@ -941,6 +941,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_optional_closing_tags"
         },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\simple_html_dom\u003A\u003A\u0024optional_closing_array",
+            "name": "optional_closing_array",
+            "summary": "",
+            "url": "classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_optional_closing_array"
+        },                {
             "fqsen": "\\tomk79\\pickles2\\publishEx\\tmp_publish_dir",
             "name": "tmp_publish_dir",
             "summary": "PX\u0020Commands\u0020\u0022publish\u0022\u0020Temporaly\u0020Publish\u0020Directory\u0020Manager",
