@@ -90,7 +90,7 @@ class publish{
 	/**
 	 * Before content function
 	 * @param object $px Picklesオブジェクト
-	 * @param object $json プラグイン設定
+	 * @param object $options プラグイン設定
 	 * ```
 	 * {
 	 * 	"paths_ignore": [
@@ -142,23 +142,23 @@ class publish{
 	 * }
 	 * ```
 	 */
-	public static function register( $px = null, $json = null ){
+	public static function register( $px = null, $options = null ){
 
 		if( count(func_get_args()) <= 1 ){
 			return __CLASS__.'::'.__FUNCTION__.'('.( is_array($px) ? json_encode($px) : '' ).')';
 		}
 
 		// プラグイン設定の初期化
-		if( !is_object($json) ){
-			$json = json_decode('{}');
+		if( !is_object($options) ){
+			$options = json_decode('{}');
 		}
-		if( !property_exists($json, 'paths_ignore') || !is_array($json->paths_ignore ?? null) ){
-			$json->paths_ignore = array();
+		if( !isset($options->paths_ignore) || !is_array($options->paths_ignore) ){
+			$options->paths_ignore = array();
 		}
-		if( !property_exists($json, 'devices') || !is_array($json->devices ?? null) ){
-			$json->devices = array();
+		if( !isset($options->devices) || !is_array($options->devices) ){
+			$options->devices = array();
 		}
-		foreach( $json->devices as $device ){
+		foreach( $options->devices as $device ){
 			if( !is_object($device) ){
 				$device = json_decode('{}');
 			}
@@ -181,15 +181,14 @@ class publish{
 				$device->rewrite_direction = null;
 			}
 		}
-		if( !property_exists($json, 'skip_default_device') ){
-			$json->skip_default_device = false;
+		if( !property_exists($options, 'skip_default_device') ){
+			$options->skip_default_device = false;
 		}
-		if( !property_exists($json, 'publish_vendor_dir') ){
-			$json->publish_vendor_dir = false;
+		if( !property_exists($options, 'publish_vendor_dir') ){
+			$options->publish_vendor_dir = false;
 		}
-		// var_dump($json);
 
-		$self = new self( $px, $json );
+		$self = new self( $px, $options );
 
 		$px->pxcmd()->register('publish', array($self, 'exec_home'));
 	}
@@ -197,11 +196,11 @@ class publish{
 	/**
 	 * constructor
 	 * @param object $px Picklesオブジェクト
-	 * @param object $json プラグイン設定
+	 * @param object $options プラグイン設定
 	 */
-	public function __construct( $px, $json ){
+	public function __construct( $px, $options ){
 		$this->px = $px;
-		$this->plugin_conf = $json;
+		$this->plugin_conf = $options;
 		$this->path_rewriter = new path_rewriter( $px, $this->plugin_conf );
 		$this->tmp_publish_dir = new tmp_publish_dir( $px, $this->plugin_conf );
 		$this->device_target_path = new device_target_path( $px, $this->plugin_conf );
@@ -222,42 +221,54 @@ class publish{
 		$this->preg_exts = '('.implode( '|', $process ).')';
 
 		// パブリッシュ対象範囲
-		$path_region = $this->px->req()->get_request_file_path();
-		$path_region = preg_replace('/^\/+/s', '/', ''.$path_region);
-		$path_region = preg_replace('/\/'.$this->px->get_directory_index_preg_pattern().'$/s', '/', ''.$path_region);
+		$this->paths_region = array();
+		$param_path_region = $this->px->req()->get_param('path_region');
+		if( strlen($param_path_region ?? '') ){
+			array_push( $this->paths_region, $param_path_region );
+		}
+		$param_paths_region = $this->px->req()->get_param('paths_region');
+		if( is_array($param_paths_region ?? null) ){
+			$this->paths_region = array_merge( $this->paths_region, $param_paths_region );
+		}
+		if( !count($this->paths_region) ){
+			$path_region = $this->px->req()->get_request_file_path();
+			$path_region = preg_replace('/^\\/*/is','/',$path_region);
+			$path_region = preg_replace('/\/'.$this->px->get_directory_index_preg_pattern().'$/s','/',$path_region);
+			array_push( $this->paths_region, $path_region );
+		}
+
 		$func_check_param_path = function($path){
 			if( !preg_match('/^\//', $path) ){
 				return false;
 			}
-			$path = preg_replace('/(?:\/|\\\\)/', '/', ''.$path);
+			$path = preg_replace('/(?:\/|\\\\)/', '/', $path);
 			if( preg_match('/(?:^|\/)\.{1,2}(?:$|\/)/', $path) ){
 				return false;
 			}
 			return true;
 		};
-		$param_path_region = $this->px->req()->get_param('path_region');
-		$param_path_region = preg_replace( '/^\\/*/is', '/', ''.$param_path_region ); // 先頭がスラッシュじゃない場合は追加する
-		if( strlen( ''.$param_path_region ) && $param_path_region != $path_region && $func_check_param_path( $param_path_region ) ){
-			$path_region = $param_path_region;
-		}
-		$this->paths_region = array( $path_region );
-		unset( $path_region, $param_path_region );
-
-		// パブリッシュ対象範囲(複数指定する場合)
-		$paths_region = $this->px->req()->get_param('paths_region');
-		if( is_array($paths_region) ){
-			$this->paths_region = array_merge( $this->paths_region, $paths_region );
+		foreach( $this->paths_region as $tmp_key => $tmp_localpath_region ){
+			if( !$func_check_param_path( $tmp_localpath_region ) ){
+				unset($this->paths_region[$tmp_key]);
+				continue;
+			}
 		}
 
-		foreach( $this->paths_region as $tmp_key=>$tmp_localpath_region ){
+		foreach( $this->paths_region as $tmp_key => $tmp_localpath_region ){
 			// 2重拡張子の2つ目を削除
 			if( !is_dir('./'.$tmp_localpath_region) && preg_match( '/\.'.$this->preg_exts.'\.'.$this->preg_exts.'$/is', $tmp_localpath_region ) ){
-				$this->paths_region[$tmp_key] = preg_replace( '/\.'.$this->preg_exts.'$/is', '', ''.$tmp_localpath_region );
+				$this->paths_region[$tmp_key] = preg_replace( '/\.'.$this->preg_exts.'$/is', '', $tmp_localpath_region );
 			}
 			// 先頭がスラッシュじゃない場合は追加する
-			$this->paths_region[$tmp_key] = preg_replace( '/^\\/*/is', '/', ''.$this->paths_region[$tmp_key] );
+			$this->paths_region[$tmp_key] = preg_replace( '/^\\/*/is', '/', $this->paths_region[$tmp_key] );
 		}
-		unset($tmp_localpath_region, $tmp_key);
+		unset(
+			$path_region,
+			$param_path_region,
+			$param_paths_region,
+			$func_check_param_path,
+			$tmp_localpath_region,
+			$tmp_key );
 
 		// キャッシュを消去しないフラグ
 		$this->flg_keep_cache = !!$this->px->req()->get_param('keep_cache');
@@ -270,7 +281,7 @@ class publish{
 		if( !is_array($this->paths_ignore) ){
 			$this->paths_ignore = array();
 		}
-		foreach( $this->paths_ignore as $tmp_key=>$tmp_localpath_region ){
+		foreach( $this->paths_ignore as $tmp_key => $tmp_localpath_region ){
 			// 先頭がスラッシュじゃない場合は追加する
 			$this->paths_ignore[$tmp_key] = preg_replace( '/^\\/*/is', '/', $this->paths_ignore[$tmp_key] );
 		}
@@ -348,7 +359,7 @@ class publish{
 			$this->exec_publish( $px );
 			exit;
 		}
-		if( strlen($pxcmd[1] ?? '') ){
+		if( strlen($pxcmd[1] ?? "") ){
 			// 命令が不明の場合、エラーを表示する。
 			if( $this->px->req()->is_cmd() ){
 				header('Content-type: text/plain;');
@@ -373,22 +384,22 @@ class publish{
 			if(!is_dir($this->path_tmp_publish)){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先一時ディレクトリが存在しません。</p>'."\n";
-				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->path_tmp_publish ).'</li></ul>'."\n";
+				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->path_tmp_publish ?? "" ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
 			}elseif(!is_writable($this->path_tmp_publish)){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先一時ディレクトリに書き込み許可がありません。</p>'."\n";
-				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->path_tmp_publish ).'</li></ul>'."\n";
+				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->path_tmp_publish ?? "" ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
-			}elseif( strlen(''.$this->path_publish_dir) && !is_dir($this->path_publish_dir) ){
+			}elseif( strlen($this->path_publish_dir ?? "") && !is_dir($this->path_publish_dir) ){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先ディレクトリが存在しません。</p>'."\n";
-				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
+				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( ''.$this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
-			}elseif( strlen(''.$this->path_publish_dir) && !is_writable($this->path_publish_dir) ){
+			}elseif( strlen($this->path_publish_dir ?? "") && !is_writable($this->path_publish_dir) ){
 				$html .= '<div class="unit">'."\n";
 				$html .= '	<p class="error">パブリッシュ先ディレクトリに書き込み許可がありません。</p>'."\n";
-				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( $this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
+				$html .= '	<ul><li style="word-break:break-all;">'.htmlspecialchars( ''.$this->px->dbh()->get_realpath( $this->path_publish_dir ).'/' ).'</li></ul>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
 			}elseif( $this->is_locked() ){
 				$html .= '<div class="unit">'."\n";
@@ -400,15 +411,15 @@ class publish{
 				$html .= '	<p>'."\n";
 				$html .= '		ロックファイルの内容を下記に示します。<br />'."\n";
 				$html .= '	</p>'."\n";
-				$html .= '	<blockquote><pre>'.htmlspecialchars( $this->px->fs()->read_file( $this->path_lockfile ) ).'</pre></blockquote>'."\n";
+				$html .= '	<blockquote><pre>'.htmlspecialchars( $this->px->fs()->read_file( $this->path_lockfile ) ?? "" ).'</pre></blockquote>'."\n";
 				$html .= '	<p>'."\n";
 				$html .= '		ロックファイルは下記の時刻に更新されました。<br />'."\n";
 				$html .= '	</p>'."\n";
-				$html .= '	<blockquote><pre>'.htmlspecialchars( date( 'Y-m-d H:i:s', filemtime( $this->path_lockfile ) ) ).'</pre></blockquote>'."\n";
+				$html .= '	<blockquote><pre>'.htmlspecialchars( ''.date( 'Y-m-d H:i:s', filemtime( $this->path_lockfile ) ) ?? "" ).'</pre></blockquote>'."\n";
 				$html .= '	<p>'."\n";
 				$html .= '		ロックファイルは、次のパスに存在します。<br />'."\n";
 				$html .= '	</p>'."\n";
-				$html .= '	<blockquote><pre>'.htmlspecialchars( realpath( $this->path_lockfile ) ).'</pre></blockquote>'."\n";
+				$html .= '	<blockquote><pre>'.htmlspecialchars( ''.realpath( $this->path_lockfile ) ).'</pre></blockquote>'."\n";
 				$html .= '</div><!-- /.unit -->'."\n";
 			}else{
 				ob_start(); ?>
@@ -424,35 +435,35 @@ function cont_EditPublishTargetPathApply(formElm){
 }
 </script>
 <div class="unit">
-	<p>プロジェクト『<?= htmlspecialchars($this->px->conf()->name) ?>』をパブリッシュします。</p>
+	<p>プロジェクト『<?= htmlspecialchars($this->px->conf()->name ?? "") ?>』をパブリッシュします。</p>
 	<table class="def" style="width:100%;">
 		<colgroup><col width="30%" /><col width="70%" /></colgroup>
 		<tr>
 			<th style="word-break:break-all;">publish directory(tmp)</th>
-			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_tmp_publish) ?></td>
+			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_tmp_publish ?? "") ?></td>
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">publish directory</th>
-			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_publish_dir) ?></td>
+			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_publish_dir ?? "") ?></td>
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">domain</th>
-			<td style="word-break:break-all;"><?= htmlspecialchars($this->domain) ?></td>
+			<td style="word-break:break-all;"><?= htmlspecialchars($this->domain ?? "") ?></td>
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">docroot directory</th>
-			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_controot) ?></td>
+			<td style="word-break:break-all;"><?= htmlspecialchars($this->path_controot ?? "") ?></td>
 		</tr>
 		<tr>
 			<th style="word-break:break-all;">region</th>
 			<td style="word-break:break-all;">
 				<div class="cont_publish_target_path_preview">
-					<div style="word-break:break-all;"><?= htmlspecialchars($this->paths_region[0]) ?></div>
+					<div style="word-break:break-all;"><?= htmlspecialchars($this->paths_region[0] ?? "") ?></div>
 					<div class="small"><a href="javascript:cont_EditPublishTargetPath();" class="icon">変更する</a></div>
 				</div>
 				<div class="cont_publish_target_path_editor" style="display:none;">
 					<form action="?" method="get" onsubmit="cont_EditPublishTargetPathApply(this); return false;" class="inline">
-						<input type="text" name="path" size="25" style="max-width:70%;" value="<?= htmlspecialchars($this->paths_region[0]) ?>" />
+						<input type="text" name="path" size="25" style="max-width:70%;" value="<?= htmlspecialchars($this->paths_region[0] ?? "") ?>" />
 						<input type="submit" style="width:20%;" value="変更する" />
 					</form>
 				</div>
@@ -464,7 +475,7 @@ function cont_EditPublishTargetPathApply(formElm){
 	<p>次のボタンをクリックしてパブリッシュを実行してください。</p>
 	<form action="?" method="get" target="_blank">
 	<p class="center"><button class="xlarge">パブリッシュを実行する</button></p>
-	<div><input type="hidden" name="PX" value="publish.run" /><input type="hidden" name="path_region" value="<?= htmlspecialchars($this->px->req()->get_param('path_region')) ?>" /></div>
+	<div><input type="hidden" name="PX" value="publish.run" /><input type="hidden" name="path_region" value="<?= htmlspecialchars($this->px->req()->get_param('path_region') ?? "") ?>" /></div>
 	</form>
 </div>
 <?php
@@ -789,8 +800,8 @@ function cont_EditPublishTargetPathApply(formElm){
 				// var_dump($row);
 				$tmp_number = '  ['.($key+1).'] ';
 				print $tmp_number;
-				print preg_replace('/(\r\n|\r|\n)/s', '$1'.str_pad('', strlen(''.$tmp_number), ' '), $row[2])."\n";
-				print str_pad('', strlen(''.$tmp_number), ' ').'  in '.$row[1]."\n";
+				print preg_replace('/(\r\n|\r|\n)/s', '$1'.str_pad('', strlen($tmp_number ?? ""), ' '), $row[2])."\n";
+				print str_pad('', strlen($tmp_number ?? ""), ' ').'  in '.$row[1]."\n";
 				if( $counter >= $max_preview_count ){ break; }
 			}
 			if( $alert_total_count > $max_preview_count ){
@@ -799,7 +810,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			print "\n";
 			print '    You got total '.$alert_total_count.' alerts.'."\n";
 			print '    see more: '.realpath($path_logfile)."\n";
-			print str_pad('', strlen(''.$alert_header), '*')."\n";
+			print str_pad('', strlen($alert_header ?? ""), '*')."\n";
 			print "\n";
 		}
 
@@ -813,8 +824,7 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		print $this->cli_footer();
 		exit;
-	} // exec_publish()
-
+	}
 
 	/**
 	 * ディレクトリを同期する。
@@ -832,7 +842,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		$this->sync_dir_compare_and_cleanup( $path_sync_to , $path_sync_from, $path_region );
 		print "\n";
 		return true;
-	}//sync_dir()
+	}
 
 	/**
 	 * ディレクトリを複製する(下層ディレクトリも全てコピー)
@@ -913,7 +923,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 		return $result;
-	} // sync_dir_copy_r()
+	}
 
 	/**
 	 * ディレクトリの内部を比較し、$comparisonに含まれない要素を$targetから削除する。
@@ -971,7 +981,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 
 		return true;
-	} // sync_dir_compare_and_cleanup()
+	}
 
 
 	/**
@@ -1016,7 +1026,6 @@ function cont_EditPublishTargetPathApply(formElm){
 		return error_log( $this->px->fs()->mk_csv( array($row) ), 3, $path_logfile );
 	}
 
-
 	/**
 	 * validate
 	 */
@@ -1024,7 +1033,6 @@ function cont_EditPublishTargetPathApply(formElm){
 		$rtn = array('status'=>true, 'message'=>'');
 		return $rtn;
 	}
-
 
 	/**
 	 * clearcache
@@ -1042,7 +1050,6 @@ function cont_EditPublishTargetPathApply(formElm){
 
 		return true;
 	}
-
 
 	/**
 	 * 一時パブリッシュディレクトリをクリーニング
@@ -1105,7 +1112,6 @@ function cont_EditPublishTargetPathApply(formElm){
 		return $count;
 	}
 
-
 	/**
 	 * make list by sitemap
 	 *
@@ -1126,7 +1132,6 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		return true;
 	}
-
 
 	/**
 	 * make list by directory scan
@@ -1181,7 +1186,9 @@ function cont_EditPublishTargetPathApply(formElm){
 			// 明らかに除外できると判断できるディレクトリは再帰処理をキャンセルする。
 			// 設定値の末尾が `/*` で終わっている ignore 指定の行は、 "ディレクトリ以下すべて除外" と断定し、
 			// これにマッチしたディレクトリをキャンセルの対象とする。
-			if(!is_string($row)){continue;}
+			if( !is_string($row) ){
+				continue;
+			}
 			if( $type != 'ignore' ){
 				continue;
 			}
@@ -1213,8 +1220,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			$this->make_list_by_dir_scan( $path.DIRECTORY_SEPARATOR.$basename );
 		}
 		return true;
-	} // make_list_by_dir_scan()
-
+	}
 
 	/**
 	 * add queue
@@ -1278,7 +1284,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		$path = $this->px->fs()->normalize_path($path);
 
-		if( is_bool($rtn[$path] ?? null) ){
+		if( is_bool( $rtn[$path] ?? null ) ){
 			return $rtn[$path];
 		}
 
@@ -1313,7 +1319,7 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		$rtn[$path] = false;// <- default
 		return $rtn[$path];
-	} // is_ignore_path()
+	}
 
 	/**
 	 * パブリッシュ範囲内か調べる
@@ -1378,7 +1384,7 @@ function cont_EditPublishTargetPathApply(formElm){
 	 * パブリッシュ先ディレクトリを取得
 	 */
 	private function get_path_publish_dir(){
-		if( !isset( $this->px->conf()->path_publish_dir ) || !strlen( ''.$this->px->conf()->path_publish_dir ) ){
+		if( !strlen( $this->px->conf()->path_publish_dir ?? "" ) ){
 			return false;
 		}
 		$tmp_path = $this->px->fs()->get_realpath( $this->px->conf()->path_publish_dir.'/' );
@@ -1390,7 +1396,6 @@ function cont_EditPublishTargetPathApply(formElm){
 		}
 		return $tmp_path;
 	}
-
 
 	/**
 	 * パブリッシュをロックする。
@@ -1405,7 +1410,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			$this->px->fs()->mkdir_r( dirname( $lockfilepath ) );
 		}
 
-		#	PHPのFileStatusCacheをクリア
+		// PHPのFileStatusCacheをクリア
 		clearstatcache();
 
 		$i = 0;
@@ -1417,7 +1422,7 @@ function cont_EditPublishTargetPathApply(formElm){
 			}
 			sleep(1);
 
-			#	PHPのFileStatusCacheをクリア
+			// PHPのFileStatusCacheをクリア
 			clearstatcache();
 		}
 		$src = '';
@@ -1445,12 +1450,12 @@ function cont_EditPublishTargetPathApply(formElm){
 		$lockfilepath = $this->path_lockfile;
 		$lockfile_expire = 60*30;//有効期限は30分
 
-		#	PHPのFileStatusCacheをクリア
+		// PHPのFileStatusCacheをクリア
 		clearstatcache();
 
 		if( $this->px->fs()->is_file($lockfilepath) ){
 			if( ( time() - filemtime($lockfilepath) ) > $lockfile_expire ){
-				#	有効期限を過ぎていたら、ロックは成立する。
+				// 有効期限を過ぎていたら、ロックは成立する。
 				return false;
 			}
 			return true;

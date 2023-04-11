@@ -168,6 +168,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.1.2 (リリース日未定)
+
+- `PX=publish.run` で、`path_region` を省略しても、 `paths_region` だけで対象範囲を絞れるようになった。
+
 ### pickles2/px2-publish-ex v2.1.1 (2023年2月11日)
 
 - 内部コードの修正など。
