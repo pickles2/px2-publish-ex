@@ -7,7 +7,7 @@
 
 ### 1. composer.json に pickles2/px2-publish-ex を追加
 
-```
+```bash
 $ composer require pickles2/px2-publish-ex;
 ```
 
@@ -168,7 +168,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.1.2 (リリース日未定)
+### pickles2/px2-publish-ex v2.1.2 (2023年4月22日)
 
 - `PX=publish.run` で、`path_region` を省略しても、 `paths_region` だけで対象範囲を絞れるようになった。
 
