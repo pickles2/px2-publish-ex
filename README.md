@@ -168,6 +168,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.1.4 (リリース日未定)
+
+- `X-PXFW-RELATEDLINK` によって追加された新しいパスが、キュー配列の先頭に追加されるようになった。
+
 ### pickles2/px2-publish-ex v2.1.3 (2023年9月24日)
 
 - 内部で扱う時刻情報を ISO 8601 形式 に変更した。
