@@ -688,6 +688,7 @@ function cont_EditPublishTargetPathApply(formElm){
 							// エラーが含まれている場合でも、得られたコンテンツを出力する。
 							$this->px->fs()->mkdir_r( dirname( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited ) );
 							$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, base64_decode( $bin->body_base64 ?? null ) );
+							$bin->relatedlinks = array_reverse($bin->relatedlinks);
 							foreach( $bin->relatedlinks as $link ){
 								$link = $this->px->fs()->get_realpath( $link, dirname($this->path_controot.$path).'/' );
 								$link = $this->px->fs()->normalize_path( $link );
