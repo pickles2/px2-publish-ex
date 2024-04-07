@@ -568,7 +568,6 @@ function cont_EditPublishTargetPathApply(formElm){
 				'rewrite_direction'=>null,
 			))));
 		}
-		// var_dump($device_list);
 
 		if( $this->plugin_conf->publish_vendor_dir ){
 			// --------------------------------------
@@ -596,7 +595,6 @@ function cont_EditPublishTargetPathApply(formElm){
 			print $path."\n";
 
 			foreach($device_list as $device_num => $device_info){
-				// var_dump($device_info);
 				$htdocs_sufix = $this->tmp_publish_dir->get_sufix( $device_info->path_publish_dir );
 				if(!$htdocs_sufix){ $htdocs_sufix = '';}
 				$path_rewrited = $this->path_rewriter->rewrite($path, $device_info->path_rewrite_rule);
@@ -1200,7 +1198,6 @@ function cont_EditPublishTargetPathApply(formElm){
 			if( strrpos($row, '/*') !== strlen($row)-2 ){
 				continue;
 			}
-			// var_dump($row);
 			$preg_pattern = preg_quote($this->px->fs()->normalize_path($this->px->fs()->get_realpath($row)), '/');
 			$realpath_controot = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $this->px->get_path_docroot().$this->px->get_path_controot() ) );
 			if( preg_match('/\*/',$preg_pattern) ){
@@ -1213,9 +1210,7 @@ function cont_EditPublishTargetPathApply(formElm){
 				$preg_pattern = preg_quote($this->px->fs()->normalize_path($this->px->fs()->get_realpath($row)),'/');
 			}
 			$path_child = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $path ).'/' );
-			// var_dump($preg_pattern);
 			if( preg_match( '/^'.$preg_pattern.'$/s' , $path_child ) ){
-				// var_dump($path_child);
 				return true;
 			}
 		}
@@ -1375,7 +1370,6 @@ function cont_EditPublishTargetPathApply(formElm){
 			// while( !$this->px->fs()->is_dir('./'.$path) ){
 			// 	$path = $this->px->fs()->normalize_path(dirname($path).'/');
 			// }
-			// var_dump($path);
 			array_push($rtn, $path);
 		}
 		return $rtn;
