@@ -33,6 +33,9 @@ class publish{
 	/** デバイス毎の対象パスを評価するオブジェクト */
 	private $device_target_path;
 
+	/** キャッシュバスターオブジェクト */
+	private $cache_buster;
+
 	/** パス設定 */
 	private $path_tmp_publish, $path_publish_dir, $path_controot;
 
@@ -184,6 +187,9 @@ class publish{
 				$device->rewrite_direction = null;
 			}
 		}
+		if( !isset($options->allow_cache_buster) || !is_array($options->allow_cache_buster) ){
+			$options->allow_cache_buster = false;
+		}
 		if( !property_exists($options, 'skip_default_device') ){
 			$options->skip_default_device = false;
 		}
@@ -207,6 +213,7 @@ class publish{
 		$this->path_rewriter = new path_rewriter( $px, $this->plugin_conf );
 		$this->tmp_publish_dir = new tmp_publish_dir( $px, $this->plugin_conf );
 		$this->device_target_path = new device_target_path( $px, $this->plugin_conf );
+		$this->cache_buster = new cache_buster( $px, $this->plugin_conf );
 
 		$this->path_tmp_publish = $px->fs()->get_realpath( $px->get_realpath_homedir().'_sys/ram/publish/' );
 		$this->path_lockfile = $this->path_tmp_publish.'applock.txt';
@@ -315,6 +322,7 @@ class publish{
 			print '    - paths_ignore: '.(is_array($device->paths_ignore) ? join(', ', $device->paths_ignore) : '')."\n";
 			print '    - rewrite_direction: '.$device->rewrite_direction."\n";
 		}
+		print 'allow cache buster: '.($this->plugin_conf->allow_cache_buster ? 'true' : 'false')."\n";
 		print 'skip default device: '.($this->plugin_conf->skip_default_device ? 'true' : 'false')."\n";
 		print 'publish vendor directory: '.($this->plugin_conf->publish_vendor_dir ? 'true' : 'false')."\n";
 		print '------------'."\n";
