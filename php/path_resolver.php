@@ -57,7 +57,7 @@ class path_resolver{
 
 		$ext = $this->px->fs()->get_extension($this->path_original);
 
-		switch( strtolower($ext) ){
+		switch( strtolower($ext ?? '') ){
 			case 'html':
 			case 'htm':
 				$src = $this->path_resolve_in_html($src);

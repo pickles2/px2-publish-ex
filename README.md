@@ -175,6 +175,7 @@ $conf->funcs->before_content = array(
 
 - `enable_cache_buster` オプションを追加。
 - `X-PXFW-RELATEDLINK` によって追加された新しいパスが、キュー配列の先頭に追加されるようになった。
+- その他の細かい修正。
 
 ### pickles2/px2-publish-ex v2.1.3 (2023年9月24日)
 
