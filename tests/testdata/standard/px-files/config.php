@@ -103,6 +103,8 @@ return call_user_func( function(){
 		'*/.git/*' => 'ignore' ,
 		'*/.gitignore' => 'ignore' ,
 
+		'/common/pass/*' => 'pass' ,
+
 		'*.html' => 'html' ,
 		'*.htm' => 'html' ,
 		'*.css' => 'css' ,
@@ -227,7 +229,8 @@ return call_user_func( function(){
 					),
 					'rewrite_direction'=>'rewrited2rewrited',
 				),
-			)
+			),
+			"allow_cache_buster" => true,
 		) ),
 	);
 

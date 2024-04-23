@@ -187,13 +187,13 @@ class publish{
 				$device->rewrite_direction = null;
 			}
 		}
-		if( !isset($options->allow_cache_buster) || !is_array($options->allow_cache_buster) ){
+		if( !isset($options->allow_cache_buster) ){
 			$options->allow_cache_buster = false;
 		}
-		if( !property_exists($options, 'skip_default_device') ){
+		if( !isset($options->skip_default_device) ){
 			$options->skip_default_device = false;
 		}
-		if( !property_exists($options, 'publish_vendor_dir') ){
+		if( !isset($options->publish_vendor_dir) ){
 			$options->publish_vendor_dir = false;
 		}
 
@@ -647,6 +647,12 @@ function cont_EditPublishTargetPathApply(formElm){
 								break;
 							}
 							$status_code = 200;
+
+							// キャッシュバスターにコンテンツハッシュを登録する
+							if( $this->plugin_conf->allow_cache_buster && $this->cache_buster->is_enabled_path($path) ){
+								$this->cache_buster->set_content_hash($path, md5_file(dirname($_SERVER['SCRIPT_FILENAME']).$path));
+							}
+
 							break;
 
 						case 'direct':
@@ -688,6 +694,11 @@ function cont_EditPublishTargetPathApply(formElm){
 								$this->alert_log(array( @date('c'), $path, 'status: '.$bin->status.' '.$bin->message ));
 							}else{
 								$this->alert_log(array( @date('c'), $path, 'Unknown status code.' ));
+							}
+
+							// キャッシュバスターにコンテンツハッシュを登録する
+							if( $this->plugin_conf->allow_cache_buster && $this->cache_buster->is_enabled_path($path) ){
+								$this->cache_buster->set_content_hash($path, md5(base64_decode( $bin->body_base64 ?? '' )));
 							}
 
 							// コンテンツの書き出し処理
