@@ -58,7 +58,7 @@ class cache_buster{
 		if( strlen($this->content_hash_cache[$path] ?? '') ){
 			return true;
 		}
-		$this->content_hash_cache[$path] = $hash;
+		$this->content_hash_cache[$path] = substr($hash, 0, 7);
 		return true;
 	}
 
@@ -270,17 +270,6 @@ class cache_buster{
 			$params = $matched[2];
 		}
 
-		// $rewrite_direction = $this->device_info->rewrite_direction ?? null;
-		// preg_match('/^(.*)2(.*)$/', $rewrite_direction ?? '', $matched);
-		// $rewrite_from = $matched[1] ?? null;
-		// $rewrite_to   = $matched[2] ?? null;
-		// if( !strlen(''.$rewrite_from) ){
-		// 	$rewrite_from = 'rewrited';
-		// }
-		// if( !strlen(''.$rewrite_to) ){
-		// 	$rewrite_to = 'origin';
-		// }
-
 		$type = 'relative';
 		if( preg_match('/^\//', ''.$path) ){
 			$type = 'absolute';
@@ -301,12 +290,6 @@ class cache_buster{
 			$cd_origin = '/';
 		}
 
-		// $cd_rewrited = $this->px->fs()->normalize_path( $this->px->fs()->get_realpath( $this->path_rewrited ) );
-		// $cd_rewrited = preg_replace( '/^(.*)(\/.*?)$/si', '$1', $cd_rewrited );
-		// if( !strlen($cd_rewrited) ){
-		// 	$cd_rewrited = '/';
-		// }
-
 		// ------------------
 
 		$realpath_from = $cd_origin;
@@ -315,17 +298,9 @@ class cache_buster{
 		if( $this->is_enabled_path($realpath_to) ){
 			$content_hash = $this->get_content_hash($realpath_to);
 			if( is_string($content_hash ?? null) ){
-				$params .= ( strlen($params??'') ? '&' : '?' ).urlencode($content_hash).'=1';
+				$params .= ( strlen($params??'') ? '&' : '?' ).'_'.urlencode($content_hash).'=1';
 			}
 		}
-
-		// if( $rewrite_from == 'rewrited' ){
-		// 	$realpath_from = $cd_rewrited;
-		// }
-		// if( $rewrite_to == 'rewrited' ){
-		// 	$realpath_to = $this->path_rewriter->rewrite($realpath_to, $this->device_info->path_rewrite_rule);
-		// 	$realpath_to = $this->px->fs()->normalize_path($this->px->fs()->get_realpath($realpath_to, $cd_origin));
-		// }
 
 		// ------------------
 
