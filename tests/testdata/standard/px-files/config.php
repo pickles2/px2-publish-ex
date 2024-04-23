@@ -230,7 +230,7 @@ return call_user_func( function(){
 					'rewrite_direction'=>'rewrited2rewrited',
 				),
 			),
-			"allow_cache_buster" => true,
+			"enable_cache_buster" => true,
 		) ),
 	);
 

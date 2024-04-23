@@ -91,7 +91,7 @@ class cache_buster{
 	 * @return string           変換後のソース全体
 	 */
 	public function resolve($path_original, $src){
-		if( !$this->plugin_conf->allow_cache_buster ){
+		if( !$this->plugin_conf->enable_cache_buster ){
 			// キャッシュバスターが無効の場合、
 			// この処理はスキップする。(無加工のまま返す)
 			return $src;

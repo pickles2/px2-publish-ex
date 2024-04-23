@@ -187,8 +187,8 @@ class publish{
 				$device->rewrite_direction = null;
 			}
 		}
-		if( !isset($options->allow_cache_buster) ){
-			$options->allow_cache_buster = false;
+		if( !isset($options->enable_cache_buster) ){
+			$options->enable_cache_buster = false;
 		}
 		if( !isset($options->skip_default_device) ){
 			$options->skip_default_device = false;
@@ -322,7 +322,7 @@ class publish{
 			print '    - paths_ignore: '.(is_array($device->paths_ignore) ? join(', ', $device->paths_ignore) : '')."\n";
 			print '    - rewrite_direction: '.$device->rewrite_direction."\n";
 		}
-		print 'allow cache buster: '.($this->plugin_conf->allow_cache_buster ? 'true' : 'false')."\n";
+		print 'allow cache buster: '.($this->plugin_conf->enable_cache_buster ? 'true' : 'false')."\n";
 		print 'skip default device: '.($this->plugin_conf->skip_default_device ? 'true' : 'false')."\n";
 		print 'publish vendor directory: '.($this->plugin_conf->publish_vendor_dir ? 'true' : 'false')."\n";
 		print '------------'."\n";
@@ -649,7 +649,7 @@ function cont_EditPublishTargetPathApply(formElm){
 							$status_code = 200;
 
 							// キャッシュバスターにコンテンツハッシュを登録する
-							if( $this->plugin_conf->allow_cache_buster && $this->cache_buster->is_enabled_path($path) ){
+							if( $this->plugin_conf->enable_cache_buster && $this->cache_buster->is_enabled_path($path) ){
 								$this->cache_buster->set_content_hash($path, md5_file(dirname($_SERVER['SCRIPT_FILENAME']).$path));
 							}
 
@@ -697,7 +697,7 @@ function cont_EditPublishTargetPathApply(formElm){
 							}
 
 							// キャッシュバスターにコンテンツハッシュを登録する
-							if( $this->plugin_conf->allow_cache_buster && $this->cache_buster->is_enabled_path($path) ){
+							if( $this->plugin_conf->enable_cache_buster && $this->cache_buster->is_enabled_path($path) ){
 								$this->cache_buster->set_content_hash($path, md5(base64_decode( $bin->body_base64 ?? '' )));
 							}
 
@@ -728,7 +728,7 @@ function cont_EditPublishTargetPathApply(formElm){
 					}
 
 					// キャッシュバスターを追加する
-					if( $this->plugin_conf->allow_cache_buster && is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ){
+					if( $this->plugin_conf->enable_cache_buster && is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ){
 						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited );
 						$src = $this->cache_buster->resolve($path, $src);
 						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, $src );

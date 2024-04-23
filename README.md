@@ -147,7 +147,7 @@ $conf->funcs->before_content = array(
 		),
 
 		// キャッシュバスターを有効にするか？ (default to `false`)
-		'allow_cache_buster' => false,
+		'enable_cache_buster' => false,
 
 		// 標準デバイスを出力しない (default to `false`)
 		// `true` を設定すると、標準デバイスでのパブリッシュはされなくなります。
@@ -173,7 +173,7 @@ $conf->funcs->before_content = array(
 
 ### pickles2/px2-publish-ex v2.1.4 (リリース日未定)
 
-- `allow_cache_buster` オプションを追加。
+- `enable_cache_buster` オプションを追加。
 - `X-PXFW-RELATEDLINK` によって追加された新しいパスが、キュー配列の先頭に追加されるようになった。
 
 ### pickles2/px2-publish-ex v2.1.3 (2023年9月24日)
