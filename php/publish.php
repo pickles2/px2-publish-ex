@@ -727,6 +727,13 @@ function cont_EditPublishTargetPathApply(formElm){
 							break;
 					}
 
+					// キャッシュバスターを追加する
+					if( $this->plugin_conf->allow_cache_buster && is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ){
+						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited );
+						$src = $this->cache_buster->resolve($path, $src);
+						$this->px->fs()->save_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited, $src );
+					}
+
 					// パスの書き換え
 					if( is_file($this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited) ){
 						$src = $this->px->fs()->read_file( $this->path_tmp_publish.'/htdocs'.$htdocs_sufix.$this->path_controot.$path_rewrited );

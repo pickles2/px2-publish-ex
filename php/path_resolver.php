@@ -97,7 +97,7 @@ class path_resolver{
 
 		if($html === false){
 			// HTMLパースに失敗した場合、無加工のまま返す。
-			$this->px->error('HTML Parse ERROR. $src size '.strlen(''.$src).' byte(s) given; '.__FILE__.' ('.__LINE__.')');
+			$this->px->error('HTML Parse ERROR. $src size '.strlen($src ?? '').' byte(s) given; '.__FILE__.' ('.__LINE__.')');
 			return $src;
 		}
 
