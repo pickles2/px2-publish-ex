@@ -69,6 +69,18 @@ class cache_buster{
 	 * @return string ハッシュ値を返します。
 	 */
 	public function get_content_hash($path){
+		if( strlen($this->content_hash_cache[$path] ?? '') ){
+			return $this->content_hash_cache[$path];
+		}
+
+		$bin = $this->px->internal_sub_request( $path, array('output'=>'json', 'user_agent'=>'Mozilla/1.0'), $return_var );
+		if( !is_object($bin) ){
+			return false;
+		}
+		if( $bin->body_base64 ){
+			$this->set_content_hash($path, md5(base64_decode( $bin->body_base64 ?? '' )));
+		}
+
 		return $this->content_hash_cache[$path] ?? false;
 	}
 
