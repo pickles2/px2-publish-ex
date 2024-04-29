@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pickles2/px2-publish-ex v2.1.3 API Document</title>
+    <title>pickles2/px2-publish-ex v2.1.4 API Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">pickles2/px2-publish-ex v2.1.3 API Document</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">pickles2/px2-publish-ex v2.1.4 API Document</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -133,6 +133,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/tomk79-pickles2-publishEx-publish.html#property_cache_buster">$cache_buster</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd>キャッシュバスターオブジェクト</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/tomk79-pickles2-publishEx-publish.html#property_device_target_path">$device_target_path</a>
     <span>
                 &nbsp;: mixed            </span>
@@ -145,6 +152,13 @@
                 &nbsp;: mixed            </span>
 </dt>
 <dd>ドメイン設定</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/tomk79-pickles2-publishEx-publish.html#property_done_count">$done_count</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd>処理済みのパス数</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/tomk79-pickles2-publishEx-publish.html#property_flg_keep_cache">$flg_keep_cache</a>
@@ -189,13 +203,6 @@
 <dd>パス設定</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_done">$paths_done</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd>処理済みのパス一覧</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_ignore">$paths_ignore</a>
     <span>
                 &nbsp;: mixed            </span>
@@ -215,6 +222,13 @@
                 &nbsp;: mixed            </span>
 </dt>
 <dd>パブリッシュ範囲設定</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_status">$paths_status</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd>パスの状態一覧</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/tomk79-pickles2-publishEx-publish.html#property_plugin_conf">$plugin_conf</a>
@@ -459,6 +473,38 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_cache_buster">
+        $cache_buster
+        <a href="classes/tomk79-pickles2-publishEx-publish.html#property_cache_buster" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+</aside>
+
+        <p class="phpdocumentor-summary">キャッシュバスターオブジェクト</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$cache_buster</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_device_target_path">
         $device_target_path
         <a href="classes/tomk79-pickles2-publishEx-publish.html#property_device_target_path" class="headerlink"><i class="fas fa-link"></i></a>
@@ -500,7 +546,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">ドメイン設定</p>
@@ -523,6 +569,38 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_done_count">
+        $done_count
+        <a href="classes/tomk79-pickles2-publishEx-publish.html#property_done_count" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">64</span>
+</aside>
+
+        <p class="phpdocumentor-summary">処理済みのパス数</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$done_count</span>
+     = <span class="phpdocumentor-signature__default-value">0</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_flg_keep_cache">
         $flg_keep_cache
         <a href="classes/tomk79-pickles2-publishEx-publish.html#property_flg_keep_cache" class="headerlink"><i class="fas fa-link"></i></a>
@@ -532,7 +610,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">キャッシュを消去しないフラグ</p>
@@ -564,7 +642,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">パス設定</p>
@@ -596,7 +674,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 </aside>
 
         <p class="phpdocumentor-summary">ロックファイルの格納パス</p>
@@ -628,7 +706,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">パス設定</p>
@@ -692,7 +770,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
         <p class="phpdocumentor-summary">パス設定</p>
@@ -715,38 +793,6 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_paths_done">
-        $paths_done
-        <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_done" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">58</span>
-</aside>
-
-        <p class="phpdocumentor-summary">処理済みのパス一覧</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$paths_done</span>
-     = <span class="phpdocumentor-signature__default-value">array()</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_paths_ignore">
         $paths_ignore
         <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_ignore" class="headerlink"><i class="fas fa-link"></i></a>
@@ -756,7 +802,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ対象外範囲設定</p>
@@ -788,7 +834,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
 
         <p class="phpdocumentor-summary">処理待ちのパス一覧</p>
@@ -820,7 +866,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ範囲設定</p>
@@ -829,6 +875,38 @@
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$paths_region</span>
+     = <span class="phpdocumentor-signature__default-value">array()</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_paths_status">
+        $paths_status
+        <a href="classes/tomk79-pickles2-publishEx-publish.html#property_paths_status" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+</aside>
+
+        <p class="phpdocumentor-summary">パスの状態一覧</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$paths_status</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
         <section class="phpdocumentor-description"></section>
@@ -884,7 +962,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
         <p class="phpdocumentor-summary">Extension をマッチさせる正規表現</p>
@@ -984,7 +1062,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 </aside>
 
         <p class="phpdocumentor-summary">constructor</p>
@@ -1039,7 +1117,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 </aside>
 
         <p class="phpdocumentor-summary">execute home</p>
@@ -1085,7 +1163,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 </aside>
 
         <p class="phpdocumentor-summary">pickles2/px2-publish-ex のバージョン番号を取得する。</p>
@@ -1141,7 +1219,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Before content function</p>
@@ -1207,7 +1285,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1230</span>
+    <span class="phpdocumentor-element-found-in__line">1256</span>
 </aside>
 
         <p class="phpdocumentor-summary">add queue</p>
@@ -1254,7 +1332,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1016</span>
+    <span class="phpdocumentor-element-found-in__line">1045</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュアラートログ</p>
@@ -1301,7 +1379,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1059</span>
+    <span class="phpdocumentor-element-found-in__line">1088</span>
 </aside>
 
         <p class="phpdocumentor-summary">一時パブリッシュディレクトリをクリーニング</p>
@@ -1356,7 +1434,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1040</span>
+    <span class="phpdocumentor-element-found-in__line">1069</span>
 </aside>
 
         <p class="phpdocumentor-summary">clearcache</p>
@@ -1390,7 +1468,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 </aside>
 
         <p class="phpdocumentor-summary">print CLI footer</p>
@@ -1424,7 +1502,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">293</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 </aside>
 
         <p class="phpdocumentor-summary">print CLI header</p>
@@ -1458,7 +1536,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 </aside>
 
         <p class="phpdocumentor-summary">report</p>
@@ -1492,7 +1570,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">494</span>
+    <span class="phpdocumentor-element-found-in__line">505</span>
 </aside>
 
         <p class="phpdocumentor-summary">execute publish</p>
@@ -1538,7 +1616,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1386</span>
+    <span class="phpdocumentor-element-found-in__line">1408</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ先ディレクトリを取得</p>
@@ -1572,7 +1650,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1364</span>
+    <span class="phpdocumentor-element-found-in__line">1387</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ範囲のルートパスを得る</p>
@@ -1607,7 +1685,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1273</span>
+    <span class="phpdocumentor-element-found-in__line">1296</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ対象か調べる</p>
@@ -1654,7 +1732,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1449</span>
+    <span class="phpdocumentor-element-found-in__line">1471</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュがロックされているか確認する。</p>
@@ -1689,7 +1767,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1329</span>
+    <span class="phpdocumentor-element-found-in__line">1352</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュ範囲内か調べる</p>
@@ -1736,7 +1814,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1405</span>
+    <span class="phpdocumentor-element-found-in__line">1427</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュをロックする。</p>
@@ -1771,7 +1849,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">992</span>
+    <span class="phpdocumentor-element-found-in__line">1021</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュログ</p>
@@ -1818,7 +1896,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1142</span>
+    <span class="phpdocumentor-element-found-in__line">1171</span>
 </aside>
 
         <p class="phpdocumentor-summary">make list by directory scan</p>
@@ -1865,7 +1943,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1120</span>
+    <span class="phpdocumentor-element-found-in__line">1149</span>
 </aside>
 
         <p class="phpdocumentor-summary">make list by sitemap</p>
@@ -1900,7 +1978,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1504</span>
+    <span class="phpdocumentor-element-found-in__line">1526</span>
 </aside>
 
         <p class="phpdocumentor-summary">パス文字列に新しいパラメータをマージする</p>
@@ -1956,7 +2034,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">837</span>
+    <span class="phpdocumentor-element-found-in__line">866</span>
 </aside>
 
         <p class="phpdocumentor-summary">ディレクトリを同期する。</p>
@@ -2021,7 +2099,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">938</span>
+    <span class="phpdocumentor-element-found-in__line">967</span>
 </aside>
 
         <p class="phpdocumentor-summary">ディレクトリの内部を比較し、$comparisonに含まれない要素を$targetから削除する。</p>
@@ -2087,7 +2165,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">858</span>
+    <span class="phpdocumentor-element-found-in__line">887</span>
 </aside>
 
         <p class="phpdocumentor-summary">ディレクトリを複製する(下層ディレクトリも全てコピー)</p>
@@ -2162,7 +2240,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1487</span>
+    <span class="phpdocumentor-element-found-in__line">1509</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュロックファイルの更新日を更新する。</p>
@@ -2197,7 +2275,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1471</span>
+    <span class="phpdocumentor-element-found-in__line">1493</span>
 </aside>
 
         <p class="phpdocumentor-summary">パブリッシュロックを解除する。</p>
@@ -2232,7 +2310,7 @@ Semantic Versioning 2.0.0 仕様に従います。</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="php/publish.php"><a href="files/php-publish.html"><abbr title="php/publish.php">publish.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1032</span>
+    <span class="phpdocumentor-element-found-in__line">1061</span>
 </aside>
 
         <p class="phpdocumentor-summary">validate</p>

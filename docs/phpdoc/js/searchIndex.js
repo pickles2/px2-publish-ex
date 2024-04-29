@@ -286,6 +286,11 @@ Search.appendIndex(
             "summary": "\u30C7\u30D0\u30A4\u30B9\u6BCE\u306E\u5BFE\u8C61\u30D1\u30B9\u3092\u8A55\u4FA1\u3059\u308B\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8",
             "url": "classes/tomk79-pickles2-publishEx-publish.html#property_device_target_path"
         },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024cache_buster",
+            "name": "cache_buster",
+            "summary": "\u30AD\u30E3\u30C3\u30B7\u30E5\u30D0\u30B9\u30BF\u30FC\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8",
+            "url": "classes/tomk79-pickles2-publishEx-publish.html#property_cache_buster"
+        },                {
             "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024path_tmp_publish",
             "name": "path_tmp_publish",
             "summary": "\u30D1\u30B9\u8A2D\u5B9A",
@@ -331,10 +336,15 @@ Search.appendIndex(
             "summary": "\u51E6\u7406\u5F85\u3061\u306E\u30D1\u30B9\u4E00\u89A7",
             "url": "classes/tomk79-pickles2-publishEx-publish.html#property_paths_queue"
         },                {
-            "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024paths_done",
-            "name": "paths_done",
-            "summary": "\u51E6\u7406\u6E08\u307F\u306E\u30D1\u30B9\u4E00\u89A7",
-            "url": "classes/tomk79-pickles2-publishEx-publish.html#property_paths_done"
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024paths_status",
+            "name": "paths_status",
+            "summary": "\u30D1\u30B9\u306E\u72B6\u614B\u4E00\u89A7",
+            "url": "classes/tomk79-pickles2-publishEx-publish.html#property_paths_status"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024done_count",
+            "name": "done_count",
+            "summary": "\u51E6\u7406\u6E08\u307F\u306E\u30D1\u30B9\u6570",
+            "url": "classes/tomk79-pickles2-publishEx-publish.html#property_done_count"
         },                {
             "fqsen": "\\tomk79\\pickles2\\publishEx\\publish\u003A\u003A\u0024preg_exts",
             "name": "preg_exts",
@@ -1015,6 +1025,71 @@ Search.appendIndex(
             "name": "path_controot",
             "summary": "\u30B3\u30F3\u30C6\u30F3\u30C4\u30EB\u30FC\u30C8\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA",
             "url": "classes/tomk79-pickles2-publishEx-vendor-dir.html#property_path_controot"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster",
+            "name": "cache_buster",
+            "summary": "PX\u0020Commands\u0020\u0022publish\u0022\u0020cache\u0020buster",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "constructor",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method___construct"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Ais_enabled_path\u0028\u0029",
+            "name": "is_enabled_path",
+            "summary": "\u30AD\u30E3\u30C3\u30B7\u30E5\u30D0\u30B9\u30C6\u30A3\u30F3\u30B0\u306E\u5BFE\u8C61\u3068\u306A\u308B\u30D1\u30B9\u304B\u5224\u5B9A\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_is_enabled_path"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Aset_content_hash\u0028\u0029",
+            "name": "set_content_hash",
+            "summary": "\u30B3\u30F3\u30C6\u30F3\u30C4\u30CF\u30C3\u30B7\u30E5\u5024\u3092\u30AD\u30E3\u30C3\u30B7\u30E5\u306B\u8A18\u61B6\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_set_content_hash"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Aget_content_hash\u0028\u0029",
+            "name": "get_content_hash",
+            "summary": "\u30B3\u30F3\u30C6\u30F3\u30C4\u30CF\u30C3\u30B7\u30E5\u5024\u3092\u53D6\u5F97\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_content_hash"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "Resolve\u0020path",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_resolve"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Apath_resolve_in_html\u0028\u0029",
+            "name": "path_resolve_in_html",
+            "summary": "HTML\u30D5\u30A1\u30A4\u30EB\u4E2D\u306E\u30D1\u30B9\u3092\u89E3\u6C7A\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_html"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Apath_resolve_in_css\u0028\u0029",
+            "name": "path_resolve_in_css",
+            "summary": "CSS\u30D5\u30A1\u30A4\u30EB\u4E2D\u306E\u30D1\u30B9\u3092\u89E3\u6C7A\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_css"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003Aget_new_path\u0028\u0029",
+            "name": "get_new_path",
+            "summary": "\u66F8\u304D\u63DB\u3048\u5F8C\u306E\u65B0\u3057\u3044\u30D1\u30B9\u3092\u53D6\u5F97\u3059\u308B",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_new_path"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003A\u0024px",
+            "name": "px",
+            "summary": "Pickles\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#property_px"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003A\u0024plugin_conf",
+            "name": "plugin_conf",
+            "summary": "\u30D7\u30E9\u30B0\u30A4\u30F3\u8A2D\u5B9A",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#property_plugin_conf"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003A\u0024content_hash_cache",
+            "name": "content_hash_cache",
+            "summary": "\u30B3\u30F3\u30C6\u30F3\u30C4\u30CF\u30C3\u30B7\u30E5\u5024\u306E\u30AD\u30E3\u30C3\u30B7\u30E5",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#property_content_hash_cache"
+        },                {
+            "fqsen": "\\tomk79\\pickles2\\publishEx\\cache_buster\u003A\u003A\u0024path_original",
+            "name": "path_original",
+            "summary": "\u73FE\u5728\u306E\u30D1\u30B9",
+            "url": "classes/tomk79-pickles2-publishEx-cache-buster.html#property_path_original"
         },                {
             "fqsen": "\\",
             "name": "\\",

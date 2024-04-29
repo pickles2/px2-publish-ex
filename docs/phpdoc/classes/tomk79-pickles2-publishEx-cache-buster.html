@@ -88,7 +88,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    path_resolver
+    cache_buster
 
     
             <div class="phpdocumentor-element__package">
@@ -102,12 +102,12 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">10</span>
 </aside>
 
-            <p class="phpdocumentor-summary">PX Commands &quot;publish&quot; path resolver</p>
+            <p class="phpdocumentor-summary">PX Commands &quot;publish&quot; cache buster</p>
 
     <section class="phpdocumentor-description"></section>
 
@@ -125,77 +125,84 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_device_info">$device_info</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_content_hash_cache">$content_hash_cache</a>
     <span>
                 &nbsp;: mixed            </span>
 </dt>
-<dd>端末設定</dd>
+<dd>コンテンツハッシュ値のキャッシュ</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_original">$path_original</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_path_original">$path_original</a>
     <span>
                 &nbsp;: mixed            </span>
 </dt>
-<dd>対象ファイルのパス情報</dd>
+<dd>現在のパス</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_rewrited">$path_rewrited</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd>対象ファイルのパス情報</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_rewriter">$path_rewriter</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd>パス変換オブジェクト</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_plugin_conf">$plugin_conf</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_plugin_conf">$plugin_conf</a>
     <span>
                 &nbsp;: mixed            </span>
 </dt>
 <dd>プラグイン設定</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_px">$px</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_px">$px</a>
     <span>
                 &nbsp;: mixed            </span>
 </dt>
 <dd>Picklesオブジェクト</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method___construct">__construct()</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method___construct">__construct()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_resolve">resolve()</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_content_hash">get_content_hash()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>コンテンツハッシュ値を取得する</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_is_enabled_path">is_enabled_path()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>キャッシュバスティングの対象となるパスか判定する</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_resolve">resolve()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>Resolve path</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_set_content_hash">set_content_hash()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>コンテンツハッシュ値をキャッシュに記憶する</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_get_new_path">get_new_path()</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_new_path">get_new_path()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>書き換え後の新しいパスを取得する</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_path_resolve_in_css">path_resolve_in_css()</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_css">path_resolve_in_css()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
 <dd>CSSファイル中のパスを解決する</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_path_resolve_in_html">path_resolve_in_html()</a>
+    <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_html">path_resolve_in_html()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
@@ -211,7 +218,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -220,25 +227,25 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_device_info">
-        $device_info
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_device_info" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_content_hash_cache">
+        $content_hash_cache
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_content_hash_cache" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
-        <p class="phpdocumentor-summary">端末設定</p>
+        <p class="phpdocumentor-summary">コンテンツハッシュ値のキャッシュ</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$device_info</span>
-    </code>
+    <span class="phpdocumentor-signature__name">$content_hash_cache</span>
+     = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -254,17 +261,17 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_path_original">
         $path_original
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_original" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_path_original" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
 
-        <p class="phpdocumentor-summary">対象ファイルのパス情報</p>
+        <p class="phpdocumentor-summary">現在のパス</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
@@ -284,78 +291,14 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_path_rewrited">
-        $path_rewrited
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_rewrited" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-</aside>
-
-        <p class="phpdocumentor-summary">対象ファイルのパス情報</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$path_rewrited</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_path_rewriter">
-        $path_rewriter
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_path_rewriter" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">19</span>
-</aside>
-
-        <p class="phpdocumentor-summary">パス変換オブジェクト</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$path_rewriter</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_plugin_conf">
         $plugin_conf
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_plugin_conf" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_plugin_conf" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">16</span>
 </aside>
@@ -382,12 +325,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_px">
         $px
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#property_px" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#property_px" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
@@ -410,7 +353,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -420,19 +363,19 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 </aside>
 
         <p class="phpdocumentor-summary">constructor</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$px</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$json</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path_rewriter</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$device_info</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path_original</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path_rewrited</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$px</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$json</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -456,42 +399,6 @@
 </section>
 
             </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$path_rewriter</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>パス変換オブジェクト</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$device_info</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>端末設定</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$path_original</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>変換前のパス</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$path_rewrited</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>変換後のパス</p>
-</section>
-
-            </dd>
             </dl>
 
     
@@ -509,26 +416,129 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_resolve">
-        resolve()
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_resolve" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_get_content_hash">
+        get_content_hash()
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_content_hash" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
+</aside>
+
+        <p class="phpdocumentor-summary">コンテンツハッシュ値を取得する</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">get_content_hash</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>対象コンテンツのパス</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>ハッシュ値を返します。</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_is_enabled_path">
+        is_enabled_path()
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_is_enabled_path" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+</aside>
+
+        <p class="phpdocumentor-summary">キャッシュバスティングの対象となるパスか判定する</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">is_enabled_path</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>対象コンテンツのパス</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>キャッシュバスティングの対象となる場合に true, それ以外の場合に false</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resolve">
+        resolve()
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_resolve" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Resolve path</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">resolve</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$src</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">resolve</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path_original</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$src</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path_original</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>コンテンツのパス</p>
+</section>
+
+            </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$src</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
@@ -553,17 +563,73 @@
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_set_content_hash">
+        set_content_hash()
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_set_content_hash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">54</span>
+</aside>
+
+        <p class="phpdocumentor-summary">コンテンツハッシュ値をキャッシュに記憶する</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">set_content_hash</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hash</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$path</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>対象コンテンツのパス</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$hash</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>対象コンテンツのハッシュ値</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>成功時に true を返します。</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -private
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_get_new_path">
         get_new_path()
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_get_new_path" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_get_new_path" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 </aside>
 
         <p class="phpdocumentor-summary">書き換え後の新しいパスを取得する</p>
@@ -605,12 +671,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_path_resolve_in_css">
         path_resolve_in_css()
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_path_resolve_in_css" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_css" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 </aside>
 
         <p class="phpdocumentor-summary">CSSファイル中のパスを解決する</p>
@@ -652,12 +718,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_path_resolve_in_html">
         path_resolve_in_html()
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#method_path_resolve_in_html" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#method_path_resolve_in_html" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="php/path_resolver.php"><a href="files/php-path-resolver.html"><abbr title="php/path_resolver.php">path_resolver.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="php/cache_buster.php"><a href="files/php-cache-buster.html"><abbr title="php/cache_buster.php">cache_buster.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
         <p class="phpdocumentor-summary">HTMLファイル中のパスを解決する</p>
@@ -707,7 +773,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/tomk79-pickles2-publishEx-path-resolver.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/tomk79-pickles2-publishEx-cache-buster.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -51,7 +51,7 @@ class path_rewriter{
 	 * パスを変換する
 	 * @param  string $path     変換前のパス
 	 * @param  mixed  $callback コールバック関数 または 変換ルール文字列
-	 * @return [type]           変換後のパス
+	 * @return string           変換後のパス
 	 */
 	public function rewrite($path, $callback){
 		if( is_null($callback) ){
