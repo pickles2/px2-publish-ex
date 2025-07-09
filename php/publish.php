@@ -361,7 +361,9 @@ class publish{
 		if( ($pxcmd[1] ?? null) == 'version' ){
 			// 命令が publish.version の場合、バージョン番号を返す。
 			$val = $this->get_version();
-			@header('Content-type: application/json; charset=UTF-8');
+			if (!headers_sent()) {
+				header('Content-type: application/json; charset=UTF-8');
+			}
 			print json_encode($val);
 			exit;
 		}
@@ -373,7 +375,9 @@ class publish{
 		if( strlen($pxcmd[1] ?? "") ){
 			// 命令が不明の場合、エラーを表示する。
 			if( $this->px->req()->is_cmd() ){
-				header('Content-type: text/plain;');
+				if (!headers_sent()) {
+					header('Content-type: text/plain;');
+				}
 				print $this->cli_header();
 				print 'execute PX command => "?PX=publish.run"'."\n";
 				print $this->cli_footer();
@@ -385,7 +389,9 @@ class publish{
 		}
 
 		if( $this->px->req()->is_cmd() ){
-			header('Content-type: text/plain;');
+			if (!headers_sent()) {
+				header('Content-type: text/plain;');
+			}
 			print $this->cli_header();
 			print 'execute PX command => "?PX=publish.run"'."\n";
 			print $this->cli_footer();
@@ -503,7 +509,9 @@ function cont_EditPublishTargetPathApply(formElm){
 	 * @param object $px Picklesオブジェクト
 	 */
 	private function exec_publish( $px ){
-		header('Content-type: text/plain;');
+		if (!headers_sent()) {
+			header('Content-type: text/plain;');
+		}
 		$total_time = time();
 		print $this->cli_header();
 

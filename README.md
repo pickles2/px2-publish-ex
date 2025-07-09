@@ -171,6 +171,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### pickles2/px2-publish-ex v2.1.5 (リリース日未定)
+
+- ヘッダー情報の送信に関する改善。
+
 ### pickles2/px2-publish-ex v2.1.4 (2024年4月30日)
 
 - `enable_cache_buster` オプションを追加。
