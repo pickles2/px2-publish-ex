@@ -1,15 +1,19 @@
-.DS_Store
-Thumbs.db
+# Composer
+!.gitkeep
+vendor/
 composer.phar
 composer.lock
-/vendor/
-.phpdoc
+
+# PHPUnit
 .phpunit.result.cache
 
-# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# PHP Documentor
+.phpdoc
+phpDocumentor.phar
 
+# Others...
+.DS_Store
+Thumbs.db
 tests/testdata/publish_vendor_dir/dist/vendor/
 tests/testdata/publish_vendor_dir/dist_smt/vendor/
 tests/testdata/publish_vendor_dir/dist_tab/vendor/

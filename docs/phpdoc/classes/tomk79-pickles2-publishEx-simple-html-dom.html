@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pickles2/px2-publish-ex v2.1.4 API Document</title>
+            <title>pickles2/px2-publish-ex v2.1.4 API Document</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -48,24 +53,37 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
-    
-    <section class="phpdocumentor-sidebar__category">
-        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
-                                                <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/tomk79.html"><abbr title="\tomk79">tomk79</abbr></a></h4>
-                <ul class="phpdocumentor-list">
-                                            <li><a href="namespaces/tomk79-pickles2.html"><abbr title="\tomk79\pickles2">pickles2</abbr></a></li>
-                                    </ul>
-                        </section>
+                    <section class="phpdocumentor-sidebar__category">
+            <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="namespaces/tomk79.html" class="">tomk79</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/tomk79-pickles2.html" class="">pickles2</a>
+                
+            </li>
+            </ul>
 
-        <section class="phpdocumentor-sidebar__category">
-        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
-                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
-                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/PlaceLocalInclude.html"><abbr title="\PlaceLocalInclude">PlaceLocalInclude</abbr></a></h3>
-                        <ul class="phpdocumentor-list">
-                                    <li><a href="packages/PlaceLocalInclude-simple.html"><abbr title="\PlaceLocalInclude\simple">simple</abbr></a></li>
-                            </ul>
                         </section>
-    
+                <section class="phpdocumentor-sidebar__category">
+            <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/Application.html" class="">Application</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="packages/PlaceLocalInclude.html" class="">PlaceLocalInclude</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="packages/PlaceLocalInclude-simple.html" class="">simple</a>
+                
+            </li>
+            </ul>
+
+                        </section>
+            
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
@@ -105,7 +123,8 @@
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">973</span>
-</aside>
+
+    </aside>
 
             <p class="phpdocumentor-summary">simple html dom parser
 Paperg - in the find routine: allow us to specify that we want case insensitive testing of the value of the selector.</p>
@@ -127,430 +146,430 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -public">
+                    <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property__charset">$_charset</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property__target_charset">$_target_charset</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_callback">$callback</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_default_span_text">$default_span_text</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_lowercase">$lowercase</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_nodes">$nodes</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_original_size">$original_size</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_root">$root</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_size">$size</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_block_tags">$block_tags</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_char">$char</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_cursor">$cursor</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_default_br_text">$default_br_text</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_doc">$doc</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_noise">$noise</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_optional_closing_tags">$optional_closing_tags</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_parent">$parent</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_pos">$pos</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_self_closing_tags">$self_closing_tags</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_token_attr">$token_attr</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_token_blank">$token_blank</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_token_equal">$token_equal</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_token_slash">$token_slash</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#property_optional_closing_array">$optional_closing_array</a>
     <span>
-                &nbsp;: mixed            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method___construct">__construct()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method___destruct">__destruct()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method___get">__get()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method___toString">__toString()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_childNodes">childNodes()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_clear">clear()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_createElement">createElement()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_createTextNode">createTextNode()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_dump">dump()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_find">find()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_firstChild">firstChild()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_getElementById">getElementById()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_getElementByTagName">getElementByTagName()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_getElementsById">getElementsById()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_getElementsByTagName">getElementsByTagName()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_lastChild">lastChild()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_load">load()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_load_file">load_file()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_loadFile">loadFile()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_remove_callback">remove_callback()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_restore_noise">restore_noise()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_save">save()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_search_noise">search_noise()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_set_callback">set_callback()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_as_text_node">as_text_node()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_copy_skip">copy_skip()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_copy_until">copy_until()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_copy_until_char">copy_until_char()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_copy_until_char_escape">copy_until_char_escape()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_link_nodes">link_nodes()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_parse">parse()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_parse_attr">parse_attr()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_parse_charset">parse_charset()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_prepare">prepare()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_read_tag">read_tag()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_remove_noise">remove_noise()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/tomk79-pickles2-publishEx-simple-html-dom.html#method_skip">skip()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
@@ -583,7 +602,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">993</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -592,7 +612,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$_charset</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -613,7 +636,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">994</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -622,7 +646,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$_target_charset</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -643,7 +670,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">977</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -652,7 +680,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$callback</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -673,7 +704,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">996</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -682,7 +714,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$default_span_text</span>
      = <span class="phpdocumentor-signature__default-value">&quot;&quot;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -703,7 +738,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">978</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -712,7 +748,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$lowercase</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -733,7 +772,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">976</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -742,7 +782,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$nodes</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -763,7 +806,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">980</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -772,7 +816,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$original_size</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -793,7 +840,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">975</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -802,7 +850,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$root</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -823,7 +874,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">981</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -832,7 +884,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$size</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -853,7 +908,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1000</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -862,7 +918,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$block_tags</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;root&#039; =&gt; 1, &#039;body&#039; =&gt; 1, &#039;form&#039; =&gt; 1, &#039;div&#039; =&gt; 1, &#039;span&#039; =&gt; 1, &#039;table&#039; =&gt; 1)</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -883,7 +942,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">984</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -892,7 +952,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$char</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -913,7 +976,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">985</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -922,7 +986,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$cursor</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -943,7 +1010,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">995</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -952,7 +1020,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$default_br_text</span>
      = <span class="phpdocumentor-signature__default-value">&quot;&quot;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -973,7 +1044,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">983</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -982,7 +1054,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$doc</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1003,7 +1078,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">987</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1012,7 +1088,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$noise</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1033,7 +1112,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1003</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1042,7 +1122,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$optional_closing_tags</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;tr&#039; =&gt; array(&#039;tr&#039; =&gt; 1, &#039;td&#039; =&gt; 1, &#039;th&#039; =&gt; 1), &#039;th&#039; =&gt; array(&#039;th&#039; =&gt; 1), &#039;td&#039; =&gt; array(&#039;td&#039; =&gt; 1), &#039;li&#039; =&gt; array(&#039;li&#039; =&gt; 1), &#039;dt&#039; =&gt; array(&#039;dt&#039; =&gt; 1, &#039;dd&#039; =&gt; 1), &#039;dd&#039; =&gt; array(&#039;dd&#039; =&gt; 1, &#039;dt&#039; =&gt; 1), &#039;dl&#039; =&gt; array(&#039;dd&#039; =&gt; 1, &#039;dt&#039; =&gt; 1), &#039;p&#039; =&gt; array(&#039;p&#039; =&gt; 1), &#039;nobr&#039; =&gt; array(&#039;nobr&#039; =&gt; 1), &#039;b&#039; =&gt; array(&#039;b&#039; =&gt; 1), &#039;option&#039; =&gt; array(&#039;option&#039; =&gt; 1))</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1063,7 +1146,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">986</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1072,7 +1156,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$parent</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1093,7 +1180,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">982</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1102,7 +1190,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$pos</span>
     </code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1123,7 +1214,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">999</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1132,7 +1224,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$self_closing_tags</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;img&#039; =&gt; 1, &#039;br&#039; =&gt; 1, &#039;input&#039; =&gt; 1, &#039;meta&#039; =&gt; 1, &#039;link&#039; =&gt; 1, &#039;hr&#039; =&gt; 1, &#039;base&#039; =&gt; 1, &#039;embed&#039; =&gt; 1, &#039;spacer&#039; =&gt; 1)</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1153,7 +1248,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">991</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1162,7 +1258,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$token_attr</span>
      = <span class="phpdocumentor-signature__default-value">&#039; &gt;&#039;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1183,17 +1282,20 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">988</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$token_blank</span>
-     = <span class="phpdocumentor-signature__default-value">&quot; 	
-&quot;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&quot; \t\r\n&quot;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1214,7 +1316,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">989</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1223,7 +1326,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$token_equal</span>
      = <span class="phpdocumentor-signature__default-value">&#039; =/&gt;&#039;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1244,17 +1350,20 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">990</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$token_slash</span>
-     = <span class="phpdocumentor-signature__default-value">&quot; /&gt;
-	&quot;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&quot; /&gt;\r\n\t&quot;</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1275,7 +1384,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1016</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1284,7 +1394,10 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <span class="phpdocumentor-signature__name">$optional_closing_array</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1309,14 +1422,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1018</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$forceTagsClosed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$target_charset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_TARGET_CHARSET</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$forceTagsClosed</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$target_charset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_TARGET_CHARSET</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1324,49 +1439,56 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$lowercase</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$forceTagsClosed</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$target_charset</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_TARGET_CHARSET</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$stripRN</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultBRText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultSpanText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1375,8 +1497,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1393,22 +1514,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1038</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__destruct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__destruct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1425,14 +1547,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1696</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1440,7 +1564,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1449,8 +1574,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1467,22 +1591,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1691</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__toString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__toString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1499,14 +1624,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1714</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">childNodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">childNodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1514,7 +1641,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">-1</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1523,8 +1651,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1541,22 +1668,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1120</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">clear</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">clear</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1573,14 +1701,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1717</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">createElement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">createElement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1588,14 +1718,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$value</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1604,8 +1736,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1622,14 +1753,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1718</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">createTextNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">createTextNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1637,7 +1770,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1646,8 +1780,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1664,14 +1797,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1131</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">dump</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$show_attr</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">dump</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$show_attr</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1679,7 +1814,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1688,8 +1824,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1706,14 +1841,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1114</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">find</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$selector</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">find</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$selector</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1721,21 +1858,24 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$idx</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$lowercase</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1744,8 +1884,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1762,22 +1901,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1715</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">firstChild</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">firstChild</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1794,14 +1934,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1719</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getElementById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getElementById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1809,7 +1951,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1818,8 +1961,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1836,14 +1978,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1721</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getElementByTagName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getElementByTagName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1851,7 +1995,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1860,8 +2005,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1878,14 +2022,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1720</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getElementsById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getElementsById</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1893,14 +2039,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$idx</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1909,8 +2057,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1927,14 +2074,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1722</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getElementsByTagName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getElementsByTagName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$idx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1942,14 +2091,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$idx</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">-1</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1958,8 +2109,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -1976,22 +2126,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1716</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">lastChild</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">lastChild</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2008,14 +2159,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1044</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">load</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">load</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2023,35 +2176,40 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$lowercase</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$stripRN</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultBRText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultSpanText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2060,8 +2218,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2078,22 +2235,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1081</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">load_file</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">load_file</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2110,22 +2268,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1723</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">loadFile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">loadFile</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2142,22 +2301,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1099</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">remove_callback</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">remove_callback</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2174,14 +2334,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1645</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">restore_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">restore_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2189,7 +2351,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2198,8 +2361,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2216,14 +2378,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1105</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filepath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filepath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2231,7 +2395,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2240,8 +2405,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2258,14 +2422,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1678</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">search_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">search_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2273,7 +2439,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2282,8 +2449,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2300,14 +2466,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1093</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">set_callback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$function_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">set_callback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$function_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2315,7 +2483,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2324,8 +2493,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2342,14 +2510,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1536</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">as_text_node</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tag</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">as_text_node</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tag</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2357,7 +2527,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2366,8 +2537,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2384,14 +2554,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1552</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">copy_skip</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">copy_skip</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2399,7 +2571,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2408,8 +2581,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2426,14 +2598,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1562</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">copy_until</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">copy_until</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2441,7 +2615,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2450,8 +2625,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2468,14 +2642,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1571</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">copy_until_char</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$char</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">copy_until_char</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$char</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2483,7 +2659,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2492,8 +2669,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2510,14 +2686,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1589</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">copy_until_char_escape</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$char</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">copy_until_char_escape</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$char</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2525,7 +2703,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2534,8 +2713,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2552,14 +2730,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1525</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">link_nodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$is_child</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">link_nodes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$is_child</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2567,14 +2747,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$is_child</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2583,8 +2765,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2601,22 +2782,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1172</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">parse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2633,14 +2815,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1486</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">parse_attr</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$space</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">parse_attr</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$space</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2648,21 +2832,24 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$name</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$space</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2671,8 +2858,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2689,22 +2875,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1190</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">parse_charset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">parse_charset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2721,14 +2908,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1137</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lowercase</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stripRN</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultBRText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultSpanText</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2736,35 +2925,40 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$lowercase</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$stripRN</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultBRText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_BR_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$defaultSpanText</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">DEFAULT_SPAN_TEXT</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2773,8 +2967,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2791,22 +2984,23 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1261</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">read_tag</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">read_tag</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2823,14 +3017,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1620</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">remove_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pattern</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$remove_tag</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">remove_noise</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pattern</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$remove_tag</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2838,14 +3034,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$remove_tag</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2854,8 +3052,7 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -2872,14 +3069,16 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <abbr class="phpdocumentor-element-found-in__file" title="php/simple_html_dom.php"><a href="files/php-simple-html-dom.html"><abbr title="php/simple_html_dom.php">simple_html_dom.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">1546</span>
-</aside>
+
+    </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                <span class="phpdocumentor-signature__name">skip</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">skip</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$chars</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2887,7 +3086,8 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2896,11 +3096,72 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
             </section>
+
+        
+    <script type="text/javascript">
+        function loadExternalCodeSnippets(line) {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                pre.setAttribute('data-line', line)
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        var modals = document.querySelectorAll("[data-modal]");
+
+        modals.forEach(function (trigger) {
+            trigger.addEventListener("click", function (event) {
+                //event.preventDefault();
+                const modal = document.getElementById(trigger.dataset.modal);
+                modal.classList.add("phpdocumentor-modal__open");
+                loadExternalCodeSnippets(trigger.dataset.line)
+                const exits = modal.querySelectorAll("[data-exit-button]");
+                exits.forEach(function (exit) {
+                    exit.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        modal.classList.remove("phpdocumentor-modal__open");
+                    });
+                });
+            });
+        });
+    </script>
 
     </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -2923,5 +3184,9 @@ Paperg - added ForceTagsClosed in the constructor which tells us whether we trus
     <script>
         cssVars({});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 </body>
 </html>

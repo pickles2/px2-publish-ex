@@ -11,12 +11,12 @@
     ],
     "scripts":{
         "test": [
-            "php ./vendor/phpunit/phpunit/phpunit"
-        ] ,
+            "@php ./vendor/phpunit/phpunit/phpunit"
+        ],
         "documentation": [
-            "php ./vendor/phpdocumentor/phpdocumentor/bin/phpdoc --title \"pickles2/px2-publish-ex v2.1.4 API Document\" -d \"./php/\" -t \"./docs/phpdoc/\""
+            "@php ./phpDocumentor.phar --title \"pickles2/px2-publish-ex v2.1.4 API Document\" -d \"./php/\" -t \"./docs/phpdoc/\""
         ]
-    } ,
+    },
     "config": {
         "process-timeout": 0,
         "allow-plugins": {
@@ -32,7 +32,6 @@
     "require-dev": {
         "pickles2/px-fw-2.x": "~2.1||~2.0",
         "pickles2/px2-multitheme": "~2.0",
-        "phpdocumentor/phpdocumentor": "~3.0.0",
         "phpunit/phpunit": "~9.5",
         "jms/serializer": "<1.8"
     },
