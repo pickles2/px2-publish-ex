@@ -171,7 +171,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### pickles2/px2-publish-ex v2.1.5 (リリース日未定)
+### pickles2/px2-publish-ex v2.1.5 (2025年7月12日)
 
 - ヘッダー情報の送信に関する改善。
 
